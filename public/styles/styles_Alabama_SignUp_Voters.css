@@ -1,0 +1,374 @@
+/* To create a customized iStock.com background image for the iVoteBallot Alabama_SignUp_Voters.html webpage. */
+html { 
+    background-color: rgb(255, 255, 255);   
+}
+
+/* To create an iVoteBallot locally-installed custom font face which is defined by a custom  
+   font name then point to the font file; in order to be use, as the custom font-family HTML
+   element. */
+   @font-face {
+    font-family: "Megrim-Regular";
+    src: url(fonts/SourceCodePro-SemiBold.ttf) format('truetype');
+    font-weight: normal;
+}
+
+/* To create a webkit scrollbar pseudo element affects which will style the scrollbar element
+   to a specified width to which will be displayed onto the users' browsers. */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* To create a webkit scrollbar track (progress bar) where there is a rocket metallic color bar
+   ontop of the box shadow inset color to which will be displayed onto the users' browsers.. */
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(172, 10, 10, 0.3); 
+}
+
+/* To create a webkit scrollbar thumb which will drag the scrolling handle to which will be
+   displayed onto the users' browsers. */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(201, 24, 24);
+}
+
+/* To create a webkit scrollbar thumb hover selector element to which an users can hover his/her
+   cursor with his/her mouse to generate a soft color affects. */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(172, 10, 10, 0.3); ;    
+}
+
+/* To style the hr line attribute's ID element for which will add decorative designs' sets of 
+   appearance to the horizontal rule line. */
+#redLines_HR {
+	height: 3px;
+    border: none;
+    background-color: rgb(255, 0, 0);
+}
+
+/* To style the hr line attribute's ID element for which will add decorative designs' sets of 
+   appearance to the horizontal rule line. */
+#blueLines_HR {
+	height: 3px;
+    border: none;
+    background-color: rgb(13, 65, 255);
+}
+
+
+
+
+/* To create five separate unordered list (ul) flex items boxes with a set of row values which will place all flex
+   items into a row. If users used smaller screen size devices which will make his/her smaller
+   screen displays vertically oriented screen layout, use with the main flex container box
+   column for vertical shrinkage. */
+#navigational_Bar_01 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;    
+    justify-content: center;
+    padding: 40px;
+    cursor: pointer;
+    cursor: 14px;
+    list-style: none;   
+    background-color: transparent;
+    width: 100%;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 2vw, 20px);    
+    color: rgb(13, 65, 255);
+    background-color: rgb(255, 255, 255);
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#navigational_Bar_01  a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 5px;
+    color: rgb(13, 65, 255);
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#navigational_Bar_01 a:hover {
+    background-color: rgba(93, 99, 207, 0.45);
+    color: rgb(255, 255, 255);
+}
+
+/* To set ivoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+   @media all and (max-width: 1000px) {
+    #navigational_Bar_01 {
+        justify-content: space-around;
+    }
+}
+
+/* To set ivoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+   @media all and (max-width: 900px) {
+    #navigational_Bar_01 {
+        justify-content: space-around;
+    }
+}
+
+/* To set ivoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+@media all and (max-width: 800px) {
+    #navigational_Bar_01 {
+        justify-content: space-around;
+    }
+}
+
+/* To set iVoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+   @media all and (max-width: 700px) {
+    #navigational_Bar_01 {
+        flex-flow: column wrap;
+        padding: 0%;        
+    }
+}
+
+/* To set iVoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+@media all and (max-width: 600px) {
+    #navigational_Bar_01 {
+        flex-flow: column wrap;
+        padding: 0%;        
+    }
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#navigational_Bar_01 a {
+    text-align: center;
+    padding: 10px;   
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#navigational_Bar_01 li:last-of-type a {
+    border-bottom: none;
+}
+
+/* To set iVoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+@media all and (max-width: 425px) {
+    #navigational_Bar_01 {
+        flex-direction: column;     
+    }
+}
+
+#iVoteBallot_Title_01 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    cursor: 14px;     
+    background-color: rgb(255, 255, 255);       
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(25px, 5vw, 300px);
+    color: blue;    
+    background-color: rgb(255, 255, 255);
+}
+
+/* To create a main flex container box column with a set of values of the area container to 
+   which will displays properties and, houses within the main flex container box two children
+   which are call flex items (left and right containers. */
+#flex_Container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;  
+   
+}
+
+/* To create three separate flex items boxes with a set of row values which will place all flex
+   items into a row. If users used a smaller screen size devices which will make his/her smaller
+   screen displays vertically oriented screen layout, use with the main flex container box
+   column for a vertical successful shrinkage to his/her device. */
+#flex_Container_Row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* To create flex items' column boxes which allows dimension to become flexible within the flex items'
+   rows container boxes from the three flex items' box containers. */   
+#flex_Container_Column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+/* To link the div tag to the three flex items boxes columns’ elements to which will allows the three column
+   values to shrink and expand to their appropriate fitted space available within the three flex items boxes
+   columns’ containers. */
+#flex_Container_Column > div {
+    display: flex;
+    flex: 1;
+    display: block;    
+}
+
+#left_Column {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto; 
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid red;
+    text-align: center;
+}
+
+#iVoteBallot_Title_02 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    cursor: 14px;     
+    background-color: rgb(255, 255, 255);       
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(17px, 2vw, 40px);
+    color: blue;    
+    background-color: rgb(255, 255, 255);
+}
+
+#voter_Card_01 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal; 
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;  
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+#voter_Card_Image {
+    max-width:100%;
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+   #voter_Card_01 a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 5px;
+    color: rgb(13, 65, 255);
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#voter_Card_01 a:hover {
+    background-color: rgba(93, 99, 207, 0.45);
+    color: rgb(255, 255, 255);
+}
+
+#iVoteBallot_Title_03 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: left;    
+    justify-content: left;
+    text-align: left;
+    cursor: pointer;
+    cursor: 14px;     
+    background-color: rgb(255, 255, 255);       
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 2vw, 25px);
+    color: blue;    
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* To create a flex item columns boxes to which will allows the columns' values to shrink and expand
+   to their appropriate fitted space for storing and styling iVoteBallot's social medias links and policies information. */
+#iVoteBallot_Link_01 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 14px;
+    cursor: pointer;
+    cursor: 14px;
+    list-style: none;   
+    background-color: transparent;  
+    width: auto;   
+    font-size: clamp(25px, 5vw, 300px);
+    text-align: center;     
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#iVoteBallot_Link_01 a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 15px;
+    color: rgb(255, 0, 0);
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#iVoteBallot_Link_01 a:hover {
+    background-color: rgba(82, 108, 187, 0.238);
+    color: rgb(136, 125, 125);
+}
+
+#right_Column {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto; 
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid red;
+    text-align: center;
+}
+
+#iVoteBallot_Title_04 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    cursor: 14px;     
+    background-color: rgb(255, 255, 255);       
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 2vw, 25px);
+    color: blue;    
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+
+
+
