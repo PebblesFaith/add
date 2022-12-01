@@ -21,7 +21,7 @@ Sarai Hannah Ajai has initialized the 'port' constant which is used by NODE.js w
 serves, as an internet connection gateway command prompt connectivities that allows her to views HTML files from the
 local host 'port' 1180 on the internet. 
 */
-const port = 1180; 
+const port = 3000; 
 
 /*
 Sarai Hannah Ajai has assigned her 'iVoteBallot' express object in order to starts and listen onto the 'port' server 1180 from the internet connectivities which has specified a error callback function which will invoked whenever there
