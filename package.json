@@ -1,0 +1,19 @@
+{
+  "name": "ivoteballot_prototype",
+  "version": "1.0.0",
+  "description": "The iVoteBallot.com web application was created for providing our United States' voters with a much more",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PebblesFaith/iVoteBallot_Prototype.git"
+  },
+  "author": "Sarai Hannah Ajai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PebblesFaith/iVoteBallot_Prototype/issues"
+  },
+  "homepage": "https://github.com/PebblesFaith/iVoteBallot_Prototype#readme"
+}
