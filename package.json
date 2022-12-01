@@ -4,7 +4,8 @@
   "description": "The iVoteBallot.com web application was created for providing our United States' voters with a much more",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/PebblesFaith/iVoteBallot_Prototype/issues"
   },
-  "homepage": "https://github.com/PebblesFaith/iVoteBallot_Prototype#readme"
+  "homepage": "https://github.com/PebblesFaith/iVoteBallot_Prototype#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
