@@ -12,9 +12,18 @@ html {
     font-weight: normal;
 }
 
+/* To create an iVoteBallot locally-installed custom font face which is defined by a custom  
+   font name then point to the font file; in order to be use, as the custom font-family HTML
+   element. */
+@font-face {
+    font-family: "Roboto_Bold_700";
+    src: url(../fonts/Roboto/Roboto_Bold_700.ttf) format('truetype');
+    font-weight: bold;
+}
+
 /* To create a webkit scrollbar pseudo element affects which will style the scrollbar element
    to a specified width to which will be displayed onto the users' browsers. */
-::-webkit-scrollbar {
+   ::-webkit-scrollbar {
     width: 15px;
 }
 
@@ -38,12 +47,14 @@ html {
     background-color: rgba(172, 10, 10, 0.3); ;    
 }
 
+
 /* To style the hr line attribute's ID element for which will add decorative designs' sets of 
    appearance to the horizontal rule line. */
 #redLines_HR {
 	height: 3px;
     border: none;
     background-color: rgb(255, 0, 0);
+    margin: 3px;
 }
 
 /* To style the hr line attribute's ID element for which will add decorative designs' sets of 
@@ -52,10 +63,8 @@ html {
 	height: 3px;
     border: none;
     background-color: rgb(13, 65, 255);
+    margin: 3px;
 }
-
-
-
 
 /* To create five separate unordered list (ul) flex items boxes with a set of row values which will place all flex
    items into a row. If users used smaller screen size devices which will make his/her smaller
@@ -70,8 +79,9 @@ html {
     cursor: pointer;
     cursor: 14px;
     list-style: none;   
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
     width: 100%;
+    height: auto;
     font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(14px, 2vw, 20px);    
     color: rgb(13, 65, 255);
@@ -91,7 +101,7 @@ html {
 /* To style form attribute's element for which will add decorative designs' sets of appearance to the 
    font hover hyperlink texts. */
 #navigational_Bar_01 a:hover {
-    background-color: rgba(93, 99, 207, 0.45);
+    background-color: rgb(201, 24, 24);
     color: rgb(255, 255, 255);
 }
 
@@ -121,7 +131,7 @@ html {
 
 /* To set iVoteBallot media query range for all (which includes print and screen) types of responsive
    breakpoint for various viewport devices. */
-   @media all and (max-width: 700px) {
+@media all and (max-width: 700px) {
     #navigational_Bar_01 {
         flex-flow: column wrap;
         padding: 0%;        
@@ -158,6 +168,8 @@ html {
     }
 }
 
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   iVoteBallot's texts. */
 #iVoteBallot_Title_01 {
     display: flex;
     flex-flow: row wrap;   
@@ -168,7 +180,7 @@ html {
     cursor: 14px;     
     background-color: rgb(255, 255, 255);       
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(25px, 5vw, 300px);
+    font-size: clamp(25px, 6vw, 500px);
     color: blue;    
     background-color: rgb(255, 255, 255);
 }
@@ -182,8 +194,7 @@ html {
     flex-direction: row;
     background-color: transparent;
     align-items: center;
-    justify-content: center;  
-   
+    justify-content: center;     
 }
 
 /* To create three separate flex items boxes with a set of row values which will place all flex
@@ -216,6 +227,8 @@ html {
     display: block;    
 }
 
+/* To create left side flex item column box to which will allows the column's values to shrink and expand
+   to their appropriate fitted space for storing and styling iVoteBallot descriptive information. */
 #left_Column {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -227,8 +240,12 @@ html {
     background-color: rgb(255, 255, 255);
     border: 1px solid red;
     text-align: center;
+    width: auto;
+    height: auto;
 }
 
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   iVoteBallot's texts. */
 #iVoteBallot_Title_02 {
     display: flex;
     flex-flow: row wrap;   
@@ -244,6 +261,8 @@ html {
     background-color: rgb(255, 255, 255);
 }
 
+/* To create image flex item column box to which will allows the column's values to shrink and expand
+   to their appropriate fitted space for storing and styling example of the State voter registration card. */
 #voter_Card_01 {
     display: -webkit-box;
     display: -moz-box;
@@ -263,10 +282,14 @@ html {
     box-align: center;  
     align-items: center;
     background-color: rgb(255, 255, 255);
+    
 }
 
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the State card image. */
 #voter_Card_Image {
-    max-width:100%;
+    width: 100%;
+    height: auto;
 }
 
 /* To style form attribute's element for which will add decorative designs' sets of appearance  
@@ -286,6 +309,8 @@ html {
     color: rgb(255, 255, 255);
 }
 
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   iVoteBallot's texts. */
 #iVoteBallot_Title_03 {
     display: flex;
     flex-flow: row wrap;   
@@ -337,6 +362,8 @@ html {
     color: rgb(136, 125, 125);
 }
 
+/* To create right side flex item column box to which will allows the column's values to shrink and expand
+   to their appropriate fitted space for storing and styling iVoteBallot descriptive information. */
 #right_Column {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -346,10 +373,13 @@ html {
     padding: 10px;
     margin: 10px;
     background-color: rgb(255, 255, 255);
-    border: 1px solid red;
-    text-align: center;
+    border: 1px solid red;    
+    text-align: center;    
+   
 }
 
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   iVoteBallot's texts. */
 #iVoteBallot_Title_04 {
     display: flex;
     flex-flow: row wrap;   
@@ -360,13 +390,218 @@ html {
     cursor: 14px;     
     background-color: rgb(255, 255, 255);       
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(14px, 2vw, 25px);
+    font-size: clamp(17px, 2vw, 25px);
     color: blue;    
     background-color: rgb(255, 255, 255);
     margin-left: 20px;
     margin-right: 20px;
+    margin-top: 75px;
 }
 
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   iVoteBallot's texts. */
+#iVoteBallot_Title_05 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    cursor: 14px;     
+    background-color: rgb(255, 255, 255);       
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(17px, 2vw, 25px);
+    color: blue;    
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 25px;
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   iVoteBallot's texts. */
+#iVoteBallot_Title_06 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    cursor: 14px;     
+    background-color: rgb(255, 255, 255);       
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 2vw, 25px);
+    color: blue;    
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 25px;
+    margin-bottom: 75px;
+}
+
+* {
+    margin: 0px;
+    padding: 0;
+  }
+  
+  #flex_Container_FallingFlagBalls {   
+    position: relative;
+    height: auto;    
+  }
+  
+#flex_Container_FallingFlagBalls > #background_Video {
+    width: 100%;
+    height: auto;
+    position: relative;
+    isolation: isolate; 
+    opacity: .20;   
+  }
+
+#flex_Container_FallingFlagBalls > #text_Container  {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;   
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    isolation: isolate;    
+    inset: 0;
+    background-color: rgb(255, 255, 255);
+    color: rgb(201, 24, 24);
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(50px, 3vw, 100px);
+    mix-blend-mode: multiply;
+    /*user-select: none; */
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#text_Container a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 5px;
+    color: rgb(13, 65, 255);
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#text_Container a:hover {
+    background-color: rgba(93, 99, 207, 0.45);
+    color: rgb(255, 255, 255);
+}
+
+#voter_Link_HomePage {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    cursor: 14px;     
+    background-color: rgb(255, 255, 255);       
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(20px, 3vw, 50px);
+    color: rgb(201, 24, 24);    
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-right: 20px;    
+}
+
+/* To create a main flex container box column with a set of values of the area container to 
+   which will displays properties and, houses within the main flex container box two children
+   which are call flex items (left and right containers. */
+#footer_flex_container > ul li img {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;    
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+}
+
+/* To create a flex item columns boxes to which will allows the columns' values to shrink and expand
+   to their appropriate fitted space for storing and styling iVoteBallot's social medias links and policies information. */
+#socialMedias_01 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 14px;
+    cursor: pointer;
+    cursor: 14px;
+    list-style: none;   
+    background-color: transparent;  
+    width: auto;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 1.5vw, 18px); 
+    text-align: center;    
+}
+
+/* To style HTML tag (img) for which will add decorative designs sets of resizes to shrink and expand  
+   to the iVoteBallot's social medias flex boxes. */
+img {
+    width: clamp(15px, 3vw, 25px);    
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#socialMedias_01 a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 15px;
+    color:rgba(93, 99, 207, 0.45);
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#socialMedias_01 a:hover {
+    background-color: rgba(82, 108, 187, 0.238);
+    color: rgb(136, 125, 125);
+}
+
+/* To create a flex item column box to which will allows the column's values to shrink and expand
+   to their appropriate fitted space for storing and styling iVoteBallot's footer insignia. */
+#iVoteBallot_Footer_Insignia_01 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px 14px;    
+    list-style: none;   
+    background-color: rgb(201, 24, 24);
+    width: auto;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(12px, 1vw, 50px); 
+    margin-top: 0px; 
+    margin-bottom: 0px;  
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#iVoteBallot_Footer_Insignia_01 a {    
+    text-decoration: none;    
+    padding: 5px;
+    color: rgb(234, 233, 233);
+    text-align: center;
+    padding: 10px;   
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance in order
+   to allow sturctual pseduo class to the style content based on it relationship with its parent and sibling
+   from the hyperlink text. */
+#iVoteBallot_Footer_Insignia_01 li:last-of-type a {
+    border-bottom: none;
+}
+
+  
 
 
 
