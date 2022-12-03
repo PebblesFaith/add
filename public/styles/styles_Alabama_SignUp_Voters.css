@@ -281,8 +281,7 @@ html {
     -moz-box-align: center;
     box-align: center;  
     align-items: center;
-    background-color: rgb(255, 255, 255);
-    
+    background-color: rgb(255, 255, 255);    
 }
 
 /* To style form attribute's element for which will add decorative designs' sets of appearance  
@@ -294,7 +293,7 @@ html {
 
 /* To style form attribute's element for which will add decorative designs' sets of appearance  
    to the hyperlink texts. */
-   #voter_Card_01 a {    
+#voter_Card_01 a {    
     text-decoration: none;
     display: block;
     background-color: inherit;
@@ -418,32 +417,55 @@ html {
     margin-top: 25px;
 }
 
-/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
-   iVoteBallot's texts. */
+/* To create a flex item columns boxes to which will allows the columns' values to shrink and expand
+   to their appropriate fitted space for storing and styling iVoteBallot's Alamaba link. */
 #iVoteBallot_Title_06 {
     display: flex;
     flex-flow: row wrap;   
-    align-items: center;    
-    justify-content: center;
-    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 14px;
     cursor: pointer;
-    cursor: 14px;     
-    background-color: rgb(255, 255, 255);       
+    cursor: 14px;
+    list-style: none;   
+    background-color: rgb(255, 255, 255);  
+    width: auto;   
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(15px, 2vw, 25px);
-    color: blue;    
-    background-color: rgb(255, 255, 255);
+    font-size: clamp(14px, 2vw, 35px); 
+    color: rgb(201, 24, 24);  
+    text-align: center;
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 25px;
     margin-bottom: 75px;
+    text-decoration: none;
 }
 
+/* To style the attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#iVoteBallot_Title_06 a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 15px;
+    color:rgba(93, 99, 207, 0.45);
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#iVoteBallot_Title_06 a:hover {
+    background-color: rgba(82, 108, 187, 0.238);
+    color: rgb(136, 125, 125);
+}
+
+/* To set an asterisk to all elements, as  an universal selector for zero margins and zero padding;
+   in order to format the iVoteBallot's webpage using the USA falling balls video. */
 * {
     margin: 0px;
     padding: 0;
   }
   
+
   #flex_Container_FallingFlagBalls {   
     position: relative;
     height: auto;    
@@ -485,8 +507,7 @@ html {
     text-decoration: none;
     display: block;
     background-color: inherit;
-    padding: 5px;
-    color: rgb(13, 65, 255);
+    padding: 5px;    
 }
 
 /* To style form attribute's element for which will add decorative designs' sets of appearance to the 
@@ -507,10 +528,9 @@ html {
     background-color: rgb(255, 255, 255);       
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(20px, 3vw, 50px);
-    color: rgb(201, 24, 24);    
-    background-color: rgb(255, 255, 255);
+    color: rgb(201, 24, 24);  
     margin-left: 20px;
-    margin-right: 20px;    
+    margin-right: 20px; 
 }
 
 /* To create a main flex container box column with a set of values of the area container to 
