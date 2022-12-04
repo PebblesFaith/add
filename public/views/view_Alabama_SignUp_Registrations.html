@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>iVoteBallot | Voter Online Sign Up</title>
+
+	<link rel="icon" type="images" href="../images/iVoteBallot Favicon/314860_star_icon.png" />
+	<link rel="stylesheet" type="text/css" href="../styles/styles_Alabama_SignUp_Registrations.css" />
+
+	<script language="JavaScript" type="text/javascript"> </script> 
+
+</head>
+<body>
+
+
+<body> 
+    <!-- -->
+    
+<hr> 
+<br>
+    <div id="flex_Container">
+        <div id="row_Container">
+            <div id="column_Containers">     
+                <div id="left_Column">
+                    <div>
+                        <p id = "flex_SignUp_Title_01">
+                            <a href = "../views/view_Alabama_SignUp_Voters.html">Alabama</a>                           
+                        </p>
+                        <br>
+						<p id = "flex_SignUp_Title_02">
+                            <a href = "../views/view_Home.html">iVoteBallot</a>                           
+                        </p>
+                        
+						<br>                           
+						<!--<p id = "flex_contactUsEmail">
+							<a href = "mailto:contactus@accounetrics.com">Email: contactus@accounetrics.com </a> 
+						</p> --> 
+                        <p>
+                    </div>                    
+                </div>
+            </div>
+            
+            <div id="column_Containers">
+                <div id="right_Column">
+                    
+                    <form id="formContactUs" name="contactUsForm" onsubmit="return validateContactUsForm()" action="/contactus" method="POST" >                       
+                            <label>First Name |</label>   
+                            <br>               
+                            <input id="firstName" type="text" name="userFirstName" maxlength="75">
+                            <br>
+                            <span id = "userFirstNameErrorMessage"></span>
+                            <br>
+                            <label>Middle Name | optional</label>  
+                            <br>
+                            <input id="middleName" type="text" name="userMiddleName" maxlength="75">
+                            <br>
+                            <span id = "userMiddleNameErrorMessage"></span>
+                            <br>
+                            <label>Last Name |</label> 
+                            <br>
+                            <input id="lastName" type="text" name="userLastName" maxlength="75">
+                            <br>
+                            <span id = "userLastNameErrorMessage"></span>
+                            <br>
+                            <label>Email Address |</label> 
+                            <br>
+                            <input id="email" type="text" name="userEmail" maxlength="250">
+                            <br>
+                            <span id = "userEmailErrorMessage"></span>
+                            <br>
+                            <label>Confirm Email Address |</label>
+                            <br>
+                            <input id="confirmEmail" type="text" name="userConfirmEmail" maxlength="250"">
+                            <br>
+                            <span id = "userConfirmEmailErrorMessage"></span>
+                            <br>
+                            <select id="membershipQuestion" name="userMembershipQuestion">
+                                <option id="selectBackground" value=""disable selected hidden>Do You Have An Account with Us?</option>
+                                    <option value = Account_Yes>Yes</option>
+                                    <option value = Account_No>No</option>                                    
+                            </select>
+                            <br>
+                            <span id = "userAccouNetricsQuestionErrorMessage"></span>
+                            <br>
+                            <select id="concern" name="userConcern">
+                                <option id="selectBackground" value=""disable selected hidden>Choose Your Concern</option>
+                                    <option value = Account_Login>Account Login</option>
+                                    <option value = Account_Sign_Up>Account Sign Up</option>
+                                    <option value = Products_and_Services>Products and Services</option>
+                                    <option value = 404_Error>404 Error</option>
+                                    <option value = 500_Error>500 Error</option>
+                                    <option value = Other_Concern>Other Concern</option>
+                            </select>
+                            <br>
+                            <span id = "userConcernErrorMessage"></span>
+                            <br>
+                            <textarea id="textMessage" type="text" name="userTextMessage" rows="4" cols="56" spellcheck="true" minlength="25" maxlength="1000" onkeyup="countCharacters(this.id)" placeholder="Write Your Test Message Here..."></textarea>
+                           <br>
+                           <span id="textareaRemainingCharacters"></span>                       
+                            <br>
+                            <span id="userTextErrorMessage"></span>  
+                            <br>                           
+                            <input id = "randomAlphaNumeric" type="hidden" name="userRandomAlphaNumeric" value="" ></input>
+                            <br>
+                            <br>
+                            <input id="submitButton" type="submit" name="submit_Button"  value="SUBMIT"></button>
+                            <br> 
+                            
+                        </form>
+             
+                    </div>
+                </div>
+            </div> 
+            <br>  
+           
+
+
+			<script>   
+            
+				const validateContactUsForm = (e) => {    
+					
+					console.log('Sarai Hannah Ajai is testing her written JavaScript programmatic codes; in order to validate her contact us form has opened up correctly within the HTML webpage.')
+	
+					const userFirstName = document.getElementById('firstName').value;
+					window.sessionStorage.setItem('userfirstname', userFirstName);
+					const userMiddleName = document.getElementById('middleName').value;
+					window.sessionStorage.setItem('usermiddlename', userMiddleName);
+					const userLastName = document.getElementById('lastName').value;
+					window.sessionStorage.setItem('userlastname', userLastName);
+					const userEmail = document.getElementById('email').value;
+					const userConfirmEmail = document.getElementById('confirmEmail').value;
+					const userMembershipQuestion = document.getElementById('membershipQuestion').value;
+					const userConcern = document.getElementById('concern').value;
+					const userTextMessage = document.getElementById('textMessage').value;   
+					const userRandomAlphaNumeric = document.getElementById('randomAlphaNumeric');                                   
+	
+					const regExName = /^[A-Za-z\s]+$/;
+					const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;                                            
+	
+														
+					if (userFirstName === '' || userFirstName == null || userFirstName.length <= 2 || !userFirstName.match(regExName)) {                                                               
+						document.getElementById('userFirstNameErrorMessage').innerHTML = 'Your first name is a required input field or you must enter more than two characters into the first name required input field.';
+	
+						setTimeout(function() {
+							document.getElementById('userFirstNameErrorMessage').innerHTML = '';
+						},
+						9000)
+	
+						return false;
+											
+					}
+					
+					if (userMiddleName === '' || userMiddleName == null) {
+						document.getElementById('userMiddleNameErrorMessage').innerHTML = 'Do you have a middle name? If so, please type in your middle name into the input field or skip the middle name input field.';
+	
+						setTimeout(function() {
+							document.getElementById('userMiddleNameErrorMessage').innerHTML = '';
+						},
+						9000)                                           
+											
+						} else if (userMiddleName.length <= 2 || !userMiddleName.match(regExName)) {
+						document.getElementById('userMiddleNameErrorMessage').innerHTML = 'Your middle name is an optional input field; however, you must enter more than two characters into the middle name required input field.';
+	
+						setTimeout(function() {
+							document.getElementById('userMiddleNameErrorMessage').innerHTML = '';
+						},
+						9000)
+					
+						return false;  
+	
+					}                                  
+	
+					if (userLastName === '' || userLastName == null || userLastName.length <= 2 || !userLastName.match(regExName)) {
+						document.getElementById('userLastNameErrorMessage').innerHTML = 'Your last name is a required input field or you must enter more than two characters into the last name required input field.';
+	
+						setTimeout(function() {
+							document.getElementById('userLastNameErrorMessage').innerHTML = '';
+						},
+						9000)
+	
+						return false;
+	
+					}
+	
+					if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
+						document.getElementById('userEmailErrorMessage').innerHTML = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
+	
+						setTimeout(function() {
+							document.getElementById('userEmailErrorMessage').innerHTML = '';
+						},
+						9000)
+	
+						return false;
+	
+					}
+	
+					if (userConfirmEmail === '' || userConfirmEmail == null || userConfirmEmail.length <= 6 || !userConfirmEmail.match(regExEmail)) {
+						document.getElementById('userConfirmEmailErrorMessage').innerHTML = 'Your confirm email address is a required input field and you must enter the correct confirm email address format into the require input field.';
+	
+						setTimeout(function() {
+							document.getElementById('userConfirmEmailErrorMessage').innerHTML = '';
+						},
+						9000)
+	
+						return false;
+	
+					}
+					
+					if (userEmail != userConfirmEmail) {
+						document.getElementById('userConfirmEmailErrorMessage').innerHTML = 'Your email address does not match to your confirm email address which are required input fields.';
+	
+						setTimeout(function() {
+							document.getElementById('userConfirmEmailErrorMessage').innerHTML = '';
+						},
+						9000)
+	
+						return false;
+	
+					}
+	
+					if (userMembershipQuestion === '' || userMembershipQuestion == null) {
+						document.getElementById('userAccouNetricsQuestionErrorMessage').innerHTML = 'You must select your AccouNetrics membership status which is a selection required field.';
+	
+						setTimeout(function() {
+							document.getElementById('userAccouNetricsQuestionErrorMessage').innerHTML = '';
+						},
+						9000)
+	
+						return false;
+	
+					}
+	
+					if (userConcern === '' || userConcern == null) {
+						document.getElementById('userConcernErrorMessage').innerHTML = 'You must select your topic concern status which is a selection required field.';
+	
+						setTimeout(function() {
+							document.getElementById('userConcernErrorMessage').innerHTML = '';
+						},
+						9000)
+	
+						return false;
+	
+					}
+					
+					if (userTextMessage === '' || userTextMessage == null || userTextMessage.length <= 25) {
+						document.getElementById('userTextErrorMessage').innerHTML = 'Your text message is a require input field and you must enter more than twenty-five characters into the input required field.';
+	
+						setTimeout(function() {
+							document.getElementById('userTextErrorMessage').innerHTML = '';
+						},
+						9000)
+	
+						return false;                                       
+	
+					}                                      
+																				
+					if (userRandomAlphaNumeric === '' || userRandomAlphaNumeric == null) {
+						//do nothing for now
+	
+						return false;
+					} 
+	
+					function randomAlphaNumeric(length) {
+						var randomAlphaNumeric;
+						var number = '';
+	
+						for(var count = 0; count < length; count++) {
+							randomAlphaNumeric = Math.floor(Math.random() * 10);
+							number += randomAlphaNumeric.toString();
+						}
+						return number;
+					}			
+					
+					userRandomAlphaNumeric.value = randomAlphaNumeric(12);
+	
+					console.log(userRandomAlphaNumeric);			                                                                  
+	
+					e.preventDefault();                                      
+					
+						form.addEventListner('submit',randomAlphaNumeric, validateContactUsForm);
+						return true; 
+						
+					}   
+	
+					function countCharacters(textMessage) {
+						const userCountTextMessage = document.getElementById('textMessage').value.length;
+					
+						console.log(userCountTextMessage);
+						if (userCountTextMessage > 0 || userCountTextMessage <= 1000 - 1 ) {
+							document.getElementById('textareaRemainingCharacters').innerHTML = 1000 - userCountTextMessage + ' Out of 1000 Remaining Characters';
+						}
+						if (userCountTextMessage > 1000 - 1) {
+							document.getElementById('textareaRemainingCharacters').innerHTML = "Maximum characters reached!";
+						}
+					}                                    
+																		
+			</script>
+         
+	
+	
+	</body>
+</html>
