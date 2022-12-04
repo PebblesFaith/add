@@ -23,7 +23,7 @@ html {
 
 /* To create a webkit scrollbar pseudo element affects which will style the scrollbar element
    to a specified width to which will be displayed onto the users' browsers. */
-   ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 15px;
 }
 
@@ -46,7 +46,6 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(172, 10, 10, 0.3); ;    
 }
-
 
 /* To style the hr line attribute's ID element for which will add decorative designs' sets of 
    appearance to the horizontal rule line. */
@@ -107,7 +106,7 @@ html {
 
 /* To set ivoteBallot media query range for all (which includes print and screen) types of responsive
    breakpoint for various viewport devices. */
-   @media all and (max-width: 1000px) {
+@media all and (max-width: 1000px) {
     #navigational_Bar_01 {
         justify-content: space-around;
     }
@@ -168,6 +167,122 @@ html {
     }
 }
 
+/* To create a main flex container box column with a set of values of the area container to 
+   which will displays properties and, houses within the main flex container box one children
+   which are call flex items box. */
+#flex_Container_USA_Falling_Balls {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;    
+}
+
+/* To create one separate flex items box with a set of row values which will place all flex
+   items into a row. If users used a smaller screen size devices which will make his/her smaller
+   screen displays vertically oriented screen layout, use with the main flex container box
+   column for a vertical successful shrinkage to his/her device. */
+#row_Container_USA_Falling_Balls {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* To link the div tag to the one flex items box row element to which will allows the row values 
+   to shrink and expand to their appropriate fitted space available within the one flex items box
+   rows containers. */
+#row_Container_USA_Falling_Balls > div {
+    display: flex;
+    flex: 1;   
+}
+
+/* To create flex items' column box which allows dimension to become flexible within the flex items'
+   rows container box from the one flex items' box container. */   
+#column_Containers_USA_Falling_Balls {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+/* To link the div tag to the one flex items box column's elements to which will allows the one column
+   values to shrink and expand to their appropriate fitted space available within the one flex items box
+   column's container. */
+#column_Containers_USA_Falling_Balls > div {
+    display: flex;
+    flex: 1;
+    display: block;    
+}
+
+/* To set an asterisk to all elements, as  an universal selector for zero margins and zero padding;
+   in order to format the iVoteBallot's webpage using the USA falling balls video. */
+   * {
+    margin: 0px;
+    padding: 0;
+  }
+  
+/* To create a main flex container box column with a set of values of the area container to 
+   which will displays properties and, houses within the main flex container box one children
+   which are call flex item box. */
+#flex_Container_FallingFlagBalls {   
+    position: relative;
+    height: auto;    
+  }
+
+/* To link the div tag to the one flex items box row element to which will allows the row values 
+   to shrink and expand to their appropriate fitted space available within the one flex items box
+   rows container. */  
+#flex_Container_FallingFlagBalls > #background_Video {
+    width: 100%;
+    height: auto;
+    position: relative;
+    isolation: isolate; 
+    opacity: .20;   
+  }
+
+/* To link the div tag to the one flex items box row element to which will allows the row values 
+   to shrink and expand to their appropriate fitted space available within the one flex items box
+   rows container. */    
+#flex_Container_FallingFlagBalls > #text_Container  {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;   
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    isolation: isolate;    
+    inset: 0;
+    background-color: rgb(255, 255, 255);
+    color: rgb(201, 24, 24);
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(50px, 3vw, 100px);
+    mix-blend-mode: multiply;
+    /*user-select: none; */
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#text_Container a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 5px;    
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#text_Container a:hover {
+    background-color: rgba(93, 99, 207, 0.45);
+    color: rgb(255, 255, 255);
+}
+
 /* To style the attribute's element for which will add decorative designs' sets of appearance to the 
    iVoteBallot's texts. */
 #iVoteBallot_Title_01 {
@@ -179,10 +294,28 @@ html {
     cursor: pointer;
     cursor: 14px;     
     background-color: rgb(255, 255, 255);       
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Roboto_Bold_700', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(25px, 6vw, 500px);
     color: blue;    
     background-color: rgb(255, 255, 255);
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   iVoteBallot's texts. */
+#voter_Link_HomePage {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    cursor: 14px;     
+    background-color: rgb(255, 255, 255);       
+    font-family: 'Roboto_Bold_700', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(20px, 3vw, 50px);
+    color: rgb(201, 24, 24);  
+    margin-left: 20px;
+    margin-right: 20px; 
 }
 
 /* To create a main flex container box column with a set of values of the area container to 
@@ -456,81 +589,6 @@ html {
 #iVoteBallot_Title_06 a:hover {
     background-color: rgba(82, 108, 187, 0.238);
     color: rgb(136, 125, 125);
-}
-
-/* To set an asterisk to all elements, as  an universal selector for zero margins and zero padding;
-   in order to format the iVoteBallot's webpage using the USA falling balls video. */
-* {
-    margin: 0px;
-    padding: 0;
-  }
-  
-
-  #flex_Container_FallingFlagBalls {   
-    position: relative;
-    height: auto;    
-  }
-  
-#flex_Container_FallingFlagBalls > #background_Video {
-    width: 100%;
-    height: auto;
-    position: relative;
-    isolation: isolate; 
-    opacity: .20;   
-  }
-
-#flex_Container_FallingFlagBalls > #text_Container  {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 0;
-    left: 0;   
-    display: flex;
-    flex-flow: row wrap;   
-    align-items: center;    
-    justify-content: center;
-    text-align: center;
-    isolation: isolate;    
-    inset: 0;
-    background-color: rgb(255, 255, 255);
-    color: rgb(201, 24, 24);
-    font-weight: 900;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(50px, 3vw, 100px);
-    mix-blend-mode: multiply;
-    /*user-select: none; */
-}
-
-/* To style form attribute's element for which will add decorative designs' sets of appearance  
-   to the hyperlink texts. */
-#text_Container a {    
-    text-decoration: none;
-    display: block;
-    background-color: inherit;
-    padding: 5px;    
-}
-
-/* To style form attribute's element for which will add decorative designs' sets of appearance to the 
-   font hover hyperlink texts. */
-#text_Container a:hover {
-    background-color: rgba(93, 99, 207, 0.45);
-    color: rgb(255, 255, 255);
-}
-
-#voter_Link_HomePage {
-    display: flex;
-    flex-flow: row wrap;   
-    align-items: center;    
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
-    cursor: 14px;     
-    background-color: rgb(255, 255, 255);       
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(20px, 3vw, 50px);
-    color: rgb(201, 24, 24);  
-    margin-left: 20px;
-    margin-right: 20px; 
 }
 
 /* To create a main flex container box column with a set of values of the area container to 
