@@ -1,0 +1,473 @@
+/* To set iVoteBallot media query range responsive breakpoint for various viewport devices. */
+@media screen and (min-width: 250px) {
+    body {
+        padding: 25px;
+        margin: 25px;
+        background-color: rgb(13, 65, 255);
+    } 
+} 
+
+/* To create an iVoteBallot locally-installed custom font face which is defined by a custom  
+   font name then point to the font file; in order to be use, as the custom font-family HTML
+   element. */
+@font-face {
+    font-family: "Megrim-Regular";
+    src: url(fonts/Megrim-Regular.ttf) format('truetype');
+    font-weight: normal;
+}
+
+/* To create an iVoteBallot locally-installed custom font face which is defined by a custom  
+   font name then point to the font file; in order to be use, as the custom font-family HTML
+   element. */
+@font-face {
+    font-family: "Roboto_Bold_700";
+    src: url(../fonts/Roboto/Roboto_Bold_700.ttf) format('truetype');
+    font-weight: bold;
+}
+
+/* Sarai Hannah Ajai have changed the default HTML placeholder attribute style color from 
+   grey to white with the non-standard "::placeholder" selector. */
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: rgb(255, 255, 255);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: rgb(255, 255, 255);
+  }
+
+/* To create a webkit scrollbar pseudo element affects which will style the scrollbar element
+   to a specified width to which will be displayed onto the users' browsers. */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* To create a webkit scrollbar track (progress bar) where there is a rocket metallic color bar
+   ontop of the box shadow inset color to which will be displayed onto the users' browsers.. */
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(136, 125, 125, 0.30); 
+}
+
+/* To create a webkit scrollbar thumb which will drag the scrolling handle to which will be
+   displayed onto the users' browsers. */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(136, 125, 125);
+}
+
+/* To create a webkit scrollbar thumb hover selector element to which an users can hover his/her
+   cursor with his/her mouse to generate a soft color affects. */
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(136, 125, 125, 0.30);    
+}
+
+/* To create 'form' tag style in order to align all DOM elements to the center of the form. */
+form {
+    text-align: center;
+}
+
+/* To style a hr attribute's element for which will add decorative designs' sets of appearance to the 
+   hortizonal rule lines. */
+hr {
+    border: none;
+    border-top: 10px;
+    background-color: rgb(136, 125, 125);
+    overflow: visible;
+    height: 2px;    
+}
+
+/* To style the label attribute's element for which will add decorative designs' sets of appearance to
+   the "label" tag. */
+label {
+    display: inline-block;
+    width: 71%;
+    text-align: left;         
+}
+
+/* To create a main flex container box column with a set of values of the area container to 
+   which will displays properties and, houses within the main flex container box two children
+   which are call flex items (left and right containers. */
+#flex_Container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: rgb(221, 205, 183);
+    align-items: center;
+    justify-content: center;
+}
+
+/* To create two separate flex items boxes with a set of row values which will place all flex
+   items into a row. If users used smaller screen size devices which will make his/her smaller
+   screen displays vertically oriented screen layout, use with the main flex container box
+   column for vertical shrinkage. */
+#row_Container {
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* To link the div tag to the two flex items boxes row element to which will allows the row values
+   to shrink and expand to their appropriate fitted space available within the two flex itemsboxes
+   rows containers. */
+#row_Container > div {
+    display: flex;
+    flex: 1;  
+}
+
+/* To create flex items' column boxes which allows dimension to become flexiable within the flex items'
+   rows box containters from the flex items' box containers left and right sides. */   
+#column_Containers {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;   
+}
+
+/* To link the div tag to the two flex items boxes columns element to which will allows the columns values
+   to shrink and expand to their appropriate fitted space available within the two flex items boxes columns 
+   containers. */
+#column_Containers > div {
+    display: flex;
+    flex: 1;
+}
+
+/* To create left side flex item column box to which will allows the column's values to shrink and expand
+   to their appropriate fitted space for storing and styling AccouNetrics contact us information. */
+#left_Column {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;
+    background-color: rgb(201, 24, 24);
+    color:rgb(255, 255, 255);
+    height: auto;
+    width: auto;
+    text-align: center;
+    line-height: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 3vw, 16px);
+    justify-content: center;  
+}
+
+/* To style and customizes iVoteBallot company name for which will increase or decrease in font size to
+   fit the users' monitor screen browsers. */
+#flex_SignUp_Title_01 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 14px;    
+    list-style: none;   
+    background-color: rgb(201, 24, 24);  
+    width: auto;
+    font-family: 'Roboto_Bold_700', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(25px, 7vw, 200px); 
+    margin-top: auto; 
+    margin-bottom: auto;      
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hyperlink texts. */
+#flex_SignUp_Title_01 a {
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    color:rgb(255, 255, 255);
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hover hyperlink texts. */
+#flex_SignUp_Title_01 a:hover {
+    color:rgba(210, 198, 203, 0.30);
+}
+
+/* To style and customizes iVoteBallot company name for which will increase or decrease in font size to
+   fit the users' monitor screen browsers. */
+#flex_SignUp_Title_02 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 14px;    
+    list-style: none;   
+    background-color: rgb(201, 24, 24);  
+    width: auto;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(18px, 3vw, 100px); 
+    margin-top: auto; 
+    margin-bottom: auto;      
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hyperlink texts. */
+#flex_SignUp_Title_02 a {
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    color:rgb(255, 255, 255);
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hover hyperlink texts. */
+#flex_SignUp_Title_02 a:hover {
+    color:rgba(210, 198, 203, 0.30);
+}
+
+
+
+
+
+
+
+
+/* To create and style customized AccouNetrics company email address for which will increase or decrease in
+   font size to fit the users' monitor screen browsers. */
+#flex_contactUsEmail {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 28px;    
+    list-style: none;   
+    background-color: rgb(136, 125, 125);  
+    width: auto;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 18px); 
+    margin-top: 0px; 
+    margin-bottom: 0px;  
+    word-break: break-all;
+}
+
+/* To add and style customized contact us email design to the font size hyperlink texts. */
+#flex_contactUsEmail a {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-around;        
+    list-style: none;   
+    background-color: rgb(136, 125, 125);  
+    width: auto;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 18px); 
+    text-decoration: none;
+    color: rgb(255, 255, 255);   
+}
+
+/* To add and style customized contact us email design to the font size hover hyperlink texts. */
+#flex_contactUsEmail a:hover {
+    color: rgba(210, 198, 203, 0.30);
+}
+
+/* To create right side flex item column box to which will allows the column's values to shrink and expand
+   to their appropriate fitted space for storing and styling AccouNetrics contact us information. */
+#right_Column {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;     
+    background-color: rgb(255, 255, 255);
+    color: rgb(13, 65, 255);
+    height: auto;
+    width: auto;
+    text-align: center;   
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 18px);    
+    justify-content: center;    
+}
+
+/* To add and style the form hidden borders to the inputs' tags. */
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: solid;
+    color: rgb(13, 65, 255);
+    background-color: inherit;
+    width: 70%;     
+}
+
+/* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
+   elements within the contact us form. */
+#firstName, #middleName, #lastName, #email, #confirmEmail, #orderNumber, #membershipQuestion, #concern, #textMessage, #contactUsFormEndTime {
+    outline: none; 
+}
+
+/* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
+#firstName, #middleName, #lastName, #email, #confirmEmail, #orderNumber:focus, #membershipQuestion, #concern, #textMessage, #contactUsFormEndTime {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 18px);  
+    color: rgb(13, 65, 255); 
+    background-color: inherit;
+    white-space: normal;
+    padding: 2px; 
+}
+
+/* Sarai Hannah Ajai has added styles input attributes to DOM Elements; in order to receive a brown border
+   colors whenever, the user clicks focus are inside the input fields. And, she has also added the CSS
+   transition property which will animate a brown border color within 0.5 secords which will change the
+   color of focus.
+*/ 
+#firstName, #middleName, #lastName, #email, #confirmEmail, #orderNumber, #membershipQuestion, #concern, #textMessage, #contactUsFormEndTime {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#firstName:focus, #middleName:focus, #lastName:focus, #email:focus, #confirmEmail:focus, #membershipQuestion:focus, #concern:focus, #orderNumber:focus, #textMessage:focus, #contactUsFormEndTime:focus {
+    border:3px solid rgb(73, 40, 16);
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: solid;
+    background-color: rgba(178, 161, 169, 0.837);    
+    width: 70%;  
+}
+
+/* To style a span attributes' DOM elements for which will add font decorations sets of appearances. */
+#userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAccouNetricsQuestionErrorMessage, #userConcernErrorMessage, #userTextErrorMessage, #userFormEndTimeErrorMessage {    
+    margin: 2px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(8px, 2vw, 14px);
+    color: rgb(13, 65, 255);    
+    text-align: center;
+    white-space: normal;
+    padding: 1px; 
+}
+
+/* To style the select attribute's DOM element for which will add font decorations sets of appearances. */
+#accounetrics_Account {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 18px);   
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255);
+    padding: 2px; 
+}
+
+select > option {
+    background-color: rgba(249, 224, 236, 0.25);
+}
+
+/* To create a webkit scrollbar pseudo element affects which will style the scrollbar element
+   to a specified width to which will be displayed onto the users' browsers. */
+textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* To create a webkit scrollbar track (progress bar) where there is a rocket metallic color bar
+   ontop of the box shadow inset color to which will be displayed onto the users' browsers.. */
+textarea::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(136, 125, 125, 0.30); 
+}
+
+/* To create a webkit scrollbar thumb which will drag the scrolling handle to which will be
+   displayed onto the users' browsers. */
+textarea::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgb(136, 125, 125);
+}
+
+
+
+
+
+/* To style the horizonal rule attribute's DOM element for which will add decorative designs' sets of appearances  
+   to the horizonal rule (HR) tag's lines. */
+#styleLine {
+    height: 1px;
+    border: none;
+    background-color: rgb(136, 125, 125);}
+
+/* To style the HTML tag (textarea) for which will add decorative designs sets of appearances  
+   to the AccouNetrics contact us textarea box. */    
+textarea {
+    resize: vertical;
+    padding: 2px;
+    margin: 5px 5px;
+    word-wrap: break-word;
+    width: 70%;
+    background-color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(13, 65, 255);
+    border-color: rgb(13, 65, 255);
+    outline: none;
+    font-size: clamp(10px, 2vw, 18px); 
+}
+
+/* To style the textareaRemainingCharacters attribute's DOM element for which will add decorative designs' sets of appearances
+   to the textarea remaining characters texts. */
+#textareaRemainingCharacters {
+    margin-top: 2px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 14px); 
+    color: rgb(13, 65, 255);
+    text-align: center;
+}
+
+/* To style the userCountMessage attribute's DOM element for which will add decorative designs' sets of appearances
+   to the user[s] number count area. */
+#userCountMessage {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 14px); 
+    color: rgb(42, 19, 19);
+    text-align: center;
+}
+
+/* To style the submitButton attribute's DOM element for which will add decorative designs' sets of appearances
+   to the submit button area. */
+#submitButton {
+    display: block;
+    height: 40px;
+    width: 70%;
+    background-color: rgb(201, 24, 24);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 255, 255);
+    font-size: clamp(10px, 2vw, 18px);
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+}
+
+/* On screens that are 992px wide or less, go from two columns to one column. */
+@media all and (max-width: 992px) {
+    .column-containers {
+      width: 50%;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of
+     next to each other */
+  @media all and (max-width: 600px) {
+    .column-containers {
+      width: 100%;
+    }
+  }
+
+  /* To style an input attributes' DOM elements for which will add decorative designs' sets of appearances  
+   to the input submit button. */
+  #userTextCountMessage {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(136, 125, 125);
+    font-size: clamp(9px, 2vw, 13px);    
+    margin-top: 5px;
+    justify-content: right;
+  }
+
+  /* To style the 'span' tag for which will add decorative designs' sets of appearances  
+   to the span tag area. */
+span {
+    background-color: rgba(178, 161, 169, 0.881);
+    display: inline-block;
+    background-color: inherit;
+    width: 61%;    
+  }
+
+  
+   
