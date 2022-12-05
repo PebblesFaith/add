@@ -3,7 +3,7 @@
     body {
         padding: 25px;
         margin: 25px;
-        background-color: rgb(13, 65, 255);
+        background-color: rgb(255, 255, 255);
     } 
 } 
 
@@ -11,7 +11,7 @@
    font name then point to the font file; in order to be use, as the custom font-family HTML
    element. */
 @font-face {
-    font-family: "Megrim-Regular";
+    font-family: "Megrim_Regular";
     src: url(fonts/Megrim-Regular.ttf) format('truetype');
     font-weight: normal;
 }
@@ -143,8 +143,14 @@ label {
     display: flex;
     flex-wrap: row wrap;
     flex-direction: column;
-    background-color: rgb(201, 24, 24);
-    color:rgb(255, 255, 255);
+    background: url(../images/iVoteBallot_Body/iStock-910057642.jpg) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: auto;   
+    color: rgb(201, 24, 24);
     height: auto;
     width: auto;
     text-align: center;
@@ -156,6 +162,8 @@ label {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(14px, 3vw, 16px);
     justify-content: center;  
+    border-style: outset;
+    border-color: rgb(201, 24, 24);
 }
 
 /* To style and customizes iVoteBallot company name for which will increase or decrease in font size to
@@ -167,7 +175,7 @@ label {
     justify-content: space-around;
     padding: 14px 14px;    
     list-style: none;   
-    background-color: rgb(201, 24, 24);  
+    background-color: transparent;  
     width: auto;
     font-family: 'Roboto_Bold_700', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(25px, 7vw, 200px); 
@@ -180,7 +188,7 @@ label {
     text-decoration: none;
     display: block;
     padding: 5px;
-    color:rgb(255, 255, 255);
+    color: rgb(201, 24, 24);
 }
 
 /* To add and style customized iVoteBallot company name design to the font size hover hyperlink texts. */
@@ -197,10 +205,10 @@ label {
     justify-content: space-around;
     padding: 14px 14px;    
     list-style: none;   
-    background-color: rgb(201, 24, 24);  
+    background-color: transparent;  
     width: auto;
-    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(18px, 3vw, 100px); 
+    font-family: 'Roboto_Bold_700', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 2vw, 50px); 
     margin-top: auto; 
     margin-bottom: auto;      
 }
@@ -210,7 +218,7 @@ label {
     text-decoration: none;
     display: block;
     padding: 5px;
-    color:rgb(255, 255, 255);
+    color: rgb(red, green, blue);
 }
 
 /* To add and style customized iVoteBallot company name design to the font size hover hyperlink texts. */
@@ -218,49 +226,70 @@ label {
     color:rgba(210, 198, 203, 0.30);
 }
 
-
-
-
-
-
-
-
-/* To create and style customized AccouNetrics company email address for which will increase or decrease in
-   font size to fit the users' monitor screen browsers. */
-#flex_contactUsEmail {
+/* To style and customizes iVoteBallot company name for which will increase or decrease in font size to
+   fit the users' monitor screen browsers. */
+#flex_SignUp_Title_03 {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
-    padding: 14px 28px;    
+    padding: 14px 14px;    
     list-style: none;   
-    background-color: rgb(136, 125, 125);  
+    background-color: transparent;  
     width: auto;
-    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(10px, 2vw, 18px); 
-    margin-top: 0px; 
-    margin-bottom: 0px;  
-    word-break: break-all;
+    font-family: 'Megrim_Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(18px, 3vw, 100px); 
+    margin-top: auto; 
+    margin-bottom: auto;      
 }
 
-/* To add and style customized contact us email design to the font size hyperlink texts. */
-#flex_contactUsEmail a {
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
-    justify-content: space-around;        
-    list-style: none;   
-    background-color: rgb(136, 125, 125);  
-    width: auto;
-    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(10px, 2vw, 18px); 
+/* To add and style customized iVoteBallot company name design to the font size hyperlink texts. */
+#flex_SignUp_Title_03 a {
     text-decoration: none;
-    color: rgb(255, 255, 255);   
+    display: block;
+    padding: 5px;
+    color: rgb(201, 24, 24);
 }
 
-/* To add and style customized contact us email design to the font size hover hyperlink texts. */
-#flex_contactUsEmail a:hover {
-    color: rgba(210, 198, 203, 0.30);
+/* To add and style customized iVoteBallot company name design to the font size hover hyperlink texts. */
+#flex_SignUp_Title_03 a:hover {
+    color:rgba(210, 198, 203, 0.30);
+}
+
+/* To style and customizes iVoteBallot company name for which will increase or decrease in font size to
+   fit the users' monitor screen browsers. */
+#flex_SignUp_Title_04 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 14px;    
+    list-style: none;   
+    background-color: transparent;  
+    width: auto;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(18px, 3vw, 100px); 
+    margin-top: auto; 
+    margin-bottom: auto;      
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hyperlink texts. */
+#flex_SignUp_Title_04 a {
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    color: rgb(201, 24, 24);
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hover hyperlink texts. */
+#flex_SignUp_Title_04 a:hover {
+    color:rgba(210, 198, 203, 0.30);
+}
+
+/* To style HTML tag (img) for which will add decorative designs sets of resizes to shrink and expand  
+   to the iVoteBallot's social medias flex boxes. */
+#flex_Alabama_Seal {    
+    width: clamp(50px, 6vw, 100px);
 }
 
 /* To create right side flex item column box to which will allows the column's values to shrink and expand
@@ -280,7 +309,9 @@ label {
     padding-bottom: 25px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(10px, 2vw, 18px);    
-    justify-content: center;    
+    justify-content: center; 
+    border-style: inset;
+    border-color: rgb(13, 65, 255);
 }
 
 /* To add and style the form hidden borders to the inputs' tags. */
@@ -296,12 +327,12 @@ input {
 
 /* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
    elements within the contact us form. */
-#firstName, #middleName, #lastName, #email, #confirmEmail, #orderNumber, #membershipQuestion, #concern, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #email, #confirmEmail, #address, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     outline: none; 
 }
 
 /* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
-#firstName, #middleName, #lastName, #email, #confirmEmail, #orderNumber:focus, #membershipQuestion, #concern, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #email, #confirmEmail, #address:focus, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(10px, 2vw, 18px);  
     color: rgb(13, 65, 255); 
@@ -315,23 +346,23 @@ input {
    transition property which will animate a brown border color within 0.5 secords which will change the
    color of focus.
 */ 
-#firstName, #middleName, #lastName, #email, #confirmEmail, #orderNumber, #membershipQuestion, #concern, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #email, #confirmEmail, #address, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 
-#firstName:focus, #middleName:focus, #lastName:focus, #email:focus, #confirmEmail:focus, #membershipQuestion:focus, #concern:focus, #orderNumber:focus, #textMessage:focus, #contactUsFormEndTime:focus {
-    border:3px solid rgb(73, 40, 16);
+#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idTypes:focus, #email:focus, #confirmEmail:focus, #address:focus, #membershipQuestion:focus, #textMessage:focus, #contactUsFormEndTime:focus {
+    border:3px solid rgb(201, 24, 24);
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: solid;
-    background-color: rgba(178, 161, 169, 0.837);    
+    background-color: rgba(212, 221, 249, .50);    
     width: 70%;  
 }
 
 /* To style a span attributes' DOM elements for which will add font decorations sets of appearances. */
-#userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAccouNetricsQuestionErrorMessage, #userConcernErrorMessage, #userTextErrorMessage, #userFormEndTimeErrorMessage {    
+#voterFirstNameErrorMessage, #voterMiddleNameErrorMessage, #voterLastNameErrorMessage, #voterSuffixErrorMessage, #voterIdTypesErrorMessage, #voterEmailErrorMessage, #voterConfirmEmailErrorMessage, #voterAddressErrorMessage, #voterAccouNetricsQuestionErrorMessage, #userTextErrorMessage, #userFormEndTimeErrorMessage {    
     margin: 2px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(8px, 2vw, 14px);
@@ -339,40 +370,36 @@ input {
     text-align: center;
     white-space: normal;
     padding: 1px; 
+    
 }
 
-/* To style the select attribute's DOM element for which will add font decorations sets of appearances. */
-#accounetrics_Account {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(10px, 2vw, 18px);   
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the State card image. */
+#voter_Card_Image {
+    width: 15%;
+    height: 15%;  
+    align-items: center;  
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#voter_Card_01 a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 5px;
+    color: rgb(13, 65, 255);
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#voter_Card_01 a:hover {
+    background-color: rgba(93, 99, 207, 0.45);
     color: rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255);
-    padding: 2px; 
 }
 
-select > option {
-    background-color: rgba(249, 224, 236, 0.25);
-}
 
-/* To create a webkit scrollbar pseudo element affects which will style the scrollbar element
-   to a specified width to which will be displayed onto the users' browsers. */
-textarea::-webkit-scrollbar {
-    width: 5px;
-}
 
-/* To create a webkit scrollbar track (progress bar) where there is a rocket metallic color bar
-   ontop of the box shadow inset color to which will be displayed onto the users' browsers.. */
-textarea::-webkit-scrollbar-track {
-    border-radius: 5px;
-    box-shadow: inset 0 0 10px rgba(136, 125, 125, 0.30); 
-}
-
-/* To create a webkit scrollbar thumb which will drag the scrolling handle to which will be
-   displayed onto the users' browsers. */
-textarea::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: rgb(136, 125, 125);
-}
 
 
 
@@ -385,40 +412,7 @@ textarea::-webkit-scrollbar-thumb {
     border: none;
     background-color: rgb(136, 125, 125);}
 
-/* To style the HTML tag (textarea) for which will add decorative designs sets of appearances  
-   to the AccouNetrics contact us textarea box. */    
-textarea {
-    resize: vertical;
-    padding: 2px;
-    margin: 5px 5px;
-    word-wrap: break-word;
-    width: 70%;
-    background-color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(13, 65, 255);
-    border-color: rgb(13, 65, 255);
-    outline: none;
-    font-size: clamp(10px, 2vw, 18px); 
-}
 
-/* To style the textareaRemainingCharacters attribute's DOM element for which will add decorative designs' sets of appearances
-   to the textarea remaining characters texts. */
-#textareaRemainingCharacters {
-    margin-top: 2px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(10px, 2vw, 14px); 
-    color: rgb(13, 65, 255);
-    text-align: center;
-}
-
-/* To style the userCountMessage attribute's DOM element for which will add decorative designs' sets of appearances
-   to the user[s] number count area. */
-#userCountMessage {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(10px, 2vw, 14px); 
-    color: rgb(42, 19, 19);
-    text-align: center;
-}
 
 /* To style the submitButton attribute's DOM element for which will add decorative designs' sets of appearances
    to the submit button area. */
