@@ -327,12 +327,12 @@ input {
 
 /* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
    elements within the contact us form. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #email, #confirmEmail, #address, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #zipSelect, #email, #confirmEmail, #address,  #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     outline: none; 
 }
 
 /* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #email, #confirmEmail, #address:focus, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #email, #confirmEmail, #address, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(10px, 2vw, 18px);  
     color: rgb(13, 65, 255); 
@@ -346,12 +346,12 @@ input {
    transition property which will animate a brown border color within 0.5 secords which will change the
    color of focus.
 */ 
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #email, #confirmEmail, #address, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #email, #confirmEmail, #address,  #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 
-#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idTypes:focus, #email:focus, #confirmEmail:focus, #address:focus, #membershipQuestion:focus, #textMessage:focus, #contactUsFormEndTime:focus {
+#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idTypes:focus, #email:focus, #confirmEmail:focus, #address:focus,  #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #membershipQuestion:focus, #textMessage:focus, #contactUsFormEndTime:focus {
     border:3px solid rgb(201, 24, 24);
     border-top-style: hidden;
     border-right-style: hidden;
@@ -398,7 +398,27 @@ input {
     color: rgb(255, 255, 255);
 }
 
-
+#us_Dropdown_Group {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;     
+    background-color: rgb(255, 255, 255);
+    color: rgb(13, 65, 255);
+    height: auto;
+    width: auto;
+    text-align: center;  
+    margin: auto; 
+    margin-top: 3rem;
+    margin-left: 50px;
+    margin-right: 50px;
+    gap: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 18px);    
+    justify-content: center;     
+    margin-top: 3rems;
+}
 
 
 
@@ -464,4 +484,6 @@ span {
   }
 
   
-   
+
+  
+ 
