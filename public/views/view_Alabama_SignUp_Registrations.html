@@ -128,6 +128,33 @@
 								<br>
 								<span id="voterAddressErrorMessage"></span>
 								<br>
+
+								<select id="countrySelect" name="voterCountrySelection" size="1">
+									<option value="" selected="selected">Select Country</option>
+								</select>
+								<br>
+								<br>
+							  
+								<select id="stateSelect" name="voterStateSelection" size="1">
+									<option value="" selected="selected">Select State</option>
+								</select>
+								
+								<select id="countySelect" name="voterCountySelection" size="1">
+									<option value="" selected="selected">Select County</option>
+								</select>
+								<br>
+								<br>
+															    
+								<select id="citySelect" name="voterCitySelection" size="1">
+									<option value="" selected="selected">Select City</option>
+								</select>								
+
+								<select id="zipSelect" name="voterZipSelection" size="1">
+									<option value="" selected="selected">Select Zip</option>
+								</select>
+								<br>
+								<br>
+
 								<select id="membershipQuestion" name="userMembershipQuestion">
 									<option id="selectBackground" value=""disable selected hidden>Do You Have An Account with Us?</option>
 										<option value = Account_Yes>Yes</option>
@@ -151,8 +178,213 @@
 
 
 		<script>   
+			/* Sarai Hannah Ajai have created a contant/variable; in order to store all United States country's, states, counties, cities and
+			   zip codes in a retrievable arrays connected links in order for the voters to have a conveniences to select from a drop down 
+			   menus. */
+			const countryStateCountyCityZipData = {
+				'USA': {
+					'Alabama': {
+						'Autauga': {
+							'Autaugaville': ['36003'],
+							'Billingsley': ['36006'],
+							'Marbury': ['36022', '36051'],
+							'Pine Level': ['36066', '36067', '36022'],
+							'Prattville': ['36066', '36067']
+						},
+						'Baldwin': {
+							'Bay Minette': ['36507'],
+							'Bon Secour': ['36511', '36535'],
+							'Daphne': ['36527', '36526'],
+							'Elberta': ['36530'],
+							'Fairhope': ['36532', '36559'],
+							'Foley': ['36535', '36580'],
+							'Gulf Shores': ['36542', '36547'],
+							'Lillian': ['36549'],
+							'Loxley': ['36551', '36527', '36578'],
+							'Magnolia Springs': ['36535', '36555'],
+							'Orange Beach': ['36561', '36530'],
+							'Perdido': ['36562'],
+							'Perdido Beach': ['36530'],
+							'Point Clear': ['36564', '36532'],
+							'Robertsdale': ['36567'],
+							'Silverhill': ['36576'],
+							'Spanish Fort': ['36507', '36527'],
+							'Stapleton': ['36527', '36578'],
+							'Stockton': ['36507', '36579'],
+							'Summerdale': ['36535', '36580']
+						},
+						'Barbour': {
+							'Bakerhill': ['36027'],
+							'Blue Springs': ['36374', '36017'],
+							'Clayton': ['36016'],
+							'Clio': ['36017'],
+							'Eufaula': ['36027'],
+							'Louisville': ['36048']
+						},
+						'Bibb': {
+							'Brent': ['35042', '35034'],
+							'Centreville': ['35042'],
+							'West Blocton': ['35184'],
+							'Woodstock': ['35188', '35111']
+						},
+						'Blount': {
+							'Allgood': ['35013', '35121'],
+							'Blountsville': ['35031'],
+							'Cleveland': ['35049', '35121'],
+							'County Line': ['35172'],
+							'Hayden': ['35180', '35079'],
+							'Highland Lake': ['35121'],
+							'Locust Fork': ['35133', '35097'],
+							'Nectar': ['35079', '35049'],
+							'Oneonta': ['35121'],
+							'Remlap': ['35133'],
+							'Rosa': ['35031', '35121'],
+							'Smoke Rise': ['35180'],
+							'Snead': ['35952'],
+							'Susan Moore': ['35952', '35031', '35121']
+						},
+						'Bullock': {
+							'Midway': ['36053'],
+							'Union Springs': ['36089']
+						},
+						'Butler': {
+							'Georgiana': ['36033'],
+							'Greenville': ['36037'],
+							'McKenzie': ['36456']
+						},
+						'Calhoun': {
+							'Alexandria': ['36265', '36250'],
+							'Anniston': ['36201', '36206', '36207', '36205'],
+							'Choccolocco': ['36207'],
+							'Hobson City': ['36203', '36201'],
+							'Jacksonville': ['36265'],
+							'Nances Creek': ['36265', '36272'],
+							'Ohatchee': ['36271'],
+							'Oxford': ['36260', '36203'],
+							'Piedmont': ['36272'],
+							'Saks': ['36201', '36206'],
+							'Weaver': ['36277'],
+							'West End-Cobb Town': ['36201'],
+							'White Plains': ['36207']
+						},
+						'Chambers': {
+							'Abanda': ['36276'],
+							'Cusseta': ['36852'],
+							'Five Points': ['36855'],
+							'Fredonia': ['36855', '36863'],
+							'Huguley': ['36863'],
+							'La Fayette': ['36862'],
+							'Lanett': ['36863'],
+							'Penton': ['36862'],
+							'Standing Rock': ['36855'],
+							'Valley': ['36854'],
+							'Waverly': ['36879'],
+						},
+						'Cherokee': {
+							'Broomtown': ['35973'],
+							'Cedar Bluff': ['35959'],
+							'Centre': ['35960'],
+							'Gaylesville': ['35973'],
+							'Leesburg': ['35983'],
+							'Sand Rock': ['35983'],
+							'Spring Garden': ['36272']
+						},
+						'Chilton': {
+							'Clanton': ['35045', '35046'],
+							'Jemison': ['35085'],
+							'Maplesville': ['36750'],
+							'Thorsby': ['35171']
+						},
+
+
+					"": {
+						"": ["", ""]		
+					}
+				
+				},
+				
+			}
+		};
+
+
+			window.onload = function () {
+				
+				//Get html elements
+				var countrySelect = document.getElementById("countrySelect");
+				var stateSelect = document.getElementById("stateSelect");	
+				var countySelect = document.getElementById("countySelect");	
+				var citySelect= document.getElementById("citySelect");	
+				var zipSelect = document.getElementById("zipSelect");
+				
+				//Load countries
+				for (var country in countryStateCountyCityZipData) {
+					countrySelect.options[countrySelect.options.length] = new Option(country, country);
+				}
+				
+				/* Create function to allow voter to change his/her country. */
+				countrySelect.onchange = function () {
+					
+					stateSelect.length = 1; // remove all options bar first
+					countySelect.length = 1; // remove all options bar first
+					citySelect.length = 1; // remove all options bar first
+					zipSelect.length = 1; // remove all options bar first
+					
+					if (this.selectedIndex < 1)
+						return; // done
+					
+					for (var state in countryStateCountyCityZipData[this.value]) {
+						stateSelect.options[stateSelect.options.length] = new Option(state, state);
+					}
+				}
+				
+				/* Create function to allow voter to change his/her state. */
+				stateSelect.onchange = function () {
+
+					countySelect.length = 1; // remove all options bar first
+					citySelect.length = 1; // remove all options bar first
+					zipSelect.length = 1; // remove all options bar first
+					
+					if (this.selectedIndex < 1)
+						return; // done
+					
+					for (var county in countryStateCountyCityZipData[countrySelect.value][this.value]) {
+						countySelect.options[countySelect.options.length] = new Option(county, county);
+					}
+				}
+				
+				/* Create function to allow voter to change his/her county. */
+				countySelect.onchange = function () {		 
+						
+						citySelect.length = 1; // remove all options bar first
+						zipSelect.length = 1; // remove all options bar first
+						
+						if (this.selectedIndex < 1)
+							return; // done
+						
+						for (var city in countryStateCountyCityZipData[countrySelect.value][stateSelect.value][this.value]) {
+							citySelect.options[citySelect.options.length] = new Option(city, city);
+						}
+					}
+					
+
+				/* Create function to allow voter to change his/her city and zip code. */
+				citySelect.onchange = function () {
+					zipSelect.length = 1; // remove all options bar first
+					
+					if (this.selectedIndex < 1)
+						return; // done
+					
+					var zips = countryStateCountyCityZipData[countrySelect.value][stateSelect.value][countySelect.value][this.value];
+					for (var i = 0; i < zips.length; i++) {
+						zipSelect.options[zipSelect.options.length] = new Option(zips[i], zips[i]);
+					}
+				}	
+			}
+
 
 			const validateContactUsForm = (e) => {    
+
+
 				
 				console.log('Sarai Hannah Ajai is testing her written JavaScript programmatic codes; in order to validate her contact us form has opened up correctly within the HTML webpage.')
 
