@@ -17,8 +17,16 @@
 
 		<!-- -->
 
-		<hr> 
-		<br>
+		<hr id="redLines_HR">	
+		<hr id="blueLines_HR">		
+		
+		<div id="flex_Container_StarsAndStrips">
+			<ul id="navigational_Bar_01">
+				<li><a href="#">About Us</a></li>
+				<li><a href="../views/view_Alabama_SignUp_Registrations.html">Alabama Online Sign Up</a></li>				
+				<li><a href="">Log In</a></li>			
+			</ul>
+		</div>
 
 		<div id="flex_Container">
 			<div id="row_Container">
@@ -54,35 +62,36 @@
 				<div id="column_Containers">
 					<div id="right_Column">
 						
-						<form id="form_Voter_SignUp" name="voterSignUpForm" onsubmit="return validateVoterSignUpForm()" action="/votersignup" method="POST" >    
+						<form id="form_Voter_SignUp" name="voterSignUpForm" onsubmit="return validateVoterSignUpForm()" action="/alabamasignup" method="POST" >    
 								<label>What is your Alabama AlphaNumeric card codes, sent to you by way of the USPS from the Department of Motor Vehicles? | </label>
 									<p id="voter_Card_01">
 										<img id="voter_Card_Image" src="../images/iVoteBallot_States_Icons/iVoteBallot - Example Card.png" />					
 									</p> 
-
 								<br>
-								<input id="registrationCode" type="text" name="voterRegistrationCode" maxlength="50" />
+								<input id="registrationCode" type="text" name="userRegistrationCode" maxlength="50" />
 								<br>
-								<span id="voterRegistrationCodeErrorMessage"></span>
-								<br>							
+								<span id="userRegistrationCodeErrorMessage"></span>
+								<br>			
+												
 								<label>First Name |</label>   
 								<br>               
-								<input id="firstName" type="text" name="voterFirstName" maxlength="75">
+								<input id="firstName" type="text" name="userFirstName" maxlength="75">
 								<br>
-								<span id="voterFirstNameErrorMessage"></span>
-								<br>
+								<span id="userFirstNameErrorMessage"></span>
+								<br>								
 								<label>Middle Name | optional</label>  
 								<br>
-								<input id="middleName" type="text" name="voterMiddleName" maxlength="75">
+								<input id="middleName" type="text" name="userMiddleName" maxlength="75">
 								<br>
-								<span id="voterMiddleNameErrorMessage"></span>
+								<span id="userMiddleNameErrorMessage"></span>
 								<br>
 								<label>Last Name |</label> 
 								<br>
-								<input id="lastName" type="text" name="voterLastName" maxlength="75">
+								<input id="lastName" type="text" name="userLastName" maxlength="75">
 								<br>
-								<span id="voterLastNameErrorMessage"></span>								
+								<span id="userLastNameErrorMessage"></span>								
 								<br>
+								<!--
 								<select id="suffix" name="voterNameSuffix">
 									<option id="selectBackground" value="" disable selected hidden>Suffix (optional)</option>
 										<option value = JR>JR</option>
@@ -164,6 +173,7 @@
 								<span id = "userAccouNetricsQuestionErrorMessage"></span>
 								<br>								
 								<br>
+							-->
 								<br>
 								<input id="submitButton" type="submit" name="submit_Button"  value="SUBMIT"></button>
 								<br> 
@@ -219,6 +229,8 @@
 			/* Sarai Hannah Ajai have created a contant/variable; in order to store all United States country's, states, counties, cities and
 			   zip codes in a retrievable arrays connected links in order for the voters to have a conveniences to select from a drop down 
 			   menus. */
+
+			/*
 			const countryStateCountyCityZipData = {
 				'USA': {
 					'Alabama': {
@@ -949,94 +961,103 @@
 			}
 		};
 
-
-			window.onload = function () {
-				
-				//Get html elements
-				var countrySelect = document.getElementById("countrySelect");
-				var stateSelect = document.getElementById("stateSelect");	
-				var countySelect = document.getElementById("countySelect");	
-				var citySelect= document.getElementById("citySelect");	
-				var zipSelect = document.getElementById("zipSelect");
-				
-				//Load countries
-				for (var country in countryStateCountyCityZipData) {
-					countrySelect.options[countrySelect.options.length] = new Option(country, country);
-				}
-				
-				/* Create function to allow voter to change his/her country. */
-				countrySelect.onchange = function () {
-					
-					stateSelect.length = 1; // remove all options bar first
-					countySelect.length = 1; // remove all options bar first
-					citySelect.length = 1; // remove all options bar first
-					zipSelect.length = 1; // remove all options bar first
-					
-					if (this.selectedIndex < 1)
-						return; // done
-					
-					for (var state in countryStateCountyCityZipData[this.value]) {
-						stateSelect.options[stateSelect.options.length] = new Option(state, state);
-					}
-				}
-				
-				/* Create function to allow voter to change his/her state. */
-				stateSelect.onchange = function () {
-
-					countySelect.length = 1; // remove all options bar first
-					citySelect.length = 1; // remove all options bar first
-					zipSelect.length = 1; // remove all options bar first
-					
-					if (this.selectedIndex < 1)
-						return; // done
-					
-					for (var county in countryStateCountyCityZipData[countrySelect.value][this.value]) {
-						countySelect.options[countySelect.options.length] = new Option(county, county);
-					}
-				}
-				
-				/* Create function to allow voter to change his/her county. */
-				countySelect.onchange = function () {		 
-						
-						citySelect.length = 1; // remove all options bar first
-						zipSelect.length = 1; // remove all options bar first
-						
-						if (this.selectedIndex < 1)
-							return; // done
-						
-						for (var city in countryStateCountyCityZipData[countrySelect.value][stateSelect.value][this.value]) {
-							citySelect.options[citySelect.options.length] = new Option(city, city);
-						}
-					}
-					
-
-				/* Create function to allow voter to change his/her city and zip code. */
-				citySelect.onchange = function () {
-					zipSelect.length = 1; // remove all options bar first
-					
-					if (this.selectedIndex < 1)
-						return; // done
-					
-					var zips = countryStateCountyCityZipData[countrySelect.value][stateSelect.value][countySelect.value][this.value];
-					for (var i = 0; i < zips.length; i++) {
-						zipSelect.options[zipSelect.options.length] = new Option(zips[i], zips[i]);
-					}
-				}	
+		
+		window.onload = function () {
+			
+			//Get html elements
+			var countrySelect = document.getElementById("countrySelect");
+			var stateSelect = document.getElementById("stateSelect");	
+			var countySelect = document.getElementById("countySelect");	
+			var citySelect= document.getElementById("citySelect");	
+			var zipSelect = document.getElementById("zipSelect");
+			
+			//Load countries
+			for (var country in countryStateCountyCityZipData) {
+				countrySelect.options[countrySelect.options.length] = new Option(country, country);
 			}
+			
+			/* Create function to allow voter to change his/her country. */
+			/*
+			countrySelect.onchange = function () {
+				
+				stateSelect.length = 1; // remove all options bar first
+				countySelect.length = 1; // remove all options bar first
+				citySelect.length = 1; // remove all options bar first
+				zipSelect.length = 1; // remove all options bar first
+				
+				if (this.selectedIndex < 1)
+					return; // done
+				
+				for (var state in countryStateCountyCityZipData[this.value]) {
+					stateSelect.options[stateSelect.options.length] = new Option(state, state);
+				}
+			}
+			*/
+			
+			/* Create function to allow voter to change his/her state. */
+			/*
+			stateSelect.onchange = function () {
+
+				countySelect.length = 1; // remove all options bar first
+				citySelect.length = 1; // remove all options bar first
+				zipSelect.length = 1; // remove all options bar first
+				
+				if (this.selectedIndex < 1)
+					return; // done
+				
+				for (var county in countryStateCountyCityZipData[countrySelect.value][this.value]) {
+					countySelect.options[countySelect.options.length] = new Option(county, county);
+				}
+			}
+			*/
+			
+			/* Create function to allow voter to change his/her county. */
+			/*
+			countySelect.onchange = function () {		 
+					
+					citySelect.length = 1; // remove all options bar first
+					zipSelect.length = 1; // remove all options bar first
+					
+					if (this.selectedIndex < 1)
+						return; // done
+					
+					for (var city in countryStateCountyCityZipData[countrySelect.value][stateSelect.value][this.value]) {
+						citySelect.options[citySelect.options.length] = new Option(city, city);
+					}
+				}
+			*/	
+
+			/* Create function to allow voter to change his/her city and zip code. */
+			/*
+			citySelect.onchange = function () {
+				zipSelect.length = 1; // remove all options bar first
+				
+				if (this.selectedIndex < 1)
+					return; // done
+				
+				var zips = countryStateCountyCityZipData[countrySelect.value][stateSelect.value][countySelect.value][this.value];
+				for (var i = 0; i < zips.length; i++) {
+					zipSelect.options[zipSelect.options.length] = new Option(zips[i], zips[i]);
+				}
+			}	
+		}
+
+		*/
 
 
-			const validateContactUsForm = (e) => {    
-
-
+			const validateVoterSignUpForm = (e) => {   
 				
 				console.log('Sarai Hannah Ajai is testing her written JavaScript programmatic codes; in order to validate her contact us form has opened up correctly within the HTML webpage.')
 
+				const userRegistrationCode = document.getElementById('registrationCode').value;
+				
 				const userFirstName = document.getElementById('firstName').value;
 				window.sessionStorage.setItem('userfirstname', userFirstName);
 				const userMiddleName = document.getElementById('middleName').value;
 				window.sessionStorage.setItem('usermiddlename', userMiddleName);
-				const userLastName = document.getElementById('lastName').value;
+				const userLastName = document.getElementById('lastName').value;				
 				window.sessionStorage.setItem('userlastname', userLastName);
+				/*
 				const userEmail = document.getElementById('email').value;
 				const userConfirmEmail = document.getElementById('confirmEmail').value;
 				const userMembershipQuestion = document.getElementById('membershipQuestion').value;
@@ -1044,10 +1065,25 @@
 				const userTextMessage = document.getElementById('textMessage').value;   
 				const userRandomAlphaNumeric = document.getElementById('randomAlphaNumeric');                                   
 
-				const regExName = /^[A-Za-z\s]+$/;
+				
 				const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;                                            
+				*/
 
+				const regExAlphaNumeric = /^[0-9a-zA-Z]+$/;
+				const regExName = /^[A-Za-z\s]+$/;
 													
+				if (userRegistrationCode === '' || userRegistrationCode == null) {                                                               
+					document.getElementById('userRegistrationCodeErrorMessage').innerHTML = 'Your voter registration code is a required input field or you have enterd the incorrect alphanumeric characters into the required input field.';
+
+					setTimeout(function() {
+						document.getElementById('userRegistrationCodeErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;
+										
+				}		
+				
 				if (userFirstName === '' || userFirstName == null || userFirstName.length <= 2 || !userFirstName.match(regExName)) {                                                               
 					document.getElementById('userFirstNameErrorMessage').innerHTML = 'Your first name is a required input field or you must enter more than two characters into the first name required input field.';
 
@@ -1058,7 +1094,7 @@
 
 					return false;
 										
-				}
+				}				
 				
 				if (userMiddleName === '' || userMiddleName == null) {
 					document.getElementById('userMiddleNameErrorMessage').innerHTML = 'Do you have a middle name? If so, please type in your middle name into the input field or skip the middle name input field.';
@@ -1091,6 +1127,8 @@
 					return false;
 
 				}
+
+				/*
 
 				if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
 					document.getElementById('userEmailErrorMessage').innerHTML = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
@@ -1183,26 +1221,19 @@
 				
 				userRandomAlphaNumeric.value = randomAlphaNumeric(12);
 
-				console.log(userRandomAlphaNumeric);			                                                                  
+				console.log(userRandomAlphaNumeric);	
+				
+				
+				*/
 
 				e.preventDefault();                                      
 				
-					form.addEventListner('submit',randomAlphaNumeric, validateContactUsForm);
+					form.addEventListner('submit', validateVoterSignUpForm);
 					return true; 
 					
 				}   
 
-				function countCharacters(textMessage) {
-					const userCountTextMessage = document.getElementById('textMessage').value.length;
-				
-					console.log(userCountTextMessage);
-					if (userCountTextMessage > 0 || userCountTextMessage <= 1000 - 1 ) {
-						document.getElementById('textareaRemainingCharacters').innerHTML = 1000 - userCountTextMessage + ' Out of 1000 Remaining Characters';
-					}
-					if (userCountTextMessage > 1000 - 1) {
-						document.getElementById('textareaRemainingCharacters').innerHTML = "Maximum characters reached!";
-					}
-				}                                    
+				                         
 																	
 		</script>
 
