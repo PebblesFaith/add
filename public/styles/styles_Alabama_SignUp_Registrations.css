@@ -1,18 +1,14 @@
-/* To set iVoteBallot media query range responsive breakpoint for various viewport devices. */
-@media screen and (min-width: 250px) {
-    body {
-        padding: 25px;
-        margin: 25px;
-        background-color: rgb(255, 255, 255);
-    } 
-} 
+/* To create a customized iStock.com background image for the iVoteBallot Alabama_SignUp_Voters.html webpage. */
+html { 
+    background-color: rgb(255, 255, 255);   
+}
 
 /* To create an iVoteBallot locally-installed custom font face which is defined by a custom  
    font name then point to the font file; in order to be use, as the custom font-family HTML
    element. */
-@font-face {
-    font-family: "Megrim_Regular";
-    src: url(fonts/Megrim-Regular.ttf) format('truetype');
+   @font-face {
+    font-family: "Megrim-Regular";
+    src: url(fonts/SourceCodePro-SemiBold.ttf) format('truetype');
     font-weight: normal;
 }
 
@@ -25,21 +21,6 @@
     font-weight: bold;
 }
 
-/* Sarai Hannah Ajai have changed the default HTML placeholder attribute style color from 
-   grey to white with the non-standard "::placeholder" selector. */
-::placeholder {
-    color: rgb(255, 255, 255);
-    opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: rgb(255, 255, 255);
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-   color: rgb(255, 255, 255);
-  }
-
 /* To create a webkit scrollbar pseudo element affects which will style the scrollbar element
    to a specified width to which will be displayed onto the users' browsers. */
 ::-webkit-scrollbar {
@@ -50,35 +31,175 @@
    ontop of the box shadow inset color to which will be displayed onto the users' browsers.. */
 ::-webkit-scrollbar-track {
     border-radius: 5px;
-    box-shadow: inset 0 0 10px rgba(136, 125, 125, 0.30); 
+    box-shadow: inset 0 0 10px rgba(172, 10, 10, 0.3); 
 }
 
 /* To create a webkit scrollbar thumb which will drag the scrolling handle to which will be
    displayed onto the users' browsers. */
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: rgb(136, 125, 125);
+    background-color: rgb(201, 24, 24);
 }
 
 /* To create a webkit scrollbar thumb hover selector element to which an users can hover his/her
    cursor with his/her mouse to generate a soft color affects. */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(136, 125, 125, 0.30);    
+    background-color: rgba(172, 10, 10, 0.3); ;    
 }
+
+/* To style the hr line attribute's ID element for which will add decorative designs' sets of 
+   appearance to the horizontal rule line. */
+#redLines_HR {
+	height: 3px;
+    border: none;
+    background-color: rgb(255, 0, 0);
+    margin: 3px;
+}
+
+/* To style the hr line attribute's ID element for which will add decorative designs' sets of 
+   appearance to the horizontal rule line. */
+#blueLines_HR {
+	height: 3px;
+    border: none;
+    background-color: rgb(13, 65, 255);
+    margin: 3px;
+}
+
+/* To create five separate unordered list (ul) flex items boxes with a set of row values which will place all flex
+   items into a row. If users used smaller screen size devices which will make his/her smaller
+   screen displays vertically oriented screen layout, use with the main flex container box
+   column for vertical shrinkage. */
+#navigational_Bar_01 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;    
+    justify-content: center;
+    padding: 40px;
+    cursor: pointer;
+    cursor: 14px;
+    list-style: none;   
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 2vw, 20px);    
+    color: rgb(13, 65, 255);
+    background-color: rgb(255, 255, 255);
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#navigational_Bar_01  a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 5px;
+    color: rgb(13, 65, 255);
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#navigational_Bar_01 a:hover {
+    background-color: rgb(201, 24, 24);
+    color: rgb(255, 255, 255);
+}
+
+/* To set ivoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+@media all and (max-width: 1000px) {
+    #navigational_Bar_01 {
+        justify-content: space-around;
+    }
+}
+
+/* To set ivoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+   @media all and (max-width: 900px) {
+    #navigational_Bar_01 {
+        justify-content: space-around;
+    }
+}
+
+/* To set ivoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+@media all and (max-width: 800px) {
+    #navigational_Bar_01 {
+        justify-content: space-around;
+    }
+}
+
+/* To set iVoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+@media all and (max-width: 700px) {
+    #navigational_Bar_01 {
+        flex-flow: column wrap;
+        padding: 0%;        
+    }
+}
+
+/* To set iVoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+@media all and (max-width: 600px) {
+    #navigational_Bar_01 {
+        flex-flow: column wrap;
+        padding: 0%;        
+    }
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#navigational_Bar_01 a {
+    text-align: center;
+    padding: 10px;   
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#navigational_Bar_01 li:last-of-type a {
+    border-bottom: none;
+}
+
+/* To set iVoteBallot media query range for all (which includes print and screen) types of responsive
+   breakpoint for various viewport devices. */
+@media all and (max-width: 425px) {
+    #navigational_Bar_01 {
+        flex-direction: column;     
+    }
+}
+
+/* To set iVoteBallot media query range responsive breakpoint for various viewport devices. */
+@media screen and (min-width: 250px) {
+    body {
+        padding: 25px;
+        margin: 25px;
+        background-color: rgb(255, 255, 255);
+    } 
+} 
+
+/* Sarai Hannah Ajai have changed the default HTML placeholder attribute style color from 
+   grey to white with the non-standard "::placeholder" selector. */
+/*
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1; /* Firefox 
+  }
+*/
+  
+/*
+  :-ms-input-placeholder { /* Internet Explorer 10-11 
+   color: rgb(255, 255, 255);
+  }
+*/
+/* 
+  ::-ms-input-placeholder { /* Microsoft Edge 
+   color: rgb(255, 255, 255);
+  }
+
+*/
 
 /* To create 'form' tag style in order to align all DOM elements to the center of the form. */
 form {
     text-align: center;
-}
-
-/* To style a hr attribute's element for which will add decorative designs' sets of appearance to the 
-   hortizonal rule lines. */
-hr {
-    border: none;
-    border-top: 10px;
-    background-color: rgb(136, 125, 125);
-    overflow: visible;
-    height: 2px;    
 }
 
 /* To style the label attribute's element for which will add decorative designs' sets of appearance to
@@ -484,12 +605,6 @@ span {
     background-color: inherit;
     width: 61%;    
   }
-
-
-
-
-
-
 
 /* To create a flex item columns boxes to which will allows the columns' values to shrink and expand
    to their appropriate fitted space for storing and styling iVoteBallot's social medias links and policies information. */
