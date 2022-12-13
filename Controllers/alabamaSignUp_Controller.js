@@ -35,7 +35,7 @@ Sarai Hannah Ajai had JavaScript programmatically coded SQLite3; in order to cre
 JavaScript table each time an iVoteBallot's user/voter sign up the Alabama webpage.
 */
 db.serialize( () => {
-	const sqlTable =  ("CREATE TABLE IF NOT EXISTS AlabamaSignUp (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userDate DATETIME NOT NULL DEFAULT (datetime(CURRENT_TIMESTAMP, 'localtime')), userRegistrationCode VARCHAR (25) NOT NULL, userFirstName VARCHAR (150) NOT NULL, userMiddleName VARCHAR (150) NOT NULL, userLastName VARCHAR(150) NOT NULL)" );
+	const sqlTable =  ("CREATE TABLE IF NOT EXISTS AlabamaSignUp (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userDate DATETIME NOT NULL DEFAULT (datetime(CURRENT_TIMESTAMP, 'localtime')), userRegistrationCode VARCHAR (25) NOT NULL, userFirstName VARCHAR (150) NOT NULL, userMiddleName VARCHAR (150) NOT NULL, userLastName VARCHAR(150) NOT NULL, userSuffix VARCHAR(5) NOT NULL, userIdType VARCHAR(50) NOT NULL)" );
 		
 	db.run(sqlTable, (error) => {       
 	
@@ -61,7 +61,9 @@ capture the user input fields information from the middleware parser.
 		userRegistrationCode: req.body.userRegistrationCode,
 		userFirstName: req.body.userFirstName,
 		userMiddleName: req.body.userMiddleName, 
-		userLastName: req.body.userLastName
+		userLastName: req.body.userLastName,
+		userSuffix: req.body.userSuffix,
+		userIdType: req.body.userIdType
 					
 	}     
 			
@@ -70,10 +72,12 @@ capture the user input fields information from the middleware parser.
 	console.log('User first name is: ' + data.userFirstName + '.');
 	console.log('User middle name is: ' + data.userMiddleName + '.');
 	console.log('User last name is: ' + data.userLastName + '.');
+	console.log('User male suffix name is: ' + data.userSuffix);
+	console.log('User type of identification card is the: ' + data.userIdType);
 	
 
-	var sqlInsert = 'INSERT INTO AlabamaSignUp (userRegistrationCode, userFirstName, userMiddleName, userLastName) VALUES (?,?,?,?)';
-	var params = [data.userRegistrationCode, data.userFirstName, data.userMiddleName, data.userLastName];
+	var sqlInsert = 'INSERT INTO AlabamaSignUp (userRegistrationCode, userFirstName, userMiddleName, userLastName, userSuffix, userIdType) VALUES (?,?,?,?,?,?)';
+	var params = [data.userRegistrationCode, data.userFirstName, data.userMiddleName, data.userLastName, data.userSuffix, data.userIdType];
 	
 		db.run(sqlInsert, params, function (err, result) {
 			if (err) {
