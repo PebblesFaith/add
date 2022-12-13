@@ -91,8 +91,8 @@
 								<br>
 								<span id="userLastNameErrorMessage"></span>								
 								<br>
-								<!--
-								<select id="suffix" name="voterNameSuffix">
+							
+								<select id="suffix" name="userSuffix">
 									<option id="selectBackground" value="" disable selected hidden>Suffix (optional)</option>
 										<option value = JR>JR</option>
 										<option value = SR>SR</option>
@@ -102,12 +102,14 @@
 										<option value = IV>IV</option>
 										<option value = V>V</option>
 								</select>
+								<br>								
+								<span id = "userSuffixErrorMessage"></span>
 								<br>
-								<span id = "voterSuffixErrorMessage"></span>
-								<br>
+
+								
 								<label for="text">What type of Alabama identification do you have? |</label>
 								<br>
-								<input id="idTypes" type="text" multiple name="voterIdType" list="voterIdList" size="64" />
+								<input id="idType" type="text" multiple name="userIdType" list="voterIdList" size="64" />
 
 								<datalist id="voterIdList">
 									<option value="" disable selected hidden></option>
@@ -117,8 +119,11 @@
 										<option value="Military Id"></option>				
 								</datalist>
 								<br>
-								<span id = "voterIdTypesErrorMessage"></span>
+								<span id = "userIdTypeErrorMessage"></span>
 								<br>
+
+								<!--
+
 								<label>Email Address |</label> 
 								<br>
 								<input id="email" type="text" name="voterEmail" maxlength="250">
@@ -1051,12 +1056,19 @@
 
 				const userRegistrationCode = document.getElementById('registrationCode').value;
 				
-				const userFirstName = document.getElementById('firstName').value;
-				window.sessionStorage.setItem('userfirstname', userFirstName);
+				const userFirstName = document.getElementById('firstName').value;	
+				userFirstName.toUpperCase().charAt(0) + userFirstName.toLowerCase().slice(1);		
+				
 				const userMiddleName = document.getElementById('middleName').value;
-				window.sessionStorage.setItem('usermiddlename', userMiddleName);
-				const userLastName = document.getElementById('lastName').value;				
+			
+				const userLastName = document.getElementById('lastName').value;					
 				window.sessionStorage.setItem('userlastname', userLastName);
+
+				const userSuffix = document.getElementById('suffix').value;
+
+				const userIdType = document.getElementById('idType').value;
+
+
 				/*
 				const userEmail = document.getElementById('email').value;
 				const userConfirmEmail = document.getElementById('confirmEmail').value;
@@ -1071,7 +1083,8 @@
 
 				const regExAlphaNumeric = /^[0-9a-zA-Z]+$/;
 				const regExName = /^[A-Za-z\s]+$/;
-													
+				
+				
 				if (userRegistrationCode === '' || userRegistrationCode == null) {                                                               
 					document.getElementById('userRegistrationCodeErrorMessage').innerHTML = 'Your voter registration code is a required input field or you have enterd the incorrect alphanumeric characters into the required input field.';
 
@@ -1080,11 +1093,11 @@
 					},
 					9000)
 
-					return false;
+					return false;					
 										
 				}		
 				
-				if (userFirstName === '' || userFirstName == null || userFirstName.length <= 2 || !userFirstName.match(regExName)) {                                                               
+				if (userFirstName === '' || userFirstName == null || userFirstName.length <= 2 || !userFirstName.match(regExName))  {                                                               
 					document.getElementById('userFirstNameErrorMessage').innerHTML = 'Your first name is a required input field or you must enter more than two characters into the first name required input field.';
 
 					setTimeout(function() {
@@ -1127,6 +1140,44 @@
 					return false;
 
 				}
+
+
+				if (userSuffix === '' || userSuffix == null) {
+					document.getElementById('userSuffixErrorMessage').innerHTML = 'Do you have a sufix name? If so, please type in your suffix name into the input field or skip the suffix name input field.';
+
+					setTimeout(function() {
+						document.getElementById('userSuffixErrorMessage').innerHTML = '';
+					},
+					9000)                                           
+										
+					} else if (userSuffix.length <= 1 || !userSuffix.match(regExName)) {
+					document.getElementById('userSuffixErrorMessage').innerHTML = 'Your suffix name is an optional input field; however, you must enter more than one characters into the suffix name required input field.';
+
+					setTimeout(function() {
+						document.getElementById('userSuffixErrorMessage').innerHTML = '';
+					},
+					9000)
+				
+					return false;  
+
+				}       
+
+				if (userIdType === '' || userIdType == null) {
+					document.getElementById('userIdTypeErrorMessage').innerHTML = 'Your identifiction card type is a required field.';
+
+					setTimeout(function() {
+						document.getElementById('userIdTypeErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;
+
+				}
+
+
+
+
+
 
 				/*
 
