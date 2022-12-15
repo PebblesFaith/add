@@ -8,9 +8,7 @@
 	<title>iVoteBallot | Voter Online Sign Up</title>
 
 	<link rel="icon" type="images" href="../images/iVoteBallot Favicon/314860_star_icon.png" />
-	<link rel="stylesheet" type="text/css" href="../styles/styles_Alabama_SignUp_Registrations.css" />
-
-	<script language="JavaScript" type="text/javascript"> </script> 
+	<link rel="stylesheet" type="text/css" href="../styles/styles_Alabama_SignUp_Registrations.css" />	
 
 </head>
 	<body>
@@ -104,9 +102,7 @@
 								</select>
 								<br>								
 								<span id = "userSuffixErrorMessage"></span>
-								<br>
-
-								
+								<br>								
 								<label for="text">What type of Alabama identification do you have? |</label>
 								<br>
 								<input id="idType" type="text" multiple name="userIdType" list="voterIdList" size="64" />
@@ -121,28 +117,27 @@
 								<br>
 								<span id = "userIdTypeErrorMessage"></span>
 								<br>
-
-								<!--
-
 								<label>Email Address |</label> 
 								<br>
-								<input id="email" type="text" name="voterEmail" maxlength="250">
+								<input id="email" type="text" name="userEmail" maxlength="250">
 								<br>
-								<span id="voterEmailErrorMessage"></span>
+								<span id = "userEmailErrorMessage"></span>
 								<br>
 								<label>Confirm Email Address |</label>
 								<br>
-								<input id="confirmEmail" type="text" name="voterConfirmEmail" maxlength="250">
+								<input id="confirmEmail" type="text" name="userConfirmEmail" maxlength="250"">
 								<br>
-								<span id="voterConfirmEmailErrorMessage"></span>
+								<span id = "userConfirmEmailErrorMessage"></span>
 								<br>
-								<label>Residential Address | (No Post Office Box)</label>
+								
+								<label>Residential Address |</label>								
+								<label id="userAddressInstruction">(As It Appears onto Your Alabama State ID Card including Apartment, Suite, Unit Number and Etc.)</label>
 								<br>
-								<input id="address" type="text" name="voterAddress" maxlength="400">
+								<input id="address" type="text" name="userAddress" maxlength="400">
 								<br>
-								<span id="voterAddressErrorMessage"></span>
+								<span id="userAddressErrorMessage"></span>
 								<br>
-
+								<!--
 								<select id="countrySelect" name="voterCountrySelection" size="1">
 									<option value="" selected="selected">Select Country</option>
 								</select>
@@ -230,7 +225,7 @@
 				
 
 
-		<script>   
+		<script type="text/javascript">   
 			/* Sarai Hannah Ajai have created a contant/variable; in order to store all United States country's, states, counties, cities and
 			   zip codes in a retrievable arrays connected links in order for the voters to have a conveniences to select from a drop down 
 			   menus. */
@@ -1050,39 +1045,42 @@
 		*/
 
 
-			const validateVoterSignUpForm = (e) => {   
-				
+			const validateVoterSignUpForm = (e) => {  				
+							
 				console.log('Sarai Hannah Ajai is testing her written JavaScript programmatic codes; in order to validate her contact us form has opened up correctly within the HTML webpage.')
 
 				const userRegistrationCode = document.getElementById('registrationCode').value;
 				
-				const userFirstName = document.getElementById('firstName').value;	
-				userFirstName.toUpperCase().charAt(0) + userFirstName.toLowerCase().slice(1);		
+				const userFirstName = document.getElementById('firstName').value;				
 				
 				const userMiddleName = document.getElementById('middleName').value;
 			
-				const userLastName = document.getElementById('lastName').value;					
-				window.sessionStorage.setItem('userlastname', userLastName);
+				const userLastName = document.getElementById('lastName').value;		
 
 				const userSuffix = document.getElementById('suffix').value;
 
 				const userIdType = document.getElementById('idType').value;
+				
+				const userEmail = document.getElementById('email').value;
 
+                const userConfirmEmail = document.getElementById('confirmEmail').value;
+
+				const userAddress = document.getElementById('address').value;
 
 				/*
-				const userEmail = document.getElementById('email').value;
-				const userConfirmEmail = document.getElementById('confirmEmail').value;
 				const userMembershipQuestion = document.getElementById('membershipQuestion').value;
 				const userConcern = document.getElementById('concern').value;
 				const userTextMessage = document.getElementById('textMessage').value;   
 				const userRandomAlphaNumeric = document.getElementById('randomAlphaNumeric');                                   
 
 				
-				const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;                                            
+				
 				*/
 
 				const regExAlphaNumeric = /^[0-9a-zA-Z]+$/;
 				const regExName = /^[A-Za-z\s]+$/;
+				const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;      
+				//const regExAddress = ;
 				
 				
 				if (userRegistrationCode === '' || userRegistrationCode == null) {                                                               
@@ -1105,10 +1103,10 @@
 					},
 					9000)
 
-					return false;
-										
-				}				
-				
+					return false;				
+
+				}									
+								
 				if (userMiddleName === '' || userMiddleName == null) {
 					document.getElementById('userMiddleNameErrorMessage').innerHTML = 'Do you have a middle name? If so, please type in your middle name into the input field or skip the middle name input field.';
 
@@ -1117,7 +1115,7 @@
 					},
 					9000)                                           
 										
-					} else if (userMiddleName.length <= 2 || !userMiddleName.match(regExName)) {
+					} else if (userMiddleName.length <= 1 || !userMiddleName.match(regExName)) {
 					document.getElementById('userMiddleNameErrorMessage').innerHTML = 'Your middle name is an optional input field; however, you must enter more than two characters into the middle name required input field.';
 
 					setTimeout(function() {
@@ -1141,7 +1139,6 @@
 
 				}
 
-
 				if (userSuffix === '' || userSuffix == null) {
 					document.getElementById('userSuffixErrorMessage').innerHTML = 'Do you have a sufix name? If so, please type in your suffix name into the input field or skip the suffix name input field.';
 
@@ -1150,7 +1147,7 @@
 					},
 					9000)                                           
 										
-					} else if (userSuffix.length <= 1 || !userSuffix.match(regExName)) {
+					} else if (userSuffix.length <= 0 || !userSuffix.match(regExName)) {
 					document.getElementById('userSuffixErrorMessage').innerHTML = 'Your suffix name is an optional input field; however, you must enter more than one characters into the suffix name required input field.';
 
 					setTimeout(function() {
@@ -1172,50 +1169,60 @@
 
 					return false;
 
-				}
+				}				
+
+				if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
+                    document.getElementById('userEmailErrorMessage').innerHTML = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
+
+                    setTimeout(function() {
+                        document.getElementById('userEmailErrorMessage').innerHTML = '';
+                    },
+                    9000)
+
+                    return false;
+
+                }
+
+                if (userConfirmEmail === '' || userConfirmEmail == null || userConfirmEmail.length <= 6 || !userConfirmEmail.match(regExEmail)) {
+                    document.getElementById('userConfirmEmailErrorMessage').innerHTML = 'Your confirm email address is a required input field and you must enter the correct confirm email address format into the require input field.';
+
+                    setTimeout(function() {
+                        document.getElementById('userConfirmEmailErrorMessage').innerHTML = '';
+                    },
+                    9000)
+
+                    return false;
+
+                }
+                
+                if (userEmail != userConfirmEmail) {
+                    document.getElementById('userConfirmEmailErrorMessage').innerHTML = 'Your email address does not match to your confirm email address which are required input fields.';
+
+                    setTimeout(function() {
+                        document.getElementById('userConfirmEmailErrorMessage').innerHTML = '';
+                    },
+                    9000)
+
+                    return false;
+
+                }
 
 
 
+				if (userAddress === '' || userAddress == null || userAddress.length <= 6 || !userAddress.match(regExAddress)) {
+                    document.getElementById('userAddressErrorMessage').innerHTML = 'Your street address is a required input field and you must enter the correct street address format into the require input field.';
 
+                    setTimeout(function() {
+                        document.getElementById('userAddressErrorMessage').innerHTML = '';
+                    },
+                    9000)
+
+                    return false;
+
+                }
 
 
 				/*
-
-				if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
-					document.getElementById('userEmailErrorMessage').innerHTML = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
-
-					setTimeout(function() {
-						document.getElementById('userEmailErrorMessage').innerHTML = '';
-					},
-					9000)
-
-					return false;
-
-				}
-
-				if (userConfirmEmail === '' || userConfirmEmail == null || userConfirmEmail.length <= 6 || !userConfirmEmail.match(regExEmail)) {
-					document.getElementById('userConfirmEmailErrorMessage').innerHTML = 'Your confirm email address is a required input field and you must enter the correct confirm email address format into the require input field.';
-
-					setTimeout(function() {
-						document.getElementById('userConfirmEmailErrorMessage').innerHTML = '';
-					},
-					9000)
-
-					return false;
-
-				}
-				
-				if (userEmail != userConfirmEmail) {
-					document.getElementById('userConfirmEmailErrorMessage').innerHTML = 'Your email address does not match to your confirm email address which are required input fields.';
-
-					setTimeout(function() {
-						document.getElementById('userConfirmEmailErrorMessage').innerHTML = '';
-					},
-					9000)
-
-					return false;
-
-				}
 
 				if (userMembershipQuestion === '' || userMembershipQuestion == null) {
 					document.getElementById('userAccouNetricsQuestionErrorMessage').innerHTML = 'You must select your AccouNetrics membership status which is a selection required field.';
@@ -1277,8 +1284,14 @@
 				
 				*/
 
-				e.preventDefault();                                      
+
+
 				
+
+			
+
+				e.preventDefault();  
+								
 					form.addEventListner('submit', validateVoterSignUpForm);
 					return true; 
 					
