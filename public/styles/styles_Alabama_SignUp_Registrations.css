@@ -445,8 +445,12 @@ input {
     border-bottom-style: solid;
     color: rgb(13, 65, 255);
     background-color: inherit;
-    width: 70%;     
+    width: 70%;   
+    
 }
+
+
+   
 
 /* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
    elements within the contact us form. */
@@ -462,7 +466,7 @@ input {
     background-color: inherit;
     white-space: normal;
     padding: 2px; 
-   
+    
 }
 
 /* Sarai Hannah Ajai has added styles input attributes to DOM Elements; in order to receive a brown border
@@ -483,12 +487,7 @@ input {
     border-bottom-style: solid;
     background-color: rgba(212, 221, 249, .50);    
     width: 70%;  
-}
-
-
-    
-    
-    
+}    
 
 /* To style a span attributes' DOM elements for which will add font decorations sets of appearances. */
 #voterFirstNameErrorMessage, #voterMiddleNameErrorMessage, #voterLastNameErrorMessage, #voterSuffixErrorMessage, #voterIdTypeErrorMessage, #voterEmailErrorMessage, #voterConfirmEmailErrorMessage, #voterAddressErrorMessage, #voterAccouNetricsQuestionErrorMessage, #userTextErrorMessage, #userFormEndTimeErrorMessage {    
@@ -498,8 +497,15 @@ input {
     color: rgb(13, 65, 255);    
     text-align: center;
     white-space: normal;
-    padding: 1px; 
+    padding: 1px;    
     
+}
+
+#right_Column > #userAddressInstruction {    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(12px, 2vw, 15px);    
+    justify-content: center;    
+
 }
 
 /* To style form attribute's element for which will add decorative designs' sets of appearance  
@@ -548,11 +554,6 @@ input {
     justify-content: center;     
     margin-top: 3rems;
 }
-
-
-
-
-
 
 /* To style the horizonal rule attribute's DOM element for which will add decorative designs' sets of appearances  
    to the horizonal rule (HR) tag's lines. */
