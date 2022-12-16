@@ -137,32 +137,44 @@
 								<br>
 								<span id="userAddressErrorMessage"></span>
 								<br>
-								<!--
-								<select id="countrySelect" name="voterCountrySelection" size="1">
+								
+								<select id="countrySelect" name="userCountrySelection" size="1">
 									<option value="" selected="selected">Select Country</option>
 								</select>
 								<br>
-								<br>
+								<span id="userCountrySelectionErrorMessage"></span>
+								<br>								
 							  
-								<select id="stateSelect" name="voterStateSelection" size="1">
+								<select id="stateSelect" name="userStateSelection" size="1">
 									<option value="" selected="selected">Select State</option>
 								</select>
+								<br>
+								<span id="userStateSelectionErrorMessage"></span>
+								<br>
 								
-								<select id="countySelect" name="voterCountySelection" size="1">
+								<select id="countySelect" name="userCountySelection" size="1">
 									<option value="" selected="selected">Select County</option>
 								</select>
 								<br>
-								<br>
+								<span id="userCountySelectionErrorMessage"></span>
+								<br>								
 															    
-								<select id="citySelect" name="voterCitySelection" size="1">
+								<select id="citySelect" name="userCitySelection" size="1">
 									<option value="" selected="selected">Select City</option>
-								</select>								
+								</select>
+								<br>
+								<span id="userCitySelectionErrorMessage"></span>
+								<br>							
 
-								<select id="zipSelect" name="voterZipSelection" size="1">
+								<select id="zipSelect" name="userZipSelection" size="1">
 									<option value="" selected="selected">Select Zip</option>
 								</select>
 								<br>
+								<span id="userZipSelectionErrorMessage"></span>
 								<br>
+								
+
+								<!--
 
 								<select id="membershipQuestion" name="userMembershipQuestion">
 									<option id="selectBackground" value=""disable selected hidden>Do You Have An Account with Us?</option>
@@ -230,7 +242,7 @@
 			   zip codes in a retrievable arrays connected links in order for the voters to have a conveniences to select from a drop down 
 			   menus. */
 
-			/*
+		
 			const countryStateCountyCityZipData = {
 				'USA': {
 					'Alabama': {
@@ -960,7 +972,6 @@
 				
 			}
 		};
-
 		
 		window.onload = function () {
 			
@@ -977,7 +988,7 @@
 			}
 			
 			/* Create function to allow voter to change his/her country. */
-			/*
+			
 			countrySelect.onchange = function () {
 				
 				stateSelect.length = 1; // remove all options bar first
@@ -992,10 +1003,10 @@
 					stateSelect.options[stateSelect.options.length] = new Option(state, state);
 				}
 			}
-			*/
+		
 			
 			/* Create function to allow voter to change his/her state. */
-			/*
+			
 			stateSelect.onchange = function () {
 
 				countySelect.length = 1; // remove all options bar first
@@ -1009,10 +1020,10 @@
 					countySelect.options[countySelect.options.length] = new Option(county, county);
 				}
 			}
-			*/
+		
 			
 			/* Create function to allow voter to change his/her county. */
-			/*
+			
 			countySelect.onchange = function () {		 
 					
 					citySelect.length = 1; // remove all options bar first
@@ -1025,10 +1036,10 @@
 						citySelect.options[citySelect.options.length] = new Option(city, city);
 					}
 				}
-			*/	
+			
 
 			/* Create function to allow voter to change his/her city and zip code. */
-			/*
+			
 			citySelect.onchange = function () {
 				zipSelect.length = 1; // remove all options bar first
 				
@@ -1041,9 +1052,7 @@
 				}
 			}	
 		}
-
-		*/
-
+	
 
 			const validateVoterSignUpForm = (e) => {  				
 							
@@ -1066,6 +1075,16 @@
                 const userConfirmEmail = document.getElementById('confirmEmail').value;
 
 				const userAddress = document.getElementById('address').value;
+
+				const userCountrySelection = document.getElementById('countrySelect').value;
+
+				const userStateSelection = document.getElementById('stateSelect').value;
+
+				const userCountySelection = document.getElementById('countySelect').value;
+
+				const userCitySelection = document.getElementById('citySelect').value;
+
+				const userZipSelection = document.getElementById('zipSelect').value;
 
 				/*
 				const userMembershipQuestion = document.getElementById('membershipQuestion').value;
@@ -1207,8 +1226,6 @@
 
                 }
 
-
-
 				if (userAddress === '' || userAddress == null || userAddress.length <= 6 || !userAddress.match(regExAddress)) {
                     document.getElementById('userAddressErrorMessage').innerHTML = 'Your street address is a required input field and you must enter the correct street address format into the require input field.';
 
@@ -1219,22 +1236,76 @@
 
                     return false;
 
-                }
+                }				
 
-
-				/*
-
-				if (userMembershipQuestion === '' || userMembershipQuestion == null) {
-					document.getElementById('userAccouNetricsQuestionErrorMessage').innerHTML = 'You must select your AccouNetrics membership status which is a selection required field.';
+				if (userCountrySelection === '' || userCountrySelection == null) {
+					document.getElementById('userCountrySelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s country status which is a selection required field.';
 
 					setTimeout(function() {
-						document.getElementById('userAccouNetricsQuestionErrorMessage').innerHTML = '';
+						document.getElementById('userCountrySelectionErrorMessage').innerHTML = '';
 					},
 					9000)
 
 					return false;
 
 				}
+
+				if (userStateSelection === '' || userStateSelection == null) {
+					document.getElementById('userStateSelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s state status which is a selection required field.';
+
+					setTimeout(function() {
+						document.getElementById('userStateSelectionErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;
+
+				}
+
+				if (userCountySelection === '' || userCountySelection == null) {
+					document.getElementById('userCountySelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s county status which is a selection required field.';
+
+					setTimeout(function() {
+						document.getElementById('userCountySelectionErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;
+
+				}
+
+				if (userCitySelection === '' || userCitySelection == null) {
+					document.getElementById('userCitySelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s city status which is a selection required field.';
+
+					setTimeout(function() {
+						document.getElementById('userCitySelectionErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;
+
+				}
+
+				if (userZipSelection === '' || userZipSelection == null) {
+					document.getElementById('userZipSelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s zip status which is a selection required field.';
+
+					setTimeout(function() {
+						document.getElementById('userZipSelectionErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;
+
+				}
+
+
+
+
+
+
+
+
+				/*
 
 				if (userConcern === '' || userConcern == null) {
 					document.getElementById('userConcernErrorMessage').innerHTML = 'You must select your topic concern status which is a selection required field.';
