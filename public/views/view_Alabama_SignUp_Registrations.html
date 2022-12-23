@@ -172,9 +172,7 @@
 								</select>
 								<br>
 								<span id="userZipSelectionErrorMessage"></span>
-								<br>
-
-															
+								<br>					
 
 								<!--
 
@@ -262,9 +260,7 @@
 				const userMembershipQuestion = document.getElementById('membershipQuestion').value;
 				const userConcern = document.getElementById('concern').value;
 				const userTextMessage = document.getElementById('textMessage').value;   
-				const userRandomAlphaNumeric = document.getElementById('randomAlphaNumeric');                                   
-
-				
+				const userRandomAlphaNumeric = document.getElementById('randomAlphaNumeric');
 				
 				*/
 
@@ -519,8 +515,7 @@
 				console.log(userRandomAlphaNumeric);	
 				
 				
-				*/
-			
+				*/			
 
 				e.preventDefault();  
 								
@@ -1281,6 +1276,13 @@
 						userCountySelection.length = 1; // remove all options bar first
 						userCitySelection.length = 1; // remove all options bar first
 						userZipSelection.length = 1; // remove all options bar first
+
+
+
+					
+
+
+
 						
 						if (this.selectedIndex < 1)
 								return; // done
@@ -1289,20 +1291,11 @@
 								userStateSelection.options[userStateSelection.options.length] = new Option(state, state);
 							}	
 							
-							
-						}
-
-						
-
-				
-
-						
-				
-					
-					/* Create function to allow voter to change his/her state. */
+						}	
 
 
 					
+					/* Create function to allow voter to change his/her state. */					
 					
 					userStateSelection.onchange = function () {						
 
@@ -1316,9 +1309,7 @@
 						for (var county in countryStateCountyCityZipData[userCountrySelection.value][this.value]) {
 							userCountySelection.options[userCountySelection.options.length] = new Option(county, county);
 						}
-						
-					}
-				
+					}				
 					
 					/* Create function to allow voter to change his/her county. */
 					
@@ -1334,7 +1325,6 @@
 								userCitySelection.options[userCitySelection.options.length] = new Option(city, city);
 							}
 						}
-					
 
 					/* Create function to allow voter to change his/her city and zip code. */
 					
@@ -1348,42 +1338,11 @@
 						for (var i = 0; i < zips.length; i++) {
 							userZipSelection.options[userZipSelection.options.length] = new Option(zips[i], zips[i]);
 						}
-					}	
-
-
-					e.preventDefault();  
-								
-					form.addEventListner('submit', validateVoterSignUpForm);
-					return true; 
+					}						
 					
-				}   
-
-
-
-
-
-
-				
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				                         
+				}                    
 																	
 		</script>
-
-
 
 	</body>
 </html>
