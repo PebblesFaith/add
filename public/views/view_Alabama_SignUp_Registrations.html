@@ -1276,24 +1276,16 @@
 						userCountySelection.length = 1; // remove all options bar first
 						userCitySelection.length = 1; // remove all options bar first
 						userZipSelection.length = 1; // remove all options bar first
-
-
-
-					
-
-
-
 						
 						if (this.selectedIndex < 1)
 								return; // done
 							
 							for (var state in countryStateCountyCityZipData[this.value]) {
+
 								userStateSelection.options[userStateSelection.options.length] = new Option(state, state);
 							}	
 							
 						}	
-
-
 					
 					/* Create function to allow voter to change his/her state. */					
 					
