@@ -450,12 +450,12 @@ input {
 
 /* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
    elements within the contact us form. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #zipSelect, #email, #confirmEmail, #address,  #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #zipSelect, #email, #confirmEmail, #address, #addressUnitType, #addressUnitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     outline: none; 
 }
 
 /* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #email, #confirmEmail, #address, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #email, #confirmEmail, #address, #addressUnitType, #addressUnitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(10px, 2vw, 18px);  
     color: rgb(13, 65, 255); 
@@ -470,12 +470,12 @@ input {
    transition property which will animate a brown border color within 0.5 secords which will change the
    color of focus.
 */ 
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #email, #confirmEmail, #address, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #email, #confirmEmail, #address, #addressUnitType, #addressUnitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 
-#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idType:focus, #email:focus, #confirmEmail:focus, #address:focus, #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #membershipQuestion:focus, #textMessage:focus, #contactUsFormEndTime:focus {
+#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idType:focus, #email:focus, #confirmEmail:focus, #address:focus, #addressUnitType:focus, #addressUnitTypeNumber:focus, #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #membershipQuestion:focus, #textMessage:focus, #contactUsFormEndTime:focus {
     border:3px solid rgb(201, 24, 24);
     border-top-style: hidden;
     border-right-style: hidden;
@@ -486,7 +486,7 @@ input {
 }    
 
 /* To style a span attributes' DOM elements for which will add font decorations sets of appearances. */
-#userRegistrationCodeErrorMessage, #userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userSuffixErrorMessage, #userIdTypeErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAddressErrorMessage, #userAccouNetricsQuestionErrorMessage, #userTextErrorMessage, #userFormEndTimeErrorMessage {    
+#userRegistrationCodeErrorMessage, #userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userSuffixErrorMessage, #userIdTypeErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAddressErrorMessage, #userAddressUnitTypeErrorMessage, #userAddressUnitTypeNumberErrorMessage, #userAccouNetricsQuestionErrorMessage, #userTextErrorMessage, #userFormEndTimeErrorMessage {    
     margin: 2px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(8px, 2vw, 12px);
