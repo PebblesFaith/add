@@ -132,13 +132,45 @@
 								<br>
 								
 								<label>Residential Address |</label>								
-								<label id="userAddressInstruction">(As It Appears onto Your Alabama State ID Card including Apartment, Suite, Unit Number and Etc.)</label>
+								<label id="userAddressInstruction">(As It Appears onto Your Alabama State ID Card)</label>
 								<br>
 								<input id="address" type="text" name="userAddress" maxlength="400">
 								<br>
 								<span id="userAddressErrorMessage"></span>
 								<br>
-								
+								<select id="addressUnitType" name="userAddressUnitType">
+									<option id="selectBackground" value="" disable selected hidden>Address Unit Type</option>
+										<option value = Apartment>Apartment</option>
+										<option value = Building>Building</option>
+										<option value = Basement>Basement</option>
+										<option value = Floor>Floor</option>
+										<option value = Front>Front</option>
+										<option value = Hanger>Hanger</option>
+										<option value = House>House</option>
+										<option value = Key>Key</option>
+										<option value = Lot>Lot</option>
+										<option value = Lower>Lower</option>
+										<option value = Office>Office</option>
+										<option value = Penthouse>Penthouse</option>
+										<option value = Pier>Pier</option>
+										<option value = Rear>Rear</option>
+										<option value = Room>Room</option>
+										<option value = Side>Side</option>
+										<option value = Slip>Slip</option>
+										<option value = Space>Space</option>
+										<option value = Suite>Suite</option>
+										<option value = Trailer>Trailer</option>
+										<option value = Unit>Unit</option>
+										<option value = Upper>Upper</option>
+								</select>
+								<br>
+								<span id="userAddressUnitTypeErrorMessage"></span>
+								<br>
+								<input id="addressUnitTypeNumber" type="text" name="userAddressUnitTypeNumber" maxlength="10" />
+								<br>
+								<span id="addressUnitTypeNumberCodeErrorMessage"></span>
+								<br>
+
 								<select id="countrySelect" name="userCountrySelection" size="1">
 									<option value="" selected="selected">Select Country</option>
 								</select>
@@ -252,7 +284,11 @@
 
                 const userConfirmEmail = document.getElementById('confirmEmail').value;
 
-				const userAddress = document.getElementById('address').value;		
+				const userAddress = document.getElementById('address').value;	
+				
+				const userAddressUnitType = document.getElementById('addressUnitType').value;	
+
+				const userAddressUnitTypeNumber = document.getElementById('addressUnitTypeNumber').value;
 				
 
 				/*
@@ -272,7 +308,7 @@
 				
 				
 				if (userRegistrationCode === '' || userRegistrationCode == null || !userRegistrationCode.match(regExRegistrationCode)) {                                                               
-					document.getElementById('userRegistrationCodeErrorMessage').innerHTML = 'Your voter registration code is a required input field or you have enterd the incorrect alphanumeric characters into the required input field.';
+					document.getElementById('userRegistrationCodeErrorMessage').innerHTML = 'Your voter registration code is a required input field or you have entered the correct alphanumeric characters into the required input field.';
 
 					setTimeout(function() {
 						document.getElementById('userRegistrationCodeErrorMessage').innerHTML = '';
@@ -303,7 +339,7 @@
 					},
 					9000)                                           
 										
-					} else if (userMiddleName.length <= 1 || !userMiddleName.match(regExName)) {
+					} else if (userMiddleName.length <= 2 || !userMiddleName.match(regExName)) {
 					document.getElementById('userMiddleNameErrorMessage').innerHTML = 'Your middle name is an optional input field; however, you must enter more than two characters into the middle name required input field.';
 
 					setTimeout(function() {
@@ -405,7 +441,51 @@
 
                     return false;
 
-                }				
+                }	
+				
+				if (userAddressUnitType === '' || userAddressUnitType == null) {                                                               
+					document.getElementById('userAddressUnitTypeErrorMessage').innerHTML = 'Your address unit type is a required input field or you must select the correct address unit type into the required input field.';
+
+					setTimeout(function() {
+						document.getElementById('userAddressUnitTypeErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;					
+										
+				}	
+				
+				if (userAddressUnitTypeNumber === '' || userAddressUnitTypeNumber == null || !userAddressUnitTypeNumber.match(regExAlphaNumeric)) {                                                               
+					document.getElementById('addressUnitTypeNumberCodeErrorMessage').innerHTML = 'Your address unit type number is a required input field or you must select the correct address unit number type into the required input field.';
+
+					setTimeout(function() {
+						document.getElementById('addressUnitTypeNumberCodeErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;					
+										
+				}		
+
+
+
+
+
+
+
+				e.preventDefault();  
+							
+				form.addEventListner('submit', validateVoterSignUpForm);
+				return true; 
+				
+				}   
+
+
+
+
+				/*
+
+
 
 				if (userCountrySelection === '' || userCountrySelection == null) {
 					document.getElementById('userCountrySelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s country status which is a selection required field.';
@@ -517,13 +597,7 @@
 				
 				*/			
 
-				e.preventDefault();  
-								
-					form.addEventListner('submit', validateVoterSignUpForm);
-					return true; 
-					
-				}   
-
+				
 			   /* Sarai Hannah Ajai have created a contant/variable; in order to store all United States country's, states, counties, cities and
 			   zip codes in a retrievable arrays connected links in order for the voters to have a conveniences to select from a drop down 
 			   menus. */		
@@ -1332,7 +1406,9 @@
 						}
 					}						
 					
-				}                    
+				} 
+				
+			
 																	
 		</script>
 
