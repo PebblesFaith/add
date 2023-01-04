@@ -164,13 +164,14 @@
 										<option value = Upper>Upper</option>
 								</select>
 								<br>
+								
 								<span id="userAddressUnitTypeErrorMessage"></span>
 								<br>
 								<input id="addressUnitTypeNumber" type="text" name="userAddressUnitTypeNumber" maxlength="10" />
 								<br>
 								<span id="addressUnitTypeNumberCodeErrorMessage"></span>
 								<br>
-
+							
 								<select id="countrySelect" name="userCountrySelection" size="1">
 									<option value="" selected="selected">Select Country</option>
 								</select>
@@ -443,7 +444,7 @@
 
                 }	
 				
-				if (userAddressUnitType === '' || userAddressUnitType == null) {                                                               
+				if (userAddressUnitType === '' || userAddressUnitType == null) {
 					document.getElementById('userAddressUnitTypeErrorMessage').innerHTML = 'Your address unit type is a required input field or you must select the correct address unit type into the required input field.';
 
 					setTimeout(function() {
@@ -451,9 +452,24 @@
 					},
 					9000)
 
-					return false;					
-										
-				}	
+				} else if (userAddressUnitType.length <= 0 ) {
+					document.getElementById('userAddressUnitTypeErrorMessage').innerHTML = 'Your suffix name is an optional input field; however, you must enter more than one characters into the suffix name required input field.';
+
+					setTimeout(function() {
+						document.getElementById('userAddressUnitTypeErrorMessage').innerHTML = '';
+					},
+					9000)
+				
+					return false; 					
+
+				}		
+
+
+
+
+
+
+
 				
 				if (userAddressUnitTypeNumber === '' || userAddressUnitTypeNumber == null || !userAddressUnitTypeNumber.match(regExAlphaNumeric)) {                                                               
 					document.getElementById('addressUnitTypeNumberCodeErrorMessage').innerHTML = 'Your address unit type number is a required input field or you must select the correct address unit number type into the required input field.';
@@ -468,17 +484,17 @@
 				}		
 
 
-
-
-
-
-
 				e.preventDefault();  
 							
-				form.addEventListner('submit', validateVoterSignUpForm);
+				form.addEventListner('submit', 'function(e)', validateVoterSignUpForm);
 				return true; 
 				
 				}   
+
+
+
+
+				
 
 
 
@@ -1330,19 +1346,33 @@
 				
 				window.onload = function (e) {
 					
-					//Get html elements
+					//Get user html DOM elements.
 					var userCountrySelection = document.getElementById("countrySelect");
 					var userStateSelection = document.getElementById("stateSelect");	
 					var userCountySelection = document.getElementById("countySelect");	
 					var userCitySelection = document.getElementById("citySelect");	
 					var userZipSelection = document.getElementById("zipSelect");					
 					
-					//Load countries
-					for (var country in countryStateCountyCityZipData) {
-						userCountrySelection.options[userCountrySelection.options.length] = new Option(country, country);
-					}
+					//Load user country.
 					
-					/* Create function to allow voter to change his/her country. */
+					for (var country in countryStateCountyCityZipData) {	
+						userCountrySelection.options[userCountrySelection.options.length] = new Option(country, country);
+
+					
+						if (userCountrySelection.value === '') {
+							document.getElementById('userCountrySelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s country status which is a selection required field.';
+
+							setTimeout(function() {
+								document.getElementById('userCountrySelectionErrorMessage').innerHTML = '';
+							},
+							9000)
+							break;			
+							
+						}
+					
+				}	
+					
+					/* Create function to allow user to change his/her state. */
 					
 					userCountrySelection.onchange = function () {
 						
@@ -1352,47 +1382,78 @@
 						userZipSelection.length = 1; // remove all options bar first
 						
 						if (this.selectedIndex < 1)
-								return; // done
+								return true; // done
 							
 							for (var state in countryStateCountyCityZipData[this.value]) {
-
 								userStateSelection.options[userStateSelection.options.length] = new Option(state, state);
-							}	
-							
+							}
+
+							if (userStateSelection.value === '') {
+								document.getElementById('userStateSelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s state status which is a selection required field.';
+
+								setTimeout(function() {
+									document.getElementById('userStateSelectionErrorMessage').innerHTML = '';
+								},
+								9000)
+								return false;
+
+							}							
 						}	
 					
-					/* Create function to allow voter to change his/her state. */					
+					/* Create function to allow user to change his/her county. */					
 					
 					userStateSelection.onchange = function () {						
 
 						userCountySelection.length = 1; // remove all options bar first
 						userCitySelection.length = 1; // remove all options bar first
-						userZipSelection.length = 1; // remove all options bar first						
+						userZipSelection.length = 1; // remove all options bar first
+						
+						if (this.selectedIndex < 1) 
+							return; // done
+						
+							for (var county in countryStateCountyCityZipData[userCountrySelection.value][this.value]) {
+								userCountySelection.options[userCountySelection.options.length] = new Option(county, county);	
+							} 
+					
+							if (userCountySelection.value === '') {
+								document.getElementById('userCountySelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s county status which is a selection required field.';
+
+								setTimeout(function() {
+									document.getElementById('userCountySelectionErrorMessage').innerHTML = '';
+								},
+								9000)
+								return false;
+
+							}
+						}				
+					
+					/* Create function to allow user to change his/her city. */
+					
+					userCountySelection.onchange = function () {		 
+							
+						userCitySelection.length = 1; // remove all options bar first
+						userZipSelection.length = 1; // remove all options bar first
 						
 						if (this.selectedIndex < 1)
 							return; // done
 						
-						for (var county in countryStateCountyCityZipData[userCountrySelection.value][this.value]) {
-							userCountySelection.options[userCountySelection.options.length] = new Option(county, county);
-						}
-					}				
-					
-					/* Create function to allow voter to change his/her county. */
-					
-					userCountySelection.onchange = function () {		 
-							
-							userCitySelection.length = 1; // remove all options bar first
-							userZipSelection.length = 1; // remove all options bar first
-							
-							if (this.selectedIndex < 1)
-								return; // done
-							
-							for (var city in countryStateCountyCityZipData[userCountrySelection.value][userStateSelection.value][this.value]) {
-								userCitySelection.options[userCitySelection.options.length] = new Option(city, city);
-							}
+						for (var city in countryStateCountyCityZipData[userCountrySelection.value][userStateSelection.value][this.value]) {
+							userCitySelection.options[userCitySelection.options.length] = new Option(city, city);
 						}
 
-					/* Create function to allow voter to change his/her city and zip code. */
+						if (userCitySelection.value === '') {
+							document.getElementById('userCitySelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s city status which is a selection required field.';
+
+							setTimeout(function() {
+								document.getElementById('userCitySelectionErrorMessage').innerHTML = '';
+							},
+							9000)
+							return false;
+
+						}
+					}
+
+					/* Create function to allow user to change his/her city and zip code area. */
 					
 					userCitySelection.onchange = function () {
 						userZipSelection.length = 1; // remove all options bar first
@@ -1404,9 +1465,21 @@
 						for (var i = 0; i < zips.length; i++) {
 							userZipSelection.options[userZipSelection.options.length] = new Option(zips[i], zips[i]);
 						}
-					}						
-					
+
+						if (userZipSelection.value === '') {
+							document.getElementById('userZipSelectionErrorMessage').innerHTML = 'You must select your iVoteBallot\s zip code area status which is a selection required field.';
+
+							setTimeout(function() {
+								document.getElementById('userZipSelectionErrorMessage').innerHTML = '';
+							},
+							9000)
+							return false;
+
+						}
+					}					
 				} 
+
+				
 				
 			
 																	
