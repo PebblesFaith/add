@@ -486,7 +486,7 @@ input {
 }    
 
 /* To style a span attributes' DOM elements for which will add font decorations sets of appearances. */
-#userRegistrationCodeErrorMessage, #userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userSuffixErrorMessage, #userIdTypeErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAddressErrorMessage, #userAddressUnitTypeErrorMessage, #userAddressUnitTypeNumberErrorMessage, #userAccouNetricsQuestionErrorMessage, #userTextErrorMessage, #userFormEndTimeErrorMessage {    
+#userRegistrationCodeErrorMessage, #userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userSuffixErrorMessage, #userIdTypeErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAddressErrorMessage, #userAddressUnitTypeErrorMessage, #userAddressUnitTypeNumberErrorMessage, #userCountrySelectionErrorMessage, #userStateSelectionErrorMessage, #userCountySelectionErrorMessage, #userCitySelectionErrorMessage, #userZipSelectionErrorMessage {    
     margin: 2px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(8px, 2vw, 12px);
@@ -554,9 +554,8 @@ input {
 #styleLine {
     height: 1px;
     border: none;
-    background-color: rgb(136, 125, 125);}
-
-
+    background-color: rgb(136, 125, 125);
+}
 
 /* To style the submitButton attribute's DOM element for which will add decorative designs' sets of appearances
    to the submit button area. */
