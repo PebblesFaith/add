@@ -450,12 +450,13 @@ input {
 
 /* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
    elements within the contact us form. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #zipSelect, #email, #confirmEmail, #address, #addressUnitType, #addressUnitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #idTypeNumber, #zipSelect, #email, #confirmEmail, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #termsofAgreement {
     outline: none; 
+    
 }
 
 /* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #email, #confirmEmail, #address, #addressUnitType, #addressUnitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #termsofAgreement {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(10px, 2vw, 18px);  
     color: rgb(13, 65, 255); 
@@ -470,12 +471,12 @@ input {
    transition property which will animate a brown border color within 0.5 secords which will change the
    color of focus.
 */ 
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #email, #confirmEmail, #address, #addressUnitType, #addressUnitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #membershipQuestion, #textMessage, #contactUsFormEndTime {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #address, #addressUnitType, #addressUnitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #termsofAgreement {
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 
-#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idType:focus, #email:focus, #confirmEmail:focus, #address:focus, #addressUnitType:focus, #addressUnitTypeNumber:focus, #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #membershipQuestion:focus, #textMessage:focus, #contactUsFormEndTime:focus {
+#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idType:focus, #idTypeNumber:focus, #email:focus, #confirmEmail:focus, #address:focus, #unitType:focus, #unitTypeNumber:focus, #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #termsofAgreement:focus {
     border:3px solid rgb(201, 24, 24);
     border-top-style: hidden;
     border-right-style: hidden;
@@ -486,7 +487,7 @@ input {
 }    
 
 /* To style a span attributes' DOM elements for which will add font decorations sets of appearances. */
-#userRegistrationCodeErrorMessage, #userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userSuffixErrorMessage, #userIdTypeErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAddressErrorMessage, #userAddressUnitTypeErrorMessage, #userAddressUnitTypeNumberErrorMessage, #userCountrySelectionErrorMessage, #userStateSelectionErrorMessage, #userCountySelectionErrorMessage, #userCitySelectionErrorMessage, #userZipSelectionErrorMessage {    
+#userRegistrationCodeErrorMessage, #userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userSuffixErrorMessage, #userIdTypeErrorMessage, #useridTypeNumberErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAddressErrorMessage, #userAddressUnitTypeErrorMessage, #userAddressUnitTypeNumberErrorMessage, #userCountrySelectionErrorMessage, #userStateSelectionErrorMessage, #userCountySelectionErrorMessage, #userCitySelectionErrorMessage, #userZipSelectionErrorMessage {    
     margin: 2px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(8px, 2vw, 12px);
@@ -697,5 +698,167 @@ img {
 
 
 
+
+
+
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+  }
   
- 
+  .tabs {
+    display: flex;
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  
+  .tab-button {
+    width: 125px;
+    height: 55px;
+    padding: 5px;
+    margin-right: 2px;
+    background-color: rgb(201, 24, 24);
+    border: none;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);
+   
+  }
+  
+  .tab-content {
+    display: flex;
+  }
+  
+  .tab-panel {
+    padding: 10px;
+    display: none;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .tab-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .previous, .next {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 80px;
+    padding: 10px;
+    background-color: rgb(13, 65, 255);
+    border: none;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);
+  }
+
+  iframe {
+   
+    border: 2px solid rgb(201, 24, 24);
+    width: 100%;
+   align-items: center;
+  }
+
+
+#terms  {
+    display: block;
+    width: 100%;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgb(201, 24, 24);
+    text-align: center;   
+    border: none;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);    
+}
+
+
+.terms_Agreement  {
+    display: block;
+    width: 100%;
+    border: 0px solid rgb(255, 255, 255);
+    background-color: rgb(201, 24, 24);
+    text-align: center;   
+    border: none;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);    
+}
+
+#terms {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;   
+    border: none;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);  
+}
+
+.privatePolicy_Agreement  {
+    display: block;
+    width: 100%;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgb(201, 24, 24);
+    text-align: center;   
+    border: none;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);    
+}
+
+#privacy {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;   
+    border: none;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);  
+}
+  
+.policyAgreements {
+    display: block;
+    width: 100%;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgb(13, 65, 255);
+    text-align: center;   
+    border: none;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);    
+}
+  
+#checkbox {
+    vertical-align: middle;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(15px, 1vw, 18px); 
+    color:rgb(255, 255, 255);   
+    width: auto; 
+}
+
+
+
+
+  
+ /* On screens that are 992px wide or less, go from two columns to one column. */
+@media all and (max-width: 992px) {
+    iframe {
+      width: 50%;
+
+      
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of
+     next to each other */
+  @media all and (max-width: 600px) {
+    iframe {
+      width: 100%;
+    }
+  }
