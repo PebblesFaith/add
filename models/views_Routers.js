@@ -14,11 +14,6 @@ router
 router
     .get('/', views_Controller.view_Home);
 
-    
-router
-    .get('/', views_Controller.view_Test);
-
-
 
 
 module.exports = router;
