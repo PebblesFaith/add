@@ -56,177 +56,257 @@
 						</div>  					
 					</div>			
 				</div>
-				
+
 				<div id="column_Containers">
 					<div id="right_Column">
 						
-						<form id="form_Voter_SignUp" name="voterSignUpForm" onsubmit="return validateVoterSignUpForm()" action="/alabamasignup" method="POST" >    
-								<label>What is your Alabama AlphaNumeric card codes including dashes, sent to you by way of the USPS from the Department of Motor Vehicles? | </label>
-									<p id="voter_Card_01">
-										<img id="voter_Card_Image" src="../images/iVoteBallot_States_Icons/iVoteBallot - Example Card.png" />					
-									</p> 
-								<br>
-								<input id="registrationCode" type="text" name="userRegistrationCode" maxlength="26" />
-								<br>
-								<span id="userRegistrationCodeErrorMessage"></span>
-								<br>			
-												
-								<label>First Name |</label>   
-								<br>               
-								<input id="firstName" type="text" name="userFirstName" maxlength="75">
-								<br>
-								<span id="userFirstNameErrorMessage"></span>
-								<br>								
-								<label>Middle Name | optional</label>  
-								<br>
-								<input id="middleName" type="text" name="userMiddleName" maxlength="75">
-								<br>
-								<span id="userMiddleNameErrorMessage"></span>
-								<br>
-								<label>Last Name |</label> 
-								<br>
-								<input id="lastName" type="text" name="userLastName" maxlength="75">
-								<br>
-								<span id="userLastNameErrorMessage"></span>								
-								<br>
-							
-								<select id="suffix" name="userSuffix">
-									<option id="selectBackground" value="" disable selected hidden>Suffix (optional)</option>
-										<option value = JR>JR</option>
-										<option value = SR>SR</option>
-										<option value = I>I</option>
-										<option value = II>II</option>
-										<option value = III>III</option>
-										<option value = IV>IV</option>
-										<option value = V>V</option>
-								</select>
+						<form id="form_Voter_SignUp" name="voterSignUpForm" onsubmit="return validateVoterSignUpForm()" action="/alabamasignup" method="POST" > 
+							<h1>Alabama's iVoteBallot Form</h1>
 
-								<br>								
-								<span id = "userSuffixErrorMessage"></span>
-								<br>								
-								<label for="text">What type of Alabama identification do you have? |</label>
-								<br>
-								<input id="idType" type="text" multiple name="userIdType" list="voterIdList" size="64" />
+							<div class="tabs-container">
+								<div class="tabs">
+								<button class="tab-button" onclick="showTab(1)">iVoteBallot Id Card</button>
+								<button class="tab-button" onclick="showTab(2)">Contact Information</button>
+								<button class="tab-button" onclick="showTab(3)">Residential Address</button>
+								<button class="tab-button" onclick="showTab(4)">Id Card Information</button>
+								<button class="tab-button" onclick="showTab(5)">Terms and Conditions</button>
+								</div>
+								<div class="tab-content">
+									<div class="tab-panel" id="tab-1">
+										<p>iVoteBallot Id Card</p>
+										<label>What is your Alabama AlphaNumeric card codes including dashes, sent to you by way of the USPS from the Department of Motor Vehicles? | </label>
+										<p id="voter_Card_01">
+											<img id="voter_Card_Image" src="../images/iVoteBallot_States_Icons/iVoteBallot - Example Card.png" />					
+										</p> 
+										<br>
+										<input id="registrationCode" type="text" name="userRegistrationCode" maxlength="26" />
+										<br>
+										<span id="userRegistrationCodeErrorMessage"></span>
+										<br>			
+									</div>
+									<div class="tab-panel" id="tab-2">
+										<p>Contact Information</p>
+										<label>First Name |</label>   
+										<br>               
+										<input id="firstName" type="text" name="userFirstName" maxlength="75">
+										<br>
+										<span id="userFirstNameErrorMessage"></span>
+										<br>								
+										<label>Middle Name | optional</label>  
+										<br>
+										<input id="middleName" type="text" name="userMiddleName" maxlength="75">
+										<br>
+										<span id="userMiddleNameErrorMessage"></span>
+										<br>
+										<label>Last Name |</label> 
+										<br>
+										<input id="lastName" type="text" name="userLastName" maxlength="75">
+										<br>
+										<span id="userLastNameErrorMessage"></span>								
+										<br>
+									
+										<select id="suffix" name="userSuffix">
+											<option id="selectBackground" value="" disable selected hidden>Suffix (optional)</option>
+												<option value = JR>JR</option>
+												<option value = SR>SR</option>
+												<option value = I>I</option>
+												<option value = II>II</option>
+												<option value = III>III</option>
+												<option value = IV>IV</option>
+												<option value = V>V</option>
+										</select>
 
-								<datalist id="voterIdList">
-									<option value="" disable selected hidden></option>
-										<option value="Alabama Driver License"></option>
-										<option value="Alabama Real Id Driver License"></option>
-										<option value="Alabama State Id Card"></option>	
-										<option value="Military Id"></option>				
-								</datalist>
-								<br>
-								<span id = "userIdTypeErrorMessage"></span>
-								<br>
-								<label>Email Address |</label> 
-								<br>
-								<input id="email" type="text" name="userEmail" maxlength="250">
-								<br>
-								<span id = "userEmailErrorMessage"></span>
-								<br>
-								<label>Confirm Email Address |</label>
-								<br>
-								<input id="confirmEmail" type="text" name="userConfirmEmail" maxlength="250"">
-								<br>
-								<span id = "userConfirmEmailErrorMessage"></span>
-								<br>
+									<br>								
+									<span id = "userSuffixErrorMessage"></span>
+									<br>
+
+								</div>
+
+								<div class="tab-panel" id="tab-3">
+									<p>Tab 3 Content</p>
+
+									<label>Email Address |</label> 
+										<br>
+										<input id="email" type="text" name="userEmail" maxlength="250">
+										<br>
+										<span id = "userEmailErrorMessage"></span>
+										<br>
+										<label>Confirm Email Address |</label>
+										<br>
+										<input id="confirmEmail" type="text" name="userConfirmEmail" maxlength="250"">
+										<br>
+										<span id = "userConfirmEmailErrorMessage"></span>
+										<br>
+										
+										<label>Residential Address |</label>								
+										<label id="userAddressInstruction">(As It Appears onto Your Alabama State ID Card)</label>
+										<br>
+										<input id="address" type="text" name="userAddress" maxlength="400">
+										<br>
+										<span id="userAddressErrorMessage"></span>
+										<br>
+										<select id="unitType" name="userUnitType">
+											<option id="selectBackground" value="" disable selected hidden>Address Unit Type</option>
+												<option value = Apartment>Apartment</option>
+												<option value = Building>Building</option>
+												<option value = Basement>Basement</option>
+												<option value = Floor>Floor</option>
+												<option value = Front>Front</option>
+												<option value = Hanger>Hanger</option>
+												<option value = House>House</option>
+												<option value = Key>Key</option>
+												<option value = Lot>Lot</option>
+												<option value = Lower>Lower</option>
+												<option value = Office>Office</option>
+												<option value = Penthouse>Penthouse</option>
+												<option value = Pier>Pier</option>
+												<option value = Rear>Rear</option>
+												<option value = Room>Room</option>
+												<option value = Side>Side</option>
+												<option value = Slip>Slip</option>
+												<option value = Space>Space</option>
+												<option value = Suite>Suite</option>
+												<option value = Trailer>Trailer</option>
+												<option value = Unit>Unit</option>
+												<option value = Upper>Upper</option>
+										</select>
+									<br>								
+									<span id="userAddressUnitTypeErrorMessage"></span>
+									<br>
+									<input id="unitTypeNumber" type="text" name="userUnitTypeNumber" maxlength="10" />
+									<br>
+									<span id="addressUnitTypeNumberCodeErrorMessage"></span>
+									<br>
 								
-								<label>Residential Address |</label>								
-								<label id="userAddressInstruction">(As It Appears onto Your Alabama State ID Card)</label>
+									<select id="countrySelect" name="userCountrySelection" size="1">
+										<option value="" selected="selected">Select Country</option>
+									</select>
+									<br>
+									<span id="userCountrySelectionErrorMessage"></span>
+									<br>								
+									
+									<select id="stateSelect" name="userStateSelection" size="1">
+										<option value="" selected="selected">Select State</option>
+									</select>
+									<br>
+									<span id="userStateSelectionErrorMessage"></span>
+									<br>
+									
+									<select id="countySelect" name="userCountySelection" size="1">
+										<option value="" selected="selected">Select County</option>
+									</select>
+									<br>
+									<span id="userCountySelectionErrorMessage"></span>
+									<br>								
+																	
+									<select id="citySelect" name="userCitySelection" size="1">
+										<option value="" selected="selected">Select City</option>
+									</select>
+									<br>
+									<span id="userCitySelectionErrorMessage"></span>
+									<br>							
+
+									<select id="zipSelect" name="userZipSelection" size="1">
+										<option value="" selected="selected">Select Zip</option>
+									</select>
+									<br>
+									<span id="userZipSelectionErrorMessage"></span>
+									<br>					
+
+								</div>
+
+								<div class="tab-panel" id="tab-4">
+									<p>Tab 4 Content</p>
+									<label for="text">What type of Alabama identification Card do you have? |</label>
+									<br>
+									<input id="idType" type="text" multiple name="userIdType" list="voterIdList" size="64" />
+
+									<datalist id="voterIdList">
+										<option value="" disable selected hidden></option>
+											<option value="Alabama Driver License"></option>
+											<option value="Alabama Real Id Driver License"></option>
+											<option value="Alabama State Id Card"></option>	
+											<option value="Military Id"></option>				
+									</datalist>
+									<br>
+									<span id = "userIdTypeErrorMessage"></span>
+									<br>
+									<label>What is your Alabama Identification Number? |</label> 
+									<br>
+									<input id="idTypeNumber" type="text" name="userIdTypeNumber" maxlength="40" />
+									<br>
+									<span id="useridTypeNumberErrorMessage"></span>								
+									<br>
+
+								</div>
+
+								<div class="tab-panel" id="tab-5">
+									<p>Terms and Conditions</p>
+									<iframe src="../pdf/Lorem Ipsum.pdf" width="100%" height="400"></iframe>
+
+									<br>	
+									<p class="terms_Agreement">									
+										<input id="terms" type="checkbox" name="userTerms" value="I have read the Terms of Use Agreement.">
+										<label id="terms" for="terms">I have read the Terms of the <a id="terms" href="#"> Terms of Use</a> agreement.</label>
+									</p>
+									<br>
+										
+									<iframe src="../pdf/Lorem Ipsum.pdf" width="100%" height="400"></iframe>
+																		
+									<br>
+									<p class="privatePolicy_Agreement">									
+										<input id="privacy" type="checkbox" name="userPrivacy" value="I have read the Private Policy Agreement.">
+										<label id="privacy" for="privacy">I have read the Policy of the <a id="privacy" href="#"> Private Policy</a> agreement.</label>
+									</p>
+									<br>
+									<br>
+									
+									<label>Do You Accept the Alabama's iVoteBallot Terms and Conditions? |</label>
+									<br>
+
+								<div>
+									
 								<br>
-								<input id="address" type="text" name="userAddress" maxlength="400">
-								<br>
-								<span id="userAddressErrorMessage"></span>
-								<br>
-								<select id="addressUnitType" name="userAddressUnitType">
-									<option id="selectBackground" value="" disable selected hidden>Address Unit Type</option>
-										<option value = Apartment>Apartment</option>
-										<option value = Building>Building</option>
-										<option value = Basement>Basement</option>
-										<option value = Floor>Floor</option>
-										<option value = Front>Front</option>
-										<option value = Hanger>Hanger</option>
-										<option value = House>House</option>
-										<option value = Key>Key</option>
-										<option value = Lot>Lot</option>
-										<option value = Lower>Lower</option>
-										<option value = Office>Office</option>
-										<option value = Penthouse>Penthouse</option>
-										<option value = Pier>Pier</option>
-										<option value = Rear>Rear</option>
-										<option value = Room>Room</option>
-										<option value = Side>Side</option>
-										<option value = Slip>Slip</option>
-										<option value = Space>Space</option>
-										<option value = Suite>Suite</option>
-										<option value = Trailer>Trailer</option>
-										<option value = Unit>Unit</option>
-										<option value = Upper>Upper</option>
-								</select>
-								<br>								
-								<span id="userAddressUnitTypeErrorMessage"></span>
-								<br>
-								<input id="addressUnitTypeNumber" type="text" name="userAddressUnitTypeNumber" maxlength="10" />
-								<br>
-								<span id="addressUnitTypeNumberCodeErrorMessage"></span>
-								<br>
-							
-								<select id="countrySelect" name="userCountrySelection" size="1">
-									<option value="" selected="selected">Select Country</option>
-								</select>
-								<br>
-								<span id="userCountrySelectionErrorMessage"></span>
-								<br>								
-							  
-								<select id="stateSelect" name="userStateSelection" size="1">
-									<option value="" selected="selected">Select State</option>
-								</select>
-								<br>
-								<span id="userStateSelectionErrorMessage"></span>
-								<br>
+										
+								<div class="policyAgreements">
+									<input id="checkbox" type="checkbox" name="us" value="I have read the Terms of Use." />
+									<label for="checkbox"> I have legally accepted the Terms of the <a id="checkbox" href="#">Terms of Use and Privacy Policy </a>agreements.</label>
+									</div>
+								</div>
+
+									<br>
+									<span id = "userIdTypeErrorMessage"></span>
+									
+
+								</div>
+
+							</div>
+
+							<br>
+							<hr id="blueLines_HR">
+
+							<div class="tab-nav">
+								<button class="previous" onclick="showPreviousTab()">Previous</button>
+								<button class="next" onclick="showNextTab()">Next</button>
+							</div>
+							<br>
+							<hr id="blueLines_HR">
+
+						</div>
+
 								
-								<select id="countySelect" name="userCountySelection" size="1">
-									<option value="" selected="selected">Select County</option>
-								</select>
 								<br>
-								<span id="userCountySelectionErrorMessage"></span>
-								<br>								
-															    
-								<select id="citySelect" name="userCitySelection" size="1">
-									<option value="" selected="selected">Select City</option>
-								</select>
 								<br>
-								<span id="userCitySelectionErrorMessage"></span>
-								<br>							
-
-								<select id="zipSelect" name="userZipSelection" size="1">
-									<option value="" selected="selected">Select Zip</option>
-								</select>
-								<br>
-								<span id="userZipSelectionErrorMessage"></span>
-								<br>					
-
-								<!--
-
-								<select id="membershipQuestion" name="userMembershipQuestion">
-									<option id="selectBackground" value=""disable selected hidden>Do You Have An Account with Us?</option>
-										<option value = Account_Yes>Yes</option>
-										<option value = Account_No>No</option>                                    
-								</select>
-								<br>
-								<span id = "userAccouNetricsQuestionErrorMessage"></span>
-								<br>								
-								<br>
-							-->
-								<br>
-								<input id="submitButton" type="submit" name="submit_Button"  value="SUBMIT"></button>
+								<input id="submitButton" type="submit"  onclick='userCheck()' value="SUBMIT">
 								<br> 
-
+							
 						</form>
 					</div>
 				</div>
 			</div> 
 		</div>
+
+
 
 		<hr id="redLines_HR">
 
@@ -242,7 +322,7 @@
 			</ul>			
 			
 			<hr id="blueLines_HR">
-	
+
 			<ul id="socialMedias_01">
 				<li><a href="http://www.twitter.com"><img src="../images/iVoteBallot_SocialMedia_Icons/6214703_bird_logo_twitter_icon.png" /></a></li>
 				<li><a href="http://www.facebook.com"><img src="../images/iVoteBallot_SocialMedia_Icons/433084_facebook_media_social_network_icon.png" /></a></li>
@@ -256,15 +336,47 @@
 				<li><a href="http://www.linkedIn.com"><img src="../images/iVoteBallot_SocialMedia_Icons/777926_linkedin_business_communication_connection_network_icon.png" /></a></li>            
 			</ul> 
 			
-			<div id="footer_flex_container">       
-				<ul id="iVoteBallot_Footer_Insignia_01">  
-					<a href="">© 2023 iVoteBallot</a></li>
-				</ul>
-			<div>	
+		<div id="footer_flex_container">       
+			<ul id="iVoteBallot_Footer_Insignia_01">  
+				<a href="">© 2023 iVoteBallot</a></li>
+			</ul>
+		<div>	
 
-		</div> 
+		
 
-		<script type="text/javascript">					
+		<script type="text/javascript">	
+
+			var currentTab = 1;
+			var maxTab = 5;
+
+			function showTab(tabNumber) {
+			var tabPanels = document.getElementsByClassName("tab-panel");
+			for (var i = 0; i < tabPanels.length; i++) {
+				tabPanels[i].style.display = "none";
+			}
+			document.getElementById("tab-" + tabNumber).style.display = "block";
+			currentTab = tabNumber;
+			}
+
+			function showPreviousTab() {
+				if (currentTab > 1) {
+					showTab(currentTab - 1);
+				}
+			}
+
+			function showNextTab() {
+				if (currentTab < maxTab) {
+					showTab(currentTab + 1);
+				}
+			}
+
+
+			
+
+
+			
+
+
 
 			const validateVoterSignUpForm = (e) => { 	
 				
@@ -279,6 +391,8 @@
 				const userSuffix = document.getElementById('suffix').value;
 
 				const userIdType = document.getElementById('idType').value;
+
+				const userIdTypeNumber = document.getElementById('idTypeNumber').value;
 				
 				const userEmail = document.getElementById('email').value;
 
@@ -286,9 +400,9 @@
 
 				const userAddress = document.getElementById('address').value;	
 				
-				const userAddressUnitType = document.getElementById('addressUnitType').value;
+				const userUnitType = document.getElementById('unitType').value;
 
-				const userAddressUnitTypeNumber = document.getElementById('addressUnitTypeNumber').value;
+				const userUnitTypeNumber = document.getElementById('unitTypeNumber').value;
 				
 
 				
@@ -386,7 +500,19 @@
 
 					return false;
 
-				}				
+				}	
+
+				if (userIdTypeNumber === '' || userIdTypeNumber == null || useridTypeNumber.length <= 7 || !userIdTypeNumber.match(regExAlphaNumeric)) {
+					document.getElementById('useridTypeNumberErrorMessage').innerHTML = 'Your Alabama Identification Alphanumeric Card code is a required input field.';
+
+					setTimeout(function() {
+						document.getElementById('useridTypeNumberErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;
+
+				}
 
 				if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
                     document.getElementById('userEmailErrorMessage').innerHTML = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
@@ -436,7 +562,7 @@
 
                 }	
 				
-				if (userAddressUnitType === '' || userAddressUnitType == null) {
+				if (userUnitType === '' || userUnitType == null) {
 					document.getElementById('userAddressUnitTypeErrorMessage').innerHTML = 'Do you have a sufix name? If so, please type in your suffix name into the input field or skip the suffix name input field.';
 
 					setTimeout(function() {
@@ -456,7 +582,7 @@
 
 				}       
 				
-				if (userAddressUnitTypeNumber === '' || userAddressUnitTypeNumber == null || !userAddressUnitTypeNumber.match(regExAlphaNumeric)) {                                                               
+				if (userUnitTypeNumber === '' || userUnitTypeNumber == null || !userUnitTypeNumber.match(regExAlphaNumeric)) {                                                               
 					document.getElementById('addressUnitTypeNumberCodeErrorMessage').innerHTML = 'Your address unit type number is a required input field or you must select the correct address unit number type into the required input field.';
 
 					setTimeout(function() {
@@ -470,10 +596,10 @@
 				
 				e.preventDefault();  
 							
-					form.addEventListner('submit', (e), validateVoterSignUpForm);
+					form.addEventListner('submit', validateVoterSignUpForm);
 					return true; 
 					
-					} 
+				} 
 				
 			   /* Sarai Hannah Ajai have created a contant/variable; in order to store all United States country's, states, counties, cities and
 			   zip codes in a retrievable arrays connected links in order for the voters to have a conveniences to select from a drop down 
@@ -1339,8 +1465,58 @@
 							}
 						}					
 					
-					} 				
+					}
+
+
+				
+					
+			function userCheck() {
+				const userRegistrationCode = document.getElementById('registrationCode').value;
+							
+				const userFirstName = document.getElementById('firstName').value;				
+				
+				const userMiddleName = document.getElementById('middleName').value;
+			
+				const userLastName = document.getElementById('lastName').value;	
+				
+				const userSuffix = document.getElementById('suffix').value;
+
+				const userIdType = document.getElementById('idType').value;
+				
+				const userIdTypeNumber = document.getElementById('idTypeNumber').value;
+
+				const userEmail = document.getElementById('email').value;
+
+                const userConfirmEmail = document.getElementById('confirmEmail').value;
+
+				const userAddress = document.getElementById('address').value;	
+				
+				const userUnitType = document.getElementById('unitType').value;
+
+				const userUnitTypeNumber = document.getElementById('unitTypeNumber').value;
+
+				const userCountrySelection = document.getElementById("countrySelect").value;
+				
+				const userStateSelection = document.getElementById("stateSelect").value;
+
+			    const userCountySelection = document.getElementById("countySelect").value;	
+
+			    const userCitySelection = document.getElementById("citySelect").value;
+
+				const userZipSelection = document.getElementById("zipSelect").value;	
+				
+				alert('Review Your Alabama\s iVoteBallot Online Form: \n\n1.  Your Registration Code is: \n     ' +  userRegistrationCode + '\n\n2.  Your Contact Information are: \n     ' + userFirstName + ' ' +  userMiddleName + ' ' +  userLastName + ' ' +  userSuffix + '\n     Your Email Address is: ' + userConfirmEmail + '\n\n3. Your Permanent Address is: \n     ' + userAddress + '\n     ' + userUnitType + ': ' + userUnitTypeNumber + '\n     Country: ' + userCountrySelection + '\n     State: ' + userStateSelection + ' \n     County: ' + userCountySelection + ' City: ' + userCitySelection + ' Zip Code: ' + userZipSelection + '\n\n Your Type of Alabama Identification Card and Number are: \n\n     ' + userIdType + ': ' + userIdTypeNumber );
+			}		
+
+			validateVoterSignUpForm(userCheck)
+			
+
+
+			
+
 
 		</script>
+
+
 	</body>
-</html>
+</html>		
