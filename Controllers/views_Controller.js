@@ -17,12 +17,12 @@ const view_Home = (req, res) => {
     res.sendFile(path.join(__dirname, './views/view_Home.html'));
 };
 
-
 module.exports = {  
     view_AboutUs,  
     view_Alabama_SignUp_Registrations,
     view_Alabama_SignUp_Voters,
     view_Home
+    
     
 
 }
