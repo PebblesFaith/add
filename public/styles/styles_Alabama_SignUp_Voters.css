@@ -611,7 +611,7 @@ html {
     flex-flow: row wrap;   
     align-items: center;
     justify-content: space-around;
-    padding: 14px 14px;
+    padding: 0px 0px;
     cursor: pointer;
     cursor: 14px;
     list-style: none;   
@@ -619,7 +619,8 @@ html {
     width: auto;   
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(14px, 1.5vw, 18px); 
-    text-align: center;    
+    text-align: center;  
+  
 }
 
 /* To style HTML tag (img) for which will add decorative designs sets of resizes to shrink and expand  
