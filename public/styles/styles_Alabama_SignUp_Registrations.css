@@ -450,13 +450,13 @@ input {
 
 /* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
    elements within the contact us form. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #idTypeNumber, #zipSelect, #email, #confirmEmail, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #termsofAgreement {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #idTypeNumber, #zipSelect, #email, #confirmEmail, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #termsofAgreement {
     outline: none; 
     
 }
 
 /* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #termsofAgreement {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #termsofAgreement {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(10px, 2vw, 18px);  
     color: rgb(13, 65, 255); 
@@ -471,12 +471,12 @@ input {
    transition property which will animate a brown border color within 0.5 secords which will change the
    color of focus.
 */ 
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #address, #addressUnitType, #addressUnitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #termsofAgreement {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #address, #addressUnitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #termsofAgreement {
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 
-#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idType:focus, #idTypeNumber:focus, #email:focus, #confirmEmail:focus, #address:focus, #unitType:focus, #unitTypeNumber:focus, #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #termsofAgreement:focus {
+#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idType:focus, #idTypeNumber:focus, #email:focus, #confirmEmail:focus, #address:focus, #unitType:focus, #unitTypeNumber:focus, #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #idType:focus, #idTypeNumber, #termsofAgreement:focus {
     border:3px solid rgb(201, 24, 24);
     border-top-style: hidden;
     border-right-style: hidden;
@@ -487,7 +487,7 @@ input {
 }    
 
 /* To style a span attributes' DOM elements for which will add font decorations sets of appearances. */
-#userRegistrationCodeErrorMessage, #userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userSuffixErrorMessage, #userIdTypeErrorMessage, #useridTypeNumberErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAddressErrorMessage, #userAddressUnitTypeErrorMessage, #userAddressUnitTypeNumberErrorMessage, #userCountrySelectionErrorMessage, #userStateSelectionErrorMessage, #userCountySelectionErrorMessage, #userCitySelectionErrorMessage, #userZipSelectionErrorMessage {    
+#userRegistrationCodeErrorMessage, #userFirstNameErrorMessage, #userMiddleNameErrorMessage, #userLastNameErrorMessage, #userSuffixErrorMessage, #userIdTypeErrorMessage, #useridTypeNumberErrorMessage, #userEmailErrorMessage, #userConfirmEmailErrorMessage, #userAddressErrorMessage, #userUnitTypeErrorMessage, #userUnitTypeNumberErrorMessage, #userCountrySelectionErrorMessage, #userStateSelectionErrorMessage, #userCountySelectionErrorMessage, #userCitySelectionErrorMessage, #userZipSelectionErrorMessage, #userIdTypeErrorMessage, #userIdTypeNumberErrorMessage {    
     margin: 2px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(8px, 2vw, 12px);
@@ -571,6 +571,8 @@ input {
     text-align: center;
     border: none;
     margin: 0 auto;
+    cursor: pointer;
+    cursor: 14px;
 }
 
 /* On screens that are 992px wide or less, go from two columns to one column. */
@@ -698,9 +700,6 @@ img {
 
 
 
-
-
-
 .tabs-container {
     display: flex;
     flex-direction: column;
@@ -711,21 +710,25 @@ img {
     display: flex;
     flex-flow: row wrap;   
     align-items: center;
-    justify-content: space-around;
-    
+    justify-content: space-around;    
   }
   
   .tab-button {
     width: 125px;
-    height: 55px;
-    padding: 5px;
+    height: 68px;
+    padding: 5px, 5px, 5px, 5px;
     margin-right: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    cursor: 14px;
     background-color: rgb(201, 24, 24);
-    border: none;
+    border-color: rgb(255, 255, 255);
+    border: 2px;
     font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(15px, 1vw, 18px); 
-    color:rgb(255, 255, 255);
-   
+    color:rgb(255, 255, 255);   
   }
   
   .tab-content {
@@ -742,7 +745,7 @@ img {
   .tab-nav {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 10px;    
   }
   
   .previous, .next {
@@ -755,10 +758,11 @@ img {
     font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(15px, 1vw, 18px); 
     color:rgb(255, 255, 255);
+    cursor: pointer;
+    cursor: 14px;
   }
 
-  iframe {
-   
+  iframe {   
     border: 2px solid rgb(201, 24, 24);
     width: 100%;
    align-items: center;
@@ -834,7 +838,7 @@ img {
     color:rgb(255, 255, 255);    
 }
   
-#checkbox {
+#policies {
     vertical-align: middle;
     font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(15px, 1vw, 18px); 
@@ -842,10 +846,7 @@ img {
     width: auto; 
 }
 
-
-
-
-  
+ 
  /* On screens that are 992px wide or less, go from two columns to one column. */
 @media all and (max-width: 992px) {
     iframe {
@@ -862,3 +863,36 @@ img {
       width: 100%;
     }
   }
+
+
+
+ 
+
+#address_Style_01 {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;     
+    background-color: rgb(255, 255, 255);
+    color: rgb(13, 65, 255);
+    height: auto;
+    width: auto;   
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(8px, 2vw, 15px);    
+
+}
+
+#instructionalGuide {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;     
+    background-color: rgb(201, 24, 24);
+    color: rgb(255, 255, 255);    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(8px, 2vw, 12px);    
+    justify-content: center; 
+
+}
