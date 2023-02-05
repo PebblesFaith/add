@@ -35,7 +35,7 @@ Sarai Hannah Ajai had JavaScript programmatically coded SQLite3; in order to cre
 JavaScript table each time an iVoteBallot's user/voter sign up the Alabama webpage.
 */
 db.serialize( () => {
-	const sqlTable =  ("CREATE TABLE IF NOT EXISTS AlabamaSignUp (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userDate DATETIME NOT NULL DEFAULT (datetime(CURRENT_TIMESTAMP, 'localtime')), userRegistrationCode VARCHAR (25) NOT NULL, userFirstName VARCHAR (150) NOT NULL, userMiddleName VARCHAR (150) NOT NULL, userLastName VARCHAR(150) NOT NULL, userSuffix VARCHAR(5) NOT NULL, userEmail VARCHAR (255) NOT NULL, userConfirmEmail VARCHAR (255) NOT NULL, userAddress VARCHAR (400) NOT NULL, userUnitType VARCHAR (50) NOT NULL, userUnitTypeNumber VARCHAR (10) NOT NULL, userCountrySelection VARCHAR (50) NOT NULL, userStateSelection VARCHAR (150) NOT NULL, userCountySelection VARCHAR (150) NOT NULL, userCitySelection VARCHAR (150) NOT NULL, userZipSelection VARCHAR (50) NOT NULL, userIdType VARCHAR (250) NOT NULL, userIdTypeNumber VARCHAR (50) NOT NULL)");
+	const sqlTable =  ("CREATE TABLE IF NOT EXISTS AlabamaSignUp (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userDate DATETIME NOT NULL DEFAULT (datetime(CURRENT_TIMESTAMP, 'localtime')), userRegistrationCode VARCHAR (25) NOT NULL, userFirstName VARCHAR (150) NOT NULL, userMiddleName VARCHAR (150) NOT NULL, userLastName VARCHAR(150) NOT NULL, userSuffix VARCHAR(5) NOT NULL, userEmail VARCHAR (255) NOT NULL, userConfirmEmail VARCHAR (255) NOT NULL, userPhoneNumber VARCHAR (15) NOT NULL, userAddress VARCHAR (400) NOT NULL, userUnitType VARCHAR (50) NOT NULL, userUnitTypeNumber VARCHAR (10) NOT NULL, userCountrySelection VARCHAR (50) NOT NULL, userStateSelection VARCHAR (150) NOT NULL, userCountySelection VARCHAR (150) NOT NULL, userCitySelection VARCHAR (150) NOT NULL, userZipSelection VARCHAR (50) NOT NULL, userIdType VARCHAR (250) NOT NULL, userIdTypeNumber VARCHAR (50) NOT NULL, userPoliciesAgreements VARCHAR (5) NOT NULL)");
 		
 	db.run(sqlTable, (error) => {       
 	
@@ -65,6 +65,7 @@ capture the user input fields information from the middleware parser.
 		userSuffix: req.body.userSuffix,
 		userEmail: req.body.userEmail,
 		userConfirmEmail: req.body.userConfirmEmail,
+		userPhoneNumber: req.body.userPhoneNumber,
 		userAddress: req.body.userAddress,
 		userUnitType: req.body.userUnitType,
 		userUnitTypeNumber: req.body.userUnitTypeNumber,
@@ -74,7 +75,8 @@ capture the user input fields information from the middleware parser.
 		userCitySelection: req.body.userCitySelection,
 		userZipSelection: req.body.userZipSelection,
 		userIdType: req.body.userIdType,
-		userIdTypeNumber: req.body.userIdTypeNumber
+		userIdTypeNumber: req.body.userIdTypeNumber,
+		userPoliciesAgreements: req.body.userPoliciesAgreements
 					
 
 					
@@ -88,6 +90,7 @@ capture the user input fields information from the middleware parser.
 	console.log('User male suffix name is: ' + data.userSuffix + '.');
 	console.log('User email address is: ' + data.userEmail + '.');
 	console.log('User confirm email address is: ' + data.userConfirmEmail + '.');	
+	console.log('User phone number is: ' + data.userPhoneNumber + '.');
 	console.log('User permanent address is: ' + data.userAddress + '.');	
 	console.log('User unit type is: ' + data.userUnitType + '.');	
 	console.log('User unit type number is: ' + data.userUnitTypeNumber + '.');
@@ -98,9 +101,10 @@ capture the user input fields information from the middleware parser.
 	console.log('User zip code area he/she lives in is: ' + data.userZipSelection + '.');
 	console.log('User identification card type is: ' + data.userIdType + '.');
 	console.log('User identification card alphanumeric characters are: ' + data.userIdTypeNumber + '.');
+	console.log('User have agreed to all Policies Agreements: ' + data.userPoliciesAgreements + '.');
 	
-	var sqlInsert = 'INSERT INTO AlabamaSignUp (userRegistrationCode, userFirstName, userMiddleName, userLastName, userSuffix, userEmail, userConfirmEmail, userAddress, userUnitType, userUnitTypeNumber, userCountrySelection, userStateSelection, userCountySelection, userCitySelection, userZipSelection, userIdType, userIdTypeNumber) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-	var params = [data.userRegistrationCode, data.userFirstName, data.userMiddleName, data.userLastName, data.userSuffix, data.userEmail, data.userConfirmEmail, data.userAddress, data.userUnitType, data.userUnitTypeNumber, data.userCountrySelection, data.userStateSelection, data.userCountySelection, data.userCitySelection, data.userZipSelection, data.userIdType, data.userIdTypeNumber];
+	var sqlInsert = 'INSERT INTO AlabamaSignUp (userRegistrationCode, userFirstName, userMiddleName, userLastName, userSuffix, userEmail, userConfirmEmail, userPhoneNumber, userAddress, userUnitType, userUnitTypeNumber, userCountrySelection, userStateSelection, userCountySelection, userCitySelection, userZipSelection, userIdType, userIdTypeNumber, userPoliciesAgreements) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+	var params = [data.userRegistrationCode, data.userFirstName, data.userMiddleName, data.userLastName, data.userSuffix, data.userEmail, data.userConfirmEmail, data.userPhoneNumber, data.userAddress, data.userUnitType, data.userUnitTypeNumber, data.userCountrySelection, data.userStateSelection, data.userCountySelection, data.userCitySelection, data.userZipSelection, data.userIdType, data.userIdTypeNumber, data.userPoliciesAgreements];
 	
 		db.run(sqlInsert, params, function (err, result) {
 			if (err) {
