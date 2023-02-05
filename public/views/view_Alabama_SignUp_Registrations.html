@@ -77,6 +77,13 @@
                                 <button class="tab-button" onclick="showTab(4)">State Id Card Information
                                     <p id="instructionalGuide">Step 4</p>   
                                 </button>
+                                <button class="tab-button" onclick="showTab(5)">Terms and Privacy Policies
+                                    <p id="instructionalGuide">Step 5</p>      
+                                </button>
+                                <button class="tab-button" onclick="showTab(6)">Review Your iVoteBallot Form
+                                    <p id="instructionalGuide">Step 6</p>      
+                                </button>
+                                
 								
 							</div>
 							<div class="tab-content">
@@ -136,10 +143,17 @@
 									<br>
 									<label>Confirm Email Address |</label>
 									<br>
-									<input id="confirmEmail" type="text" name="userConfirmEmail" maxlength="250"">
+									<input id="confirmEmail" type="text" name="userConfirmEmail" maxlength="250">
 									<br>
 									<span id="userConfirmEmailErrorMessage"></span>
-									<br>									
+									<br>
+                                    <label>Phone Number |</label>
+                                    <p id="address_Style_01">(Enter your phone number in the format of xxx-xxx-xxxx.)</p>
+									<br>
+									<input id="phoneNumber" type="text" name="userPhoneNumber" maxlength="15">
+									<br>
+									<span id="userPhoneNumberErrorMessage"></span>
+									<br>										
 
 								</div>	
 								
@@ -238,9 +252,10 @@
                                     <datalist id="voterIdList">
                                         <option value="" disable selected hidden></option>
                                             <option value="Alabama Driver License"></option>
-                                            <option value="Alabama Real Id Driver License"></option>
-                                            <option value="Alabama State Id Card"></option> 
-                                            <option value="Military Id"></option>               
+                                            <option value="Alabama Real ID Driver License"></option>
+                                            <option value="Alabama State ID Card"></option> 
+                                            <option value="Military ID"></option> 
+                                            <option value="Tribal ID"></option>              
                                     </datalist>
                                     <br>
                                     <span id="userIdTypeErrorMessage"></span>
@@ -252,6 +267,42 @@
                                     <span id="userIdTypeNumberErrorMessage"></span>                             
                                     <br>
 
+                                </div>
+
+                                <div class="tab-panel" id="tab-5">
+                                    <p>Terms of Service</p>
+                                    
+                                    <iframe src="../pdf/Lorem Ipsum.pdf" width="100%" height="400"></iframe>
+
+                                    <br>
+                                    <br>
+                                    
+                                    <p>Privacy Policy</p>
+
+                                    <iframe src="../pdf/Lorem Ipsum.pdf" width="100%" height="400"></iframe>
+
+                                    <br>
+                                    <br>
+
+                                    <p>Cookie Use</p>
+
+                                    <iframe src="../pdf/Lorem Ipsum.pdf" width="100%" height="400"></iframe>
+
+                                    <br>
+                                    <br>
+
+                                    <label>By signup for iVoteBallot.com web application services, you have read and agree to abide by the Terms of Service, Privacy Policy and Cookie Use Agreements. |</label>   
+									              
+                                    <p id="address_Style_01">(Please type in either "Yes" or "No".)</p>             
+									<input id="policiesAgreements" type="text" name="userPoliciesAgreements" maxlength="10">
+									<br>
+									<span id="userPoliciesAgreementsErrorMessage"></span>
+									<br>	
+
+                                </div>
+
+                                <div class="tab-panel" id="tab-6">
+                                    <p>Review Your iVoteBallot Form</p>
                                 </div>
 
 
@@ -321,7 +372,7 @@
 		<script type="text/javascript">	
 
 			var currentTab = 1;
-			var maxTab = 5;
+			var maxTab = 6;
 
 			function showTab(tabNumber) {
 			var tabPanels = document.getElementsByClassName("tab-panel");
@@ -361,6 +412,8 @@
 
 				const userConfirmEmail = document.getElementById('confirmEmail').value;
 
+                const userPhoneNumber = document.getElementById('phoneNumber').value;
+
 				const userAddress = document.getElementById('address').value;
 
 				const userUnitType = document.getElementById('unitType').value;
@@ -379,14 +432,19 @@
 
                 const userIdType = document.getElementById('idType').value;
 
-                const userIdTypeNumber = document.getElementById('idTypeNumber').value;			
+                const userIdTypeNumber = document.getElementById('idTypeNumber').value;
+                
+                const userPoliciesAgreements = document.getElementById('policiesAgreements').value;
 				
 
 				const regExRegistrationCode = /\d{2}[A-Z]{1}\d{1}\-\d{1}[A-Z]{1}\d{1}\-[A-Z]{2}\-\d{3}[A-Z]{2}\d{6}\-\d{2}/;
 				const regExAlphaNumeric = /^[0-9a-zA-Z]+$/;
 				const regExName = /^[A-Za-z\s]+$/;
-				const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;      
-				const regExAddress = /^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]?$/;
+				const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;  
+                const regExPhoneNumber = /^\d{3}\-\d{3}\-\d{4}$/;    
+				const regExAddress = /^\d+\s[\d\w]+\s(.*)$/;
+                const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
+                const regExPoliciesAgreements = /^Yes\b$|^No\b$/;
 				
 				
 				if (userRegistrationCode === '' || userRegistrationCode == null || !userRegistrationCode.match(regExRegistrationCode)) {                                                               
@@ -501,6 +559,18 @@
 
                 }
 
+                if (userPhoneNumber === '' || userPhoneNumber == null || userPhoneNumber.length <= 10 || !userPhoneNumber.match(regExPhoneNumber))  {                                                               
+					document.getElementById('userPhoneNumberErrorMessage').innerHTML = 'Your phone number is a required input field or you must enter exactly twelve number digits into the phone number required input field.';
+
+					setTimeout(function() {
+						document.getElementById('userPhoneNumberErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;				
+
+				}			
+
 				if (userAddress === '' || userAddress == null || userAddress.length <= 6 || !userAddress.match(regExAddress))  {                                                               
 					document.getElementById('userAddressErrorMessage').innerHTML = 'Your street address is a required field and you must enter your correct street address format into the require input field.';
 
@@ -598,7 +668,7 @@
 				}
 
                 if (userIdType === '' || userIdType == null) {
-					document.getElementById('userIdTypeErrorMessage').innerHTML = 'Your Alabama/s identification card type is a required select option field and you must select your correct Alabama/s identification card type from the option require field.';
+					document.getElementById('userIdTypeErrorMessage').innerHTML = 'Your Alabama\s identification card type is a required select option field and you must select your correct Alabama\s identification card type from the option require field.';
 
 					setTimeout(function() {
 						document.getElementById('userIdTypeErrorMessage').innerHTML = '';
@@ -609,11 +679,23 @@
 
 				}
 
-                if (userIdTypeNumber === '' || userIdTypeNumber == null || userIdTypeNumber.length <= 8)  {                                                               
-					document.getElementById('userIdTypeNumberErrorMessage').innerHTML =  'Your Alabama alphanumeric identification card characters are a required field or you must enter the correct Alabama alphanumeric identification card characters from your Alabama/s identification card into the required field.';
+                if (userIdTypeNumber === '' || userIdTypeNumber == null || !userIdTypeNumber.match(regExAlabamaId))  {                                                               
+					document.getElementById('userIdTypeNumberErrorMessage').innerHTML =  'Your Alabama numeric identification card characters are a required field or you must enter the correct Alabama numeric identification card characters from your Alabama\s identification card into the required field.';
 
 					setTimeout(function() {
 						document.getElementById('userIdTypeNumberErrorMessage').innerHTML = '';
+					},
+					9000)
+
+					return false;				
+
+				}		
+
+                if (userPoliciesAgreements === '' || userPoliciesAgreements == null || !userPoliciesAgreements.match(regExPoliciesAgreements))  {                                                               
+					document.getElementById('userPoliciesAgreementsErrorMessage').innerHTML =  'You must either type in "Yes", if you agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements or "No", if you do not agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements into the required field.';
+
+					setTimeout(function() {
+						document.getElementById('userPoliciesAgreementsErrorMessage').innerHTML = '';
 					},
 					9000)
 
