@@ -272,7 +272,7 @@
                                 <div class="tab-panel" id="tab-5">
                                     <p>Terms of Service</p>
                                     
-                                    <iframe src="../pdf/Lorem Ipsum.pdf" width="100%" height="400"></iframe>
+                                    <iframe src="../pdf/iVoteBallot's Terms of Services - Effective Dated 02-07-23.pdf" width="100%" height="400"></iframe>
 
                                     <br>
                                     <br>
@@ -303,6 +303,106 @@
 
                                 <div class="tab-panel" id="tab-6">
                                     <p>Review Your iVoteBallot Form</p>
+                                   
+                                    <span id="userReview">Step 1</span> 
+                                    <br>
+                                    <br> 
+                                    <span id="userReviewRegistrationCode"></span> 
+                                    <span id="userReviewRegistrationCodeErrorMessage" ></span>                                    
+                                    
+                                    <span onclick="showTab(1)">                                    
+                                        <p id="reviewInstructionalGuide">Return to Step 1 - iVoteBallot Id Card</p>
+                                    </span>
+
+                                    <hr id="redLines_HR">	
+                                    
+                                    <br>
+                                    <span id="userReview">Step 2</span> 
+                                    <br>
+                                    <br> 
+                                    <span id="userReviewFirstName"></span>
+                                    <span id="userReviewFirstNameErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewMiddleName"></span>
+                                    <span id="userReviewMiddleNameErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewLastName"></span>
+                                    <span id="userReviewLastNameErrorMessage"></span>
+                                    <br> 
+                                    <span id="userReviewSuffix"></span>
+                                    <span id="userReviewSuffixErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewEmail"></span>                                    
+                                    <span id="userReviewEmailErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewConfirmEmail"></span>
+                                    <span id="userReviewConfirmEmailErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewPhoneNumber"></span>
+                                    <span id="userReviewPhoneNumberErrorMessage"></span>
+                                    
+                                    <span onclick="showTab(2)">                                    
+                                        <p id="reviewInstructionalGuide">Return to Step 2 - Contact Information</p>
+                                    </span>
+
+                                    <hr id="redLines_HR">	                                    
+                                   
+                                    <br>
+                                    <span id="userReview">Step 3</span> 
+                                    <br>
+                                    <br> 
+
+                                    <span id="userReviewAddress"></span>
+                                    <span id="userReviewAddressErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewUnitType"></span>
+                                    <span id="userReviewUnitTypeErrorMessage"></span>
+                                    <br>
+
+                                    <span onclick="showTab(3)">                                    
+                                        <p id="reviewInstructionalGuide">Return to Step 3 - Residential Address</p>
+                                    </span>
+                                                                        
+                                    <hr id="redLines_HR">
+
+                                    
+
+                                    
+                                    <span id="userReviewUnitTypeNumber"></span>
+                                    <br>
+                                    <span id="userReviewCountrySelection"></span>
+                                    <br>
+                                    <span id="userReviewStateSelection"></span>
+                                    <br>
+                                    <span id="userReviewCountySelection"></span>
+                                    <br>
+                                    <span id="userReviewCitySelection"></span>
+                                    <br>
+                                    <span id="userReviewZipSelection"></span>
+                                    <br>
+                                    <span id="userReviewIdType"></span>
+                                    <br>
+                                    <span id="userReviewIdTypeNumber"></span>
+                                    <br>
+                                    <span id="userReviewPoliciesAgreements"></span>
+                                    
+
+
+
+                                    
+
+                                    <br>
+                                    <br>
+                                    <button id="submitReview" onclick="review()">Review My iVoteBallot Form</button>
+                                    <br>
+                                    <br>
+                                    <br>
+
+                                    <input id="submitButton" type="submit" value="SUBMIT">
+							        <br> 
+
+
+
                                 </div>
 
 
@@ -324,8 +424,7 @@
 								
 							<br>
 							<br>
-							<input id="submitButton" type="submit" value="SUBMIT">
-							<br> 
+							
 
 
 						</form>		
@@ -584,7 +683,7 @@
 				}	
 				
 				if (userUnitType === '' || userUnitType == null) {
-					document.getElementById('userUnitTypeErrorMessage').innerHTML = 'Select your unit type you live in, and your unit type is a require field.';
+					document.getElementById('userUnitTypeErrorMessage').innerHTML = 'Select your residential unit type you live in, and your residential unit type is a require field.';
 
 					setTimeout(function() {
 						document.getElementById('userUnitTypeErrorMessage').innerHTML = '';
@@ -1523,6 +1622,257 @@
                 
             }                   
         
+        }
+
+        function review() {
+            const userRegistrationCode = document.getElementById('registrationCode').value; 
+            const userFirstName = document.getElementById('firstName').value;
+            const userMiddleName = document.getElementById('middleName').value;	
+            const userLastName = document.getElementById('lastName').value;	
+            const userSuffix = document.getElementById('suffix').value;
+            const userEmail = document.getElementById('email').value;
+            const userConfirmEmail = document.getElementById('confirmEmail').value;
+            const userPhoneNumber = document.getElementById('phoneNumber').value;
+            const userAddress = document.getElementById('address').value;
+            const userUnitType = document.getElementById('unitType').value;
+            /*
+            		
+			
+            
+            
+            
+           
+			
+            const userUnitTypeNumber = document.getElementById('unitTypeNumber').value;
+            const userCountrySelection = document.getElementById('countrySelect').value;
+            const userStateSelection = document.getElementById('stateSelect').value;
+            const userCountySelection = document.getElementById('countySelect').value;              
+            const userCitySelection = document.getElementById('citySelect').value;
+            const userZipSelection = document.getElementById('zipSelect').value;
+            const userIdType = document.getElementById('idType').value;
+            const userIdTypeNumber = document.getElementById('idTypeNumber').value;
+            const userPoliciesAgreements = document.getElementById('policiesAgreements').value;
+            */
+
+
+           
+            const regExRegistrationCode = /\d{2}[A-Z]{1}\d{1}\-\d{1}[A-Z]{1}\d{1}\-[A-Z]{2}\-\d{3}[A-Z]{2}\d{6}\-\d{2}/;
+            //const regExAlphaNumeric = /^[0-9a-zA-Z]+$/;
+            const regExName = /^[A-Za-z\s]+$/;
+            const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;  
+            const regExPhoneNumber = /^\d{3}\-\d{3}\-\d{4}$/;    
+            const regExAddress = /^\d+\s[\d\w]+\s(.*)$/;
+            //const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
+            //const regExPoliciesAgreements = /^Yes\b$|^No\b$/;
+            
+            
+            if (userRegistrationCode === '' || userRegistrationCode == null || !userRegistrationCode.match(regExRegistrationCode)) { 
+                document.getElementById('userReviewRegistrationCode').innerHTML = '1. Your IVoteBallot Identification code is: ' +  userRegistrationCode + '.';
+                document.getElementById('userReviewRegistrationCodeErrorMessage').innerHTML = 'Error Message:  Your voter registration code is a required input field or you have entered the correct alphanumeric characters into the required input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewRegistrationCodeErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;					
+                                    
+            }	else {
+                document.getElementById('userReviewRegistrationCode').innerHTML = '1. Your IVoteBallot Identification code is: ' +  userRegistrationCode + '.';
+            }
+            
+            
+            if (userFirstName === '' || userFirstName == null || userFirstName.length <= 2 || !userFirstName.match(regExName))  { 
+                document.getElementById('userReviewFirstName').innerHTML = '2. Your First Name is: ' +  userFirstName + '.';     
+                document.getElementById('userReviewFirstNameErrorMessage').innerHTML = 'Your first name is a required input field or you must enter more than two characters into the first name required input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewFirstNameErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;				
+
+			} else {
+                    document.getElementById('userReviewFirstName').innerHTML = '2. Your First Name is: ' +  userFirstName + '.';  
+            }	
+            
+            if (userMiddleName === '' || userMiddleName == null) {
+                document.getElementById('userReviewMiddleName').innerHTML = '3. Your Middle Name is: ' +  userMiddleName + '.';
+                document.getElementById('userReviewMiddleNameErrorMessage').innerHTML = 'Do you have a middle name? If so, please type in your middle name into the input field or skip the middle name input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewMiddleNameErrorMessage').innerHTML = '';
+                },
+                9000)                                           
+                                    
+            } else if (userMiddleName.length <= 2 || !userMiddleName.match(regExName)) {                    
+                document.getElementById('userReviewMiddleName').innerHTML = '3. Your Middle Name is: ' +  userMiddleName + '.';
+                document.getElementById('userReviewMiddleNameErrorMessage').innerHTML = 'Your middle name is an optional input field; however, you must enter more than two characters into the middle name required input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewMiddleNameErrorMessage').innerHTML = '';
+                },
+                9000)
+            
+                return false;  
+ 
+            } else {
+                document.getElementById('userReviewMiddleName').innerHTML = '3. Your Middle Name is: ' +  userMiddleName + '.';
+            }  
+            
+            if (userLastName === '' || userLastName == null || userLastName.length <= 2 || !userLastName.match(regExName)) {
+                document.getElementById('userReviewLastName').innerHTML = '4. Your Last Name is: ' +  userLastName + '.';
+                document.getElementById('userReviewLastNameErrorMessage').innerHTML = 'Your last name is a required input field or you must enter more than two characters into the last name required input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewLastNameErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;
+
+            } else {
+                document.getElementById('userReviewLastName').innerHTML = '4. Your Last Name is: ' +  userLastName + '.';
+            }
+
+            if (userSuffix === '' || userSuffix == null) {
+                document.getElementById('userReviewSuffix').innerHTML = '5. Your selected Suffix is: ' +  userSuffix + '.';
+                document.getElementById('userReviewSuffixErrorMessage').innerHTML = 'Do you have a sufix name? If so, please type in your suffix name into the input field or skip the suffix name input field.';
+
+                setTimeout(function() {                    
+                    document.getElementById('userReviewSuffixErrorMessage').innerHTML = '';
+                },
+                9000)                                           
+                                    
+            } else if (userSuffix.length <= 0 || !userSuffix.match(regExName)) {
+                document.getElementById('userReviewSuffix').innerHTML = '5. Your selected Suffix is: ' +  userSuffix + '.';
+                document.getElementById('userReviewSuffixErrorMessage').innerHTML = 'Your suffix name is an optional input field; however, you must enter more than one characters into the suffix name required input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewSuffixErrorMessage').innerHTML = '';
+                },
+                9000)
+            
+                return false;  
+
+            } else {
+                document.getElementById('userReviewSuffix').innerHTML = '5. Your selected Suffix is: ' +  userSuffix + '.';
+            }
+
+            if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
+                document.getElementById('userReviewEmail').innerHTML = '6. Your Email Addresss is: ' +  userEmail + '.'; 
+                document.getElementById('userReviewEmailErrorMessage').innerHTML = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewEmailErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;
+
+            } else {
+                document.getElementById('userReviewEmail').innerHTML = '6. Your Email Addresss is: ' +  userEmail + '.'; 
+            }
+
+            if (userConfirmEmail === '' || userConfirmEmail == null || userConfirmEmail.length <= 6 || !userConfirmEmail.match(regExEmail)) {
+                document.getElementById('userReviewConfirmEmail').innerHTML = '7. Your Confirm Email Addresss is: ' +  userConfirmEmail + '.';
+                document.getElementById('userReviewConfirmEmailErrorMessage').innerHTML = 'Your confirm email address is a required input field and you must enter the correct confirm email address format into the require input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewConfirmEmailErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;
+
+            } else {
+                document.getElementById('userReviewConfirmEmail').innerHTML = '7. Your Confirm Email Addresss is: ' +  userConfirmEmail + '.';
+            }
+            
+            if (userEmail != userConfirmEmail) {
+                document.getElementById('userReviewConfirmEmail').innerHTML = '7. Your Confirm Email Addresss is: ' +  userConfirmEmail + '.';
+                document.getElementById('userReviewConfirmEmailErrorMessage').innerHTML = 'Your email address does not match to your confirm email address which are required input fields.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewConfirmEmailErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;
+
+            } else {
+                document.getElementById('userReviewConfirmEmail').innerHTML = '7. Your Confirm Email Addresss is: ' +  userConfirmEmail + '.';
+            }
+
+            if (userPhoneNumber === '' || userPhoneNumber == null || userPhoneNumber.length <= 10 || !userPhoneNumber.match(regExPhoneNumber))  {
+                document.getElementById('userReviewPhoneNumber').innerHTML = '8. Your Phone Number is: ' +  userPhoneNumber + '.';
+                document.getElementById('userReviewPhoneNumberErrorMessage').innerHTML = 'Your phone number is a required input field or you must enter exactly twelve number digits into the phone number required input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewPhoneNumberErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;				
+
+            } else {
+                document.getElementById('userReviewPhoneNumber').innerHTML = '8. Your Phone Number is: ' +  userPhoneNumber + '.';
+            }	
+
+            if (userAddress === '' || userAddress == null || userAddress.length <= 6 || !userAddress.match(regExAddress))  { 
+                document.getElementById('userReviewAddress').innerHTML = '9. Your Residential Address is: ' +  userAddress + '.';
+                document.getElementById('userReviewAddressErrorMessage').innerHTML = 'Your street address is a required field and you must enter your correct street address format into the require input field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewAddressErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;				
+
+            } else {
+                document.getElementById('userReviewAddress').innerHTML = '9. Your Residential Address is: ' +  userAddress + '.';
+            }
+
+            if (userUnitType === '' || userUnitType == null) {
+                document.getElementById('userReviewUnitType').innerHTML = '10. Your Residential Unit Type is: ' +  userUnitType + '.';
+                document.getElementById('userReviewUnitTypeErrorMessage').innerHTML = 'Select your residential unit type you live in, and your residential unit type is a require field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewUnitTypeErrorMessage').innerHTML = '';
+                },
+                9000)   
+            
+                return false;  
+
+            } else {
+                document.getElementById('userReviewUnitType').innerHTML = '10. Your Residential Unit Type is: ' +  userUnitType + '.';
+            }
+            
+           
+           		
+            
+
+
+            /*
+            
+            
+            
+           
+            
+            
+            document.getElementById('userReviewUnitType').innerHTML = '10. Your Residential Unit Type is: ' +  userUnitType + '.';
+            document.getElementById('userReviewUnitTypeNumber').innerHTML = '11. Your Residential Unit Type Number is: ' +  userUnitTypeNumber + '.';
+            document.getElementById('userReviewCountrySelection').innerHTML = '12. Your selected Country is: ' +  userCountrySelection + '.';
+            document.getElementById('userReviewCountySelection').innerHTML = '13. Your selected State is: ' +  userCountySelection + '.';
+            document.getElementById('userReviewCitySelection').innerHTML = '14. Your selected City is: ' +  userCitySelection + '.';
+            document.getElementById('userReviewZipSelection').innerHTML = '15. Your selected Zip Code is: ' +  userZipSelection + '.';
+            document.getElementById('userReviewIdType').innerHTML = '16. Your selected Identification card type is: ' +  userIdType + '.';
+            document.getElementById('userReviewIdTypeNumber').innerHTML = '17. Your selected Identification card number is: ' +  userIdTypeNumber + '.';
+            document.getElementById('userReviewPoliciesAgreements').innerHTML = '18. Your answer is: ' +  userIdTypeNumber + ' to iVoteBallot policies agreements.';
+
+            */
         }
 
 
