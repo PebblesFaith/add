@@ -715,7 +715,7 @@ img {
   
   .tab-button {
     width: 125px;
-    height: 68px;
+    height: 125px;
     padding: 5px, 5px, 5px, 5px;
     margin-right: 2px;
     margin-top: 2px;
@@ -892,3 +892,83 @@ img {
 }
 
 
+/* To style the submitButton attribute's DOM element for which will add decorative designs' sets of appearances
+   to the submit button area. */
+#submitReview {
+    display: block;
+    height: 40px;
+    width: 70%;
+    background-color: rgb(201, 24, 24);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 255, 255);
+    font-size: clamp(10px, 2vw, 18px);
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+    cursor: pointer;
+    cursor: 14px;
+}
+
+#userReviewRegistrationCode, #userReviewFirstName, #userReviewMiddleName, #userReviewLastName, #userReviewSuffix, #userReviewEmail, #userReviewConfirmEmail, #userReviewPhoneNumber, #userReviewAddress, #userReviewUnitType, #userReviewUnitTypeNumber, #userReviewCountrySelection, #userReviewStateSelection, #userReviewCountySelection, #userReviewCitySelection, #userReviewZipSelection, #userReviewIdType, #userReviewIdTypeNumber, #userReviewPoliciesAgreements {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;     
+    background-color: rgb(255, 255, 255);
+    color: rgb(13, 65, 255);
+    height: auto;
+    width: auto;        
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(8px, 2vw, 15px); 
+    text-align: left;   
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#userReviewRegistrationCodeErrorMessage, #userReviewFirstNameErrorMessage, #userReviewMiddleNameErrorMessage, #userReviewLastNameErrorMessage, #userReviewSuffixErrorMessage, #userReviewEmailErrorMessage, #userReviewConfirmEmailErrorMessage, #userReviewPhoneNumberErrorMessage, #userReviewAddressErrorMessage, #userReviewUnitTypeErrorMessage {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;     
+    background-color: rgb(255, 255, 255);
+    color: rgb(201, 24, 24);
+    height: auto;
+    width: auto;        
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(8px, 1vw, 12px); 
+    text-align: left;   
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#reviewInstructionalGuide {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;  
+    justify-content: center;   
+    background-color: rgb(255, 255, 255);  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(8px, 1vw, 12px); 
+    text-align: center;       
+    width: auto;
+    height: 25px;
+    margin: 5px, 5px, 5px, 5px;   
+    background-color: rgb(13, 65, 255);
+    border: none;   
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+    cursor: 14px;
+    
+
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hyperlink texts. */
+#reviewInstructionalGuide span {
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    color: rgb(201, 24, 24);
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hover hyperlink texts. */
+#reviewInstructionalGuide span:hover {
+    color:rgba(210, 198, 203, 0.30);
+}
