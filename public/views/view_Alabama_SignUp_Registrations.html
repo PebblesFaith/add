@@ -10,6 +10,8 @@
 	<link rel="icon" type="images" href="../images/iVoteBallot Favicon/314860_star_icon.png" />
 	<link rel="stylesheet" type="text/css" href="../styles/styles_Alabama_SignUp_Registrations.css" />	
 
+
+
 </head>
 	<body>
 
@@ -20,7 +22,7 @@
 		
 		<div id="flex_Container_StarsAndStrips">
 			<ul id="navigational_Bar_01">
-				<li><a href="#">About Us</a></li>
+				<li><a href="../views/view_AboutUs.html">About Us</a></li>
 				<li><a href="../views/view_Alabama_SignUp_Registrations.html">Alabama Online Sign Up</a></li>				
 				<li><a href="">Log In</a></li>			
 			</ul>
@@ -77,11 +79,14 @@
                                 <button class="tab-button" onclick="showTab(4)">State Id Card Information
                                     <p id="instructionalGuide">Step 4</p>   
                                 </button>
-                                <button class="tab-button" onclick="showTab(5)">Terms and Privacy Policies
-                                    <p id="instructionalGuide">Step 5</p>      
+                                <button class="tab-button" onclick="showTab(5)">Account Password
+                                    <p id="instructionalGuide">Step 5</p>   
                                 </button>
-                                <button class="tab-button" onclick="showTab(6)">Review Your iVoteBallot Form
+                                <button class="tab-button" onclick="showTab(6)">Terms and Privacy Policies
                                     <p id="instructionalGuide">Step 6</p>      
+                                </button>
+                                <button class="tab-button" onclick="showTab(7)">Review Your Form
+                                    <p id="instructionalGuide">Step 7</p>      
                                 </button>
                                 
 								
@@ -270,9 +275,29 @@
                                 </div>
 
                                 <div class="tab-panel" id="tab-5">
+                                    <p>Account Password</p>
+                                    <br>
+                                    <label>Password | </label>
+                                    <br>
+                                    <input id="password" type="password" name="userPassword" maxlength="250" >
+                                    <label id="labelInputPassword"><input id="inputPassword" type="checkbox" onclick="inputPasswordCheckBox()">Show Password</label>
+                                    <br>
+                                    <span id = "userPasswordErrorMessage"></span>
+                                    <br>
+                                    <label>Confirm Password | </label>
+                                    <br>
+                                    <input id="confirmPassword" type="password" name="userConfirmPassword" maxlength="250" >
+                                    <label id="labelInputPassword"><input id="inputPassword" type="checkbox" onclick="inputConfirmPasswordCheckBox()">Show Confirm Password</label>
+                                    <br>
+                                    <span id = "userConfirmPasswordErrorMessage"></span>	
+                                    <br>					
+
+                                </div>
+
+                                <div class="tab-panel" id="tab-6">
                                     <p>Terms of Service</p>
                                     
-                                    <iframe src="../pdf/iVoteBallot's Terms of Services - Effective Dated 02-07-23.pdf" width="100%" height="400"></iframe>
+                                    <iframe src="../pdf/iVoteBallot's Terms of Services - Effective Dated 02-08-23.pdf" width="100%" height="400"></iframe>
 
                                     <br>
                                     <br>
@@ -301,7 +326,7 @@
 
                                 </div>
 
-                                <div class="tab-panel" id="tab-6">
+                                <div class="tab-panel" id="tab-7">
                                     <p>Review Your iVoteBallot Form</p>
                                    
                                     <span id="userReview">Step 1</span> 
@@ -358,32 +383,55 @@
                                     <span id="userReviewUnitType"></span>
                                     <span id="userReviewUnitTypeErrorMessage"></span>
                                     <br>
+                                    <span id="userReviewUnitTypeNumber"></span>
+                                    <span id="userReviewUnitTypeNumberErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewCountrySelection"></span>
+                                    <span id="userReviewCountrySelectionErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewStateSelection"></span>
+                                    <span id="userReviewStateSelectionErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewCountySelection"></span>
+                                    <span id="userReviewCountySelectionErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewCitySelection"></span>
+                                    <span id="userReviewCitySelectionErrorMessage"></span>
+                                    <br>
+                                    <span id="userReviewZipSelection"></span>
+                                    <span id="userReviewZipSelectionErrorMessage"></span>
+                                    <br>
 
                                     <span onclick="showTab(3)">                                    
                                         <p id="reviewInstructionalGuide">Return to Step 3 - Residential Address</p>
                                     </span>
                                                                         
-                                    <hr id="redLines_HR">
-
+                                    <hr id="redLines_HR">                                    
+                                    <br>
                                     
+                                    <span id="userReview">Step 4</span> 
+                                    <br>
+                                    <br> 
 
-                                    
-                                    <span id="userReviewUnitTypeNumber"></span>
-                                    <br>
-                                    <span id="userReviewCountrySelection"></span>
-                                    <br>
-                                    <span id="userReviewStateSelection"></span>
-                                    <br>
-                                    <span id="userReviewCountySelection"></span>
-                                    <br>
-                                    <span id="userReviewCitySelection"></span>
-                                    <br>
-                                    <span id="userReviewZipSelection"></span>
-                                    <br>
                                     <span id="userReviewIdType"></span>
+                                    <span id="userReviewIdTypeErrorMessage"></span>
                                     <br>
                                     <span id="userReviewIdTypeNumber"></span>
-                                    <br>
+                                    <span id="userReviewIdTypeNumberErrorMessage"></span>
+                                    <br>                                    
+
+                                    <span onclick="showTab(4)">                                    
+                                        <p id="reviewInstructionalGuide">Return to Step 4 - State Id Card Information</p>
+                                    </span>
+                                                                        
+                                    <hr id="redLines_HR">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                  
                                     <span id="userReviewPoliciesAgreements"></span>
                                     
 
@@ -471,7 +519,7 @@
 		<script type="text/javascript">	
 
 			var currentTab = 1;
-			var maxTab = 6;
+			var maxTab = 7;
 
 			function showTab(tabNumber) {
 			var tabPanels = document.getElementsByClassName("tab-panel");
@@ -494,6 +542,26 @@
 				}
 			}
 
+            function inputPasswordCheckBox() {
+            var inputPassword = document.getElementById("password");
+            if (inputPassword.type === "password") {
+                inputPassword.type = "text";
+            } else {
+                inputPassword.type = "password";
+            }
+            }
+
+            function inputConfirmPasswordCheckBox() {
+            var inputPassword = document.getElementById("confirmPassword");
+            if (inputPassword.type === "password") {
+                inputPassword.type = "text";
+            } else {
+                inputPassword.type = "password";
+            }
+            }
+
+
+            
 
 			const validateVoterSignUpForm = (e) => { 	
 				
@@ -532,8 +600,14 @@
                 const userIdType = document.getElementById('idType').value;
 
                 const userIdTypeNumber = document.getElementById('idTypeNumber').value;
+
+                const userPassword = document.getElementById('password').value;
+
+                const userConfirmPassword = document.getElementById('confirmPassword').value;	
                 
                 const userPoliciesAgreements = document.getElementById('policiesAgreements').value;
+
+               
 				
 
 				const regExRegistrationCode = /\d{2}[A-Z]{1}\d{1}\-\d{1}[A-Z]{1}\d{1}\-[A-Z]{2}\-\d{3}[A-Z]{2}\d{6}\-\d{2}/;
@@ -543,6 +617,7 @@
                 const regExPhoneNumber = /^\d{3}\-\d{3}\-\d{4}$/;    
 				const regExAddress = /^\d+\s[\d\w]+\s(.*)$/;
                 const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
+                const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,32}$/;
                 const regExPoliciesAgreements = /^Yes\b$|^No\b$/;
 				
 				
@@ -788,7 +863,43 @@
 
 					return false;				
 
-				}		
+				}	
+                
+                if (userPassword === '' || userPassword == null || userPassword.length <= 7 || !userPassword.match(regExPassword)) {
+				document.getElementById('userPasswordErrorMessage').innerHTML = 'Your password is a required input field and you must enter the correct password format into the require input field.';
+
+				setTimeout(function() {
+					document.getElementById('userPasswordErrorMessage').innerHTML = '';
+				},
+				9000)
+
+				return false;
+
+                }
+
+                if (userConfirmPassword === '' || userConfirmPassword == null || userConfirmPassword.length <= 7 || !userConfirmPassword.match(regExPassword)) {
+                    document.getElementById('userConfirmPasswordErrorMessage').innerHTML = 'Your confirm password is a required input field and you must enter the correct confirm password format into the require input field.';
+
+                    setTimeout(function() {
+                        document.getElementById('userConfirmPasswordErrorMessage').innerHTML = '';
+                    },
+                    9000)
+
+                    return false;
+
+                }
+
+                if (userPassword != userConfirmPassword) {
+                    document.getElementById('userConfirmPasswordErrorMessage').innerHTML = 'Your password does not match to your confirm password which are required input fields.';
+
+                    setTimeout(function() {
+                        document.getElementById('userConfirmPasswordErrorMessage').innerHTML = '';
+                    },
+                    9000)
+
+                    return false;
+
+                }
 
                 if (userPoliciesAgreements === '' || userPoliciesAgreements == null || !userPoliciesAgreements.match(regExPoliciesAgreements))  {                                                               
 					document.getElementById('userPoliciesAgreementsErrorMessage').innerHTML =  'You must either type in "Yes", if you agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements or "No", if you do not agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements into the required field.';
@@ -1635,14 +1746,6 @@
             const userPhoneNumber = document.getElementById('phoneNumber').value;
             const userAddress = document.getElementById('address').value;
             const userUnitType = document.getElementById('unitType').value;
-            /*
-            		
-			
-            
-            
-            
-           
-			
             const userUnitTypeNumber = document.getElementById('unitTypeNumber').value;
             const userCountrySelection = document.getElementById('countrySelect').value;
             const userStateSelection = document.getElementById('stateSelect').value;
@@ -1651,6 +1754,13 @@
             const userZipSelection = document.getElementById('zipSelect').value;
             const userIdType = document.getElementById('idType').value;
             const userIdTypeNumber = document.getElementById('idTypeNumber').value;
+
+            /*
+            		
+			           
+            
+           
+            
             const userPoliciesAgreements = document.getElementById('policiesAgreements').value;
             */
 
@@ -1662,7 +1772,7 @@
             const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;  
             const regExPhoneNumber = /^\d{3}\-\d{3}\-\d{4}$/;    
             const regExAddress = /^\d+\s[\d\w]+\s(.*)$/;
-            //const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
+            const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
             //const regExPoliciesAgreements = /^Yes\b$|^No\b$/;
             
             
@@ -1849,8 +1959,127 @@
             } else {
                 document.getElementById('userReviewUnitType').innerHTML = '10. Your Residential Unit Type is: ' +  userUnitType + '.';
             }
+
+            if (userUnitTypeNumber === '' || userUnitTypeNumber == null || userUnitTypeNumber.length <= 1)  {  
+                document.getElementById('userReviewUnitTypeNumber').innerHTML = '11. Your Residential Unit Type Number is: ' +  userUnitTypeNumber + '.';                                      
+                document.getElementById('userReviewUnitTypeNumberErrorMessage').innerHTML =  'Your address unit type number is a required field or you must enter the correct address unit number type into the required field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewUnitTypeNumberErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;				
+
+            } else {
+                document.getElementById('userReviewUnitTypeNumber').innerHTML = '11. Your Residential Unit Type Number is: ' +  userUnitTypeNumber + '.';
+            }		
             
-           
+            if (userCountrySelection === '' || userCountrySelection == null) {
+                document.getElementById('userReviewCountrySelection').innerHTML = '12. Your selected Country is: ' +  userCountrySelection + '.';
+                document.getElementById('userReviewCountrySelectionErrorMessage').innerHTML = 'Your country is a required select option field and you must select your correct country from the option require field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewCountrySelectionErrorMessage').innerHTML = '';
+                },
+                9000)    	
+            
+                return false;  
+
+            } else {
+                document.getElementById('userReviewCountrySelection').innerHTML = '12. Your selected Country is: ' +  userCountrySelection + '.';
+            }
+
+            if (userStateSelection === '' || userStateSelection == null) {
+                document.getElementById('userReviewStateSelection').innerHTML = '13. Your selected State is: ' +  userStateSelection + '.';
+                document.getElementById('userReviewStateSelectionErrorMessage').innerHTML = 'Your state is a required select option field and you must select your correct state from the option require field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewStateSelectionErrorMessage').innerHTML = '';
+                },
+                9000)    	
+            
+                return false;  
+
+            } else {
+                document.getElementById('userReviewStateSelection').innerHTML = '13. Your selected State is: ' +  userStateSelection + '.';
+            }
+
+            if (userCountySelection === '' || userCountySelection == null) {
+                document.getElementById('userReviewCountySelection').innerHTML = '14. Your selected County is: ' +  userCountySelection + '.';
+                document.getElementById('userReviewCountySelectionErrorMessage').innerHTML = 'Your county is a required select option field and you must select your correct county from the option require field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewCountySelectionErrorMessage').innerHTML = '';
+                },
+                9000)    	
+            
+                return false;  
+
+            } else {
+                document.getElementById('userReviewCountySelection').innerHTML = '14. Your selected County is: ' +  userCountySelection + '.';
+            }
+
+            if (userCitySelection === '' || userCitySelection == null) {
+                document.getElementById('userReviewCitySelection').innerHTML = '15. Your selected City is: ' +  userCitySelection + '.';
+                document.getElementById('userReviewCitySelectionErrorMessage').innerHTML = 'Your city is a required select option field and you must select your correct city from the option require field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewCitySelectionErrorMessage').innerHTML = '';
+                },
+                9000)    	
+            
+                return false;  
+
+            } else {
+                document.getElementById('userReviewCitySelection').innerHTML = '15. Your selected City is: ' +  userCitySelection + '.';
+            }
+
+            if (userZipSelection === '' || userZipSelection == null) {
+                document.getElementById('userReviewZipSelection').innerHTML = '16. Your selected Zip Code is: ' +  userZipSelection + '.';
+                document.getElementById('userReviewZipSelectionErrorMessage').innerHTML = 'Your zip code area is a required select option field and you must select your correct zip code area from the option require field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewZipSelectionErrorMessage').innerHTML = '';
+                },
+                9000)    	
+            
+                return false;  
+
+            } else {
+                document.getElementById('userReviewZipSelection').innerHTML = '16. Your selected Zip Code is: ' +  userZipSelection + '.';
+            }
+
+            if (userIdType === '' || userIdType == null) {
+                document.getElementById('userReviewIdType').innerHTML = '17. Your selected Identification card type is: ' +  userIdType + '.';
+                document.getElementById('userReviewIdTypeErrorMessage').innerHTML = 'Your Alabama\s identification card type is a required select option field and you must select your correct Alabama\s identification card type from the option require field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewIdTypeErrorMessage').innerHTML = '';
+                },
+                9000)    	
+            
+                return false;  
+
+            } else {
+                document.getElementById('userReviewIdType').innerHTML = '17. Your selected Identification card type is: ' +  userIdType + '.';
+            }
+
+            if (userIdTypeNumber === '' || userIdTypeNumber == null || !userIdTypeNumber.match(regExAlabamaId))  {   
+                document.getElementById('userReviewIdTypeNumber').innerHTML = '18. Your selected Identification card number is: ' +  userIdTypeNumber + '.';                        
+                document.getElementById('userReviewIdTypeNumberErrorMessage').innerHTML =  'Your Alabama numeric identification card characters are a required field or you must enter the correct Alabama numeric identification card characters from your Alabama/s identification card into the required field.';
+
+                setTimeout(function() {
+                    document.getElementById('userReviewIdTypeNumberErrorMessage').innerHTML = '';
+                },
+                9000)
+
+                return false;				
+
+            } else {
+                document.getElementById('userReviewIdTypeNumber').innerHTML = '18. Your selected Identification card number is: ' +  userIdTypeNumber + '.';
+            }	
+        
            		
             
 
@@ -1862,15 +2091,15 @@
            
             
             
-            document.getElementById('userReviewUnitType').innerHTML = '10. Your Residential Unit Type is: ' +  userUnitType + '.';
-            document.getElementById('userReviewUnitTypeNumber').innerHTML = '11. Your Residential Unit Type Number is: ' +  userUnitTypeNumber + '.';
-            document.getElementById('userReviewCountrySelection').innerHTML = '12. Your selected Country is: ' +  userCountrySelection + '.';
-            document.getElementById('userReviewCountySelection').innerHTML = '13. Your selected State is: ' +  userCountySelection + '.';
-            document.getElementById('userReviewCitySelection').innerHTML = '14. Your selected City is: ' +  userCitySelection + '.';
-            document.getElementById('userReviewZipSelection').innerHTML = '15. Your selected Zip Code is: ' +  userZipSelection + '.';
-            document.getElementById('userReviewIdType').innerHTML = '16. Your selected Identification card type is: ' +  userIdType + '.';
-            document.getElementById('userReviewIdTypeNumber').innerHTML = '17. Your selected Identification card number is: ' +  userIdTypeNumber + '.';
-            document.getElementById('userReviewPoliciesAgreements').innerHTML = '18. Your answer is: ' +  userIdTypeNumber + ' to iVoteBallot policies agreements.';
+            
+            
+           
+            
+           
+           
+            
+           
+            document.getElementById('userReviewPoliciesAgreements').innerHTML = '19. Your answer is: ' +  userIdTypeNumber + ' to iVoteBallot policies agreements.';
 
             */
         }
