@@ -8,7 +8,7 @@ html {
    element. */
    @font-face {
     font-family: "Megrim-Regular";
-    src: url(fonts/SourceCodePro-SemiBold.ttf) format('truetype');
+    src: url(../fonts/Source_Code_Pro/SourceCodePro-SemiBold.ttf) format('truetype');
     font-weight: normal;
 }
 
@@ -909,7 +909,7 @@ img {
     cursor: 14px;
 }
 
-#userReviewRegistrationCode, #userReviewFirstName, #userReviewMiddleName, #userReviewLastName, #userReviewSuffix, #userReviewEmail, #userReviewConfirmEmail, #userReviewPhoneNumber, #userReviewAddress, #userReviewUnitType, #userReviewUnitTypeNumber, #userReviewCountrySelection, #userReviewStateSelection, #userReviewCountySelection, #userReviewCitySelection, #userReviewZipSelection, #userReviewIdType, #userReviewIdTypeNumber, #userReviewPoliciesAgreements {
+#userReviewRegistrationCode, #userReviewFirstName, #userReviewMiddleName, #userReviewLastName, #userReviewSuffix, #userReviewEmail, #userReviewConfirmEmail, #userReviewPhoneNumber, #userReviewAddress, #userReviewUnitType, #userReviewUnitTypeNumber, #userReviewCountrySelection, #userReviewStateSelection, #userReviewCountySelection, #userReviewCitySelection, #userReviewZipSelection, #userReviewIdType, #userReviewIdTypeNumber, #userReviewPassword, #userReviewConfirmPassword, #userReviewPoliciesAgreements {
     display: flex;
     flex-wrap: row wrap;
     flex-direction: column;     
@@ -924,7 +924,7 @@ img {
     margin-right: 50px;
 }
 
-#userReviewRegistrationCodeErrorMessage, #userReviewFirstNameErrorMessage, #userReviewMiddleNameErrorMessage, #userReviewLastNameErrorMessage, #userReviewSuffixErrorMessage, #userReviewEmailErrorMessage, #userReviewConfirmEmailErrorMessage, #userReviewPhoneNumberErrorMessage, #userReviewAddressErrorMessage, #userReviewUnitTypeErrorMessage, #userReviewUnitTypeNumberErrorMessage, #userReviewCountrySelectionErrorMessage, #userReviewStateSelectionErrorMessage, #userReviewCountySelectionErrorMessage, #userReviewCitySelectionErrorMessage, #userReviewZipSelectionErrorMessage, #userReviewIdTypeErrorMessage, #userReviewIdTypeNumberErrorMessage {
+#userReviewRegistrationCodeErrorMessage, #userReviewFirstNameErrorMessage, #userReviewMiddleNameErrorMessage, #userReviewLastNameErrorMessage, #userReviewSuffixErrorMessage, #userReviewEmailErrorMessage, #userReviewConfirmEmailErrorMessage, #userReviewPhoneNumberErrorMessage, #userReviewAddressErrorMessage, #userReviewUnitTypeErrorMessage, #userReviewUnitTypeNumberErrorMessage, #userReviewCountrySelectionErrorMessage, #userReviewStateSelectionErrorMessage, #userReviewCountySelectionErrorMessage, #userReviewCitySelectionErrorMessage, #userReviewZipSelectionErrorMessage, #userReviewIdTypeErrorMessage, #userReviewIdTypeNumberErrorMessage, #userReviewPasswordErrorMessage, #userReviewConfirmPasswordErrorMessage, #userReviewPoliciesAgreementsErrorMessage {
     display: flex;
     flex-wrap: row wrap;
     flex-direction: column;     
@@ -973,12 +973,63 @@ img {
     color:rgba(210, 198, 203, 0.30);
 }
 
-input[type=checkbox] { 
-    width: 25px;  
-    position: relative;
-    bottom: 1px;
+
+
+
+#showHide_01 {    
+    cursor: pointer;
+    cursor: 12px;      
+    background-color: rgb(255, 255, 255); 
+    width: 10px;    
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(12px, 2vw, 16px);    
+    color: rgb(13, 65, 255);
+    background-color: rgb(255, 255, 255);
 }
 
-#labelInputPassword {    
-    text-align: right; 
+/* To style the attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#showHide_01 a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 15px;
+    color: rgb(201, 24, 24);
 }
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#showHide_01 a:hover {
+    background-color: rgba(255, 255, 255, 0.238);
+    color: rgb(201, 24, 24);
+}
+
+
+#showHide_02 {    
+    cursor: pointer;
+    cursor: 12px;      
+    background-color: rgb(255, 255, 255); 
+    width: 10px;    
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(12px, 2vw, 16px);    
+    color: rgb(13, 65, 255);
+    background-color: rgb(255, 255, 255);
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#showHide_02 a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 15px;
+    color: rgb(201, 24, 24);
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#showHide_02 a:hover {
+    background-color: rgba(255, 255, 255, 0.238);
+    color: rgb(201, 24, 24);
+}
+
