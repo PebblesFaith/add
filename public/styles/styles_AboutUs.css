@@ -14,7 +14,7 @@ html {
    element. */
 @font-face {
     font-family: "Megrim-Regular";
-    src: url(fonts/SourceCodePro-SemiBold.ttf) format('truetype');
+    src: url(../fonts/Source_Code_Pro/SourceCodePro-SemiBold.ttf) format('truetype');
     font-weight: normal;
 }
 
