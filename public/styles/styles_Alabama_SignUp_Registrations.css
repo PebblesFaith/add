@@ -727,7 +727,7 @@ img {
     border-color: rgb(255, 255, 255);
     border: 2px;
     font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: clamp(15px, 1vw, 18px); 
+    font-size: clamp(13px, 1vw, 16px); 
     color:rgb(255, 255, 255);   
   }
   
@@ -745,13 +745,17 @@ img {
   .tab-nav {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;    
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    
   }
   
   .previous, .next {
     margin-left: 0px;
     margin-right: 0px;
-    width: 80px;
+    width: 100px;
     padding: 10px;
     background-color: rgb(13, 65, 255);
     border: none;
@@ -981,7 +985,7 @@ img {
     cursor: 12px;      
     background-color: rgb(255, 255, 255); 
     width: 10px;    
-    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(12px, 2vw, 16px);    
     color: rgb(13, 65, 255);
     background-color: rgb(255, 255, 255);
@@ -1010,7 +1014,7 @@ img {
     cursor: 12px;      
     background-color: rgb(255, 255, 255); 
     width: 10px;    
-    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(12px, 2vw, 16px);    
     color: rgb(13, 65, 255);
     background-color: rgb(255, 255, 255);
