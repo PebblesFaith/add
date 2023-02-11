@@ -19,6 +19,11 @@ callback from the server ("index.js").
 */
 const alabamaSignUp_Router = require('../models/alabamaSignUp_Router');
 
+
+const bcrypt = require('bcrypt');
+
+
+
 // Sarai Hannah Ajai had JavaScript programmatically coded an open "database_Alabama_SignUp.db" (database) connection.
 
 const db = new sqlite3.Database('database_Alabama_SignUp.db', error => {
@@ -47,10 +52,24 @@ db.serialize( () => {
 	});        
 });
 
-const createAlabamaSignUpDatabase = ('/alabamasignup', (req, res, next,) => {   
+const createAlabamaSignUpDatabase = ('/alabamasignup', async(req, res, next,) => {   
 		
 	res.redirect(301, 'http://localhost:3001/view_Home.html');
 	console.log('The user inserted data information texts from body-parser section had been successfully loaded into the iVoteBallot\s SQLite3 database , ' + Date());   
+
+
+
+/*
+Sarai Hannah Ajai have written her JavaScript programmatic codes language to include the 'Bcrypt' API 
+Library for hashing and salting user's 'PASSWORD' from an one-way process of securing his/her 'PLAIN
+TEXT PASSWORD' by creating a bit string of a fixed size called 'HASH' crypotographic hash function[s]/
+variable[s]. In which, the crypotographic hash function[s]/variable[s] designed to be a one-way function[s]/
+variable[s] that is, a crypotographic function[s]/variable[s] which in infeasible to invert by ways of express passport.
+*/
+	
+	const salt = await bcrypt.genSalt(13);	
+	const hashedPassword = await bcrypt.hash(req.body.userPassword, salt);	
+	const confirmHashedPassword = await bcrypt.hash(req.body.userConfirmPassword, salt);
 	
 /* 
 Sarai Hannah Ajai has written her JavaScript programmatic codes which will specify each time an user enter
@@ -76,8 +95,8 @@ capture the user input fields information from the middleware parser.
 		userZipSelection: req.body.userZipSelection,
 		userIdType: req.body.userIdType,
 		userIdTypeNumber: req.body.userIdTypeNumber,
-		userPassword: req.body.userPassword,
-		userConfirmPassword: req.body.userConfirmPassword,
+		userPassword: hashedPassword,
+		userConfirmPassword: confirmHashedPassword,
 		userPoliciesAgreements: req.body.userPoliciesAgreements
 					
 
