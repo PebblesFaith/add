@@ -1037,3 +1037,49 @@ img {
     color: rgb(201, 24, 24);
 }
 
+
+.collapsible {
+    width: 100%;
+    height: 25px;
+    background-color: rgb(255, 255, 255);  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 1vw, 14px); 
+    background-color: rgb(13, 65, 255);
+    border: none;   
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+    cursor: 14px;   
+    
+}
+
+/* To add and style customized iVoteBallot company name design to the font size hyperlink texts. */
+.active, .collapsible:hover {
+    background-color: rgb(201, 24, 24);
+  }
+
+/* To add and style customized iVoteBallot company name design to the font size hover hyperlink texts. */
+  
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+
+
+#step1_Button, #step2_Button, #step3_Button, #step4_Button, #step5_Button, #step6_Button {
+    width: 80%;
+    height: 25px;
+    background-color: rgb(255, 255, 255);  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 1vw, 14px); 
+    background-color: rgb(201, 24, 24);
+    border: none;   
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+    cursor: 14px;   
+    
+
+}
+
