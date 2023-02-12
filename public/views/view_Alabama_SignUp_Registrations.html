@@ -330,138 +330,214 @@
                                 </div>
 
                                 <div class="tab-panel" id="tab-7">
-                                    <p>Review Your iVoteBallot Form</p>
-                                   
-                                    <span id="userReview">Step 1</span> 
-                                    <br>
-                                    <br> 
-                                    <span id="userReviewRegistrationCode"></span> 
-                                    <span id="userReviewRegistrationCodeErrorMessage" ></span>                                    
-                                    
-                                    <span onclick="showTab(1)">                                    
-                                        <p id="reviewInstructionalGuide">Return to Step 1 - iVoteBallot Id Card</p>
-                                    </span>
 
-                                    <hr id="redLines_HR">	
-                                    
+                                    <span id="userReview">Review Your iVoteBallot Form</span> 
                                     <br>
-                                    <span id="userReview">Step 2</span> 
-                                    <br>
-                                    <br> 
-                                    <span id="userReviewFirstName"></span>
-                                    <span id="userReviewFirstNameErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewMiddleName"></span>
-                                    <span id="userReviewMiddleNameErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewLastName"></span>
-                                    <span id="userReviewLastNameErrorMessage"></span>
-                                    <br> 
-                                    <span id="userReviewSuffix"></span>
-                                    <span id="userReviewSuffixErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewEmail"></span>                                    
-                                    <span id="userReviewEmailErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewConfirmEmail"></span>
-                                    <span id="userReviewConfirmEmailErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewPhoneNumber"></span>
-                                    <span id="userReviewPhoneNumberErrorMessage"></span>
-                                    
-                                    <span onclick="showTab(2)">                                    
-                                        <p id="reviewInstructionalGuide">Return to Step 2 - Contact Information</p>
-                                    </span>
-
-                                    <hr id="redLines_HR">	                                    
-                                   
-                                    <br>
-                                    <span id="userReview">Step 3</span> 
-                                    <br>
-                                    <br> 
-
-                                    <span id="userReviewAddress"></span>
-                                    <span id="userReviewAddressErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewUnitType"></span>
-                                    <span id="userReviewUnitTypeErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewUnitTypeNumber"></span>
-                                    <span id="userReviewUnitTypeNumberErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewCountrySelection"></span>
-                                    <span id="userReviewCountrySelectionErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewStateSelection"></span>
-                                    <span id="userReviewStateSelectionErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewCountySelection"></span>
-                                    <span id="userReviewCountySelectionErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewCitySelection"></span>
-                                    <span id="userReviewCitySelectionErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewZipSelection"></span>
-                                    <span id="userReviewZipSelectionErrorMessage"></span>
-                                    <br>
-
-                                    <span onclick="showTab(3)">                                    
-                                        <p id="reviewInstructionalGuide">Return to Step 3 - Residential Address</p>
-                                    </span>
-                                                                        
-                                    <hr id="redLines_HR">                                    
                                     <br>
                                     
-                                    <span id="userReview">Step 4</span> 
+                                    <button type="button" class="collapsible">iVoteBallot ID Card</button>
+
+                                    <div class="content">   
+                                        <br>   
+                                        <span id="userReview">Step 1</span> 
+                                        <br>
+                                        <br>                              
+                                        
+                                        <span id="userReviewRegistrationCode"></span> 
+                                        <span id="userReviewRegistrationCodeErrorMessage" ></span>                                    
+                                        
+                                        <span onclick="showTab(1)">                                    
+                                            <p id="reviewInstructionalGuide">Return to Step 1 - iVoteBallot Id Card</p>
+                                        </span>
+                                        <br>
+                                        <br>
+
+                                        <button id="step1_Button" type="submit">Review - Step 1</button>
+                                        <br>
+                                        <br>
+
+
+                                        <hr id="redLines_HR">
+                                      
+                                    </div>     
+
+                                    <button type="button" class="collapsible">Contact Information</button>
+                                    <div class="content"> 
+                                        
+                                        <br>
+                                        <span id="userReview">Step 2</span> 
+                                        <br>
+                                        <br> 
+                                        <span id="userReviewFirstName"></span>
+                                        <span id="userReviewFirstNameErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewMiddleName"></span>
+                                        <span id="userReviewMiddleNameErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewLastName"></span>
+                                        <span id="userReviewLastNameErrorMessage"></span>
+                                        <br> 
+                                        <span id="userReviewSuffix"></span>
+                                        <span id="userReviewSuffixErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewEmail"></span>                                    
+                                        <span id="userReviewEmailErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewConfirmEmail"></span>
+                                        <span id="userReviewConfirmEmailErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewPhoneNumber"></span>
+                                        <span id="userReviewPhoneNumberErrorMessage"></span>
+                                        
+                                        <span onclick="showTab(2)">                                    
+                                            <p id="reviewInstructionalGuide">Return to Step 2 - Contact Information</p>
+                                        </span>                                        
+
+                                        <br>
+                                        <br>
+
+                                        <button id="step2_Button" type="submit">Review - Step 2</button>
+                                        <br>
+                                        <br>
+
+                                        <hr id="redLines_HR">                                                                               
+                                        
+                                    </div>
+
+                                    
+                                    <button type="button" class="collapsible">Residential Address</button>
+                                    <div class="content"> 
+                                        <br>
+                                        <span id="userReview">Step 3</span> 
+                                        <br>
+                                        <br> 
+
+                                        <span id="userReviewAddress"></span>
+                                        <span id="userReviewAddressErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewUnitType"></span>
+                                        <span id="userReviewUnitTypeErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewUnitTypeNumber"></span>
+                                        <span id="userReviewUnitTypeNumberErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewCountrySelection"></span>
+                                        <span id="userReviewCountrySelectionErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewStateSelection"></span>
+                                        <span id="userReviewStateSelectionErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewCountySelection"></span>
+                                        <span id="userReviewCountySelectionErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewCitySelection"></span>
+                                        <span id="userReviewCitySelectionErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewZipSelection"></span>
+                                        <span id="userReviewZipSelectionErrorMessage"></span>
+                                        <br>
+
+                                        <span onclick="showTab(3)">                                    
+                                            <p id="reviewInstructionalGuide">Return to Step 3 - Residential Address</p>
+                                        </span>
+                                        <br>
+                                        <br>
+
+                                        <button id="step3_Button" type="submit">Review - Step 3</button>
+                                        <br>
+                                        <br>
+                                                                            
+                                        <hr id="redLines_HR">                                    
+                                        <br>
+
+                                    </div>
+
+                                    <button type="button" class="collapsible">State Id Card Information</button>
+                                    <div class="content"> 
+                                        <span id="userReview">Step 4</span> 
+                                        <br>
+                                        <br> 
+
+                                        <span id="userReviewIdType"></span>
+                                        <span id="userReviewIdTypeErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewIdTypeNumber"></span>
+                                        <span id="userReviewIdTypeNumberErrorMessage"></span>
+                                        <br>                                    
+
+                                        <span onclick="showTab(4)">                                    
+                                            <p id="reviewInstructionalGuide">Return to Step 4 - State Id Card Information</p>
+                                        </span>
+                                        <br>
+                                        <br>
+
+                                        <button id="step4_Button" type="submit">Review - Step 4</button>  
+                                        <br>
+                                        <br>
+
+                                        <hr id="redLines_HR">   
+
+                                    </div>
+                                        
+                                        
+                                    <button type="button" class="collapsible">Account Password</button>
+                                    <div class="content"> 
+                                        <span id="userReview">Step 5</span> 
+                                        <br>
+                                        <br> 
+
+                                        <span id="userReviewPassword"></span>                                   
+                                        <span id="userReviewPasswordErrorMessage"></span>
+                                        <br>
+                                        <span id="userReviewConfirmPassword"></span>                                    
+                                        <span id="userReviewConfirmPasswordErrorMessage"></span>
+                                        <br>                                    
+
+                                        <span onclick="showTab(5)">                                    
+                                            <p id="reviewInstructionalGuide">Return to Step 5 - Account Password</p>
+                                        </span>
+                                        <br>
+                                        <br>
+
+                                        <button id="step5_Button" type="submit">Review - Step 5</button>
+                                        <br>
+                                        <br>
+                                                                            
+                                        <hr id="redLines_HR">
+
+                                    </div>
+
+                                    <button type="button" class="collapsible">Terms and Privacy Policies</button>
+                                    <div class="content"> 
+
+                                        <span id="userReview">Step 6</span> 
+                                        <br>
+                                        <br> 
+                                    
+                                        <span id="userReviewPoliciesAgreements"></span>
+                                        <span id="userReviewPoliciesAgreementsErrorMessage"></span>
+
+                                        <span onclick="showTab(6)">                                    
+                                            <p id="reviewInstructionalGuide">Return to Step 6 - Terms and Privacy Policies</p>
+                                        </span>
+                                        <br>
+                                        <br>
+
+                                        <button id="step6_Button" type="submit">Review - Step 6</button>
+                                        <br>
+                                        <br>
+                                                                            
+                                        <hr id="redLines_HR"> 
+                                        
+                                    </div>
+                                        
+                                 
+
+                                
+
                                     <br>
-                                    <br> 
-
-                                    <span id="userReviewIdType"></span>
-                                    <span id="userReviewIdTypeErrorMessage"></span>
                                     <br>
-                                    <span id="userReviewIdTypeNumber"></span>
-                                    <span id="userReviewIdTypeNumberErrorMessage"></span>
-                                    <br>                                    
-
-                                    <span onclick="showTab(4)">                                    
-                                        <p id="reviewInstructionalGuide">Return to Step 4 - State Id Card Information</p>
-                                    </span>
-                                                                        
-                                    <hr id="redLines_HR">                                    
-
-                                    <span id="userReview">Step 5</span> 
-                                    <br>
-                                    <br> 
-
-                                    <span id="userReviewPassword"></span>                                   
-                                    <span id="userReviewPasswordErrorMessage"></span>
-                                    <br>
-                                    <span id="userReviewConfirmPassword"></span>                                    
-                                    <span id="userReviewConfirmPasswordErrorMessage"></span>
-                                    <br>                                    
-
-                                    <span onclick="showTab(5)">                                    
-                                        <p id="reviewInstructionalGuide">Return to Step 5 - Account Password</p>
-                                    </span>
-                                                                        
-                                    <hr id="redLines_HR">
-
-                                    <span id="userReview">Step 6</span> 
-                                    <br>
-                                    <br> 
-                                  
-                                    <span id="userReviewPoliciesAgreements"></span>
-                                    <span id="userReviewPoliciesAgreementsErrorMessage"></span>
-
-                                    <span onclick="showTab(6)">                                    
-                                        <p id="reviewInstructionalGuide">Return to Step 6 - Terms and Privacy Policies</p>
-                                    </span>
-                                                                        
-                                    <hr id="redLines_HR">                                    
-
-                                    <br>
-                                    <br>
-                                    <button id="submitReview" onclick="review(showTab(7))">Review My iVoteBallot Form</button>
+                                    <button id="submitReview" type="submit" onclick="review(showTab(7))">Review My iVoteBallot Form</button>
                                     <br>
                                     <br>
                                   
@@ -560,13 +636,6 @@
 			}
 
 
-
-
-
-
-
-
-
             function toggle_InputPasswordCheckBox() {
             const inputPassword = document.getElementById('password');
             const userShowHide = document.getElementById('showHide_01')
@@ -592,51 +661,68 @@
                     userShowHide.innerText = 'Show';
                 }
             }
+
+
+
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                content.style.display = "none";
+                } else {
+                content.style.display = "block";
+                }
+            });
+            }
             
 
 			const validateVoterSignUpForm = (e) => { 	
 				
-				const userRegistrationCode = document.getElementById('registrationCode').value;
+				const userRegistrationCode = document.getElementById('registrationCode').value.trim();
 							
-				const userFirstName = document.getElementById('firstName').value;				
+				const userFirstName = document.getElementById('firstName').value.trim();				
 				
-				const userMiddleName = document.getElementById('middleName').value;
+				const userMiddleName = document.getElementById('middleName').value.trim();
 			
-				const userLastName = document.getElementById('lastName').value;		
+				const userLastName = document.getElementById('lastName').value.trim();		
 
-				const userSuffix = document.getElementById('suffix').value;
+				const userSuffix = document.getElementById('suffix').value.trim();
 
-				const userEmail = document.getElementById('email').value;
+				const userEmail = document.getElementById('email').value.trim();
 
-				const userConfirmEmail = document.getElementById('confirmEmail').value;
+				const userConfirmEmail = document.getElementById('confirmEmail').value.trim();
 
-                const userPhoneNumber = document.getElementById('phoneNumber').value;
+                const userPhoneNumber = document.getElementById('phoneNumber').value.trim();
 
-				const userAddress = document.getElementById('address').value;
+				const userAddress = document.getElementById('address').value.trim();
 
-				const userUnitType = document.getElementById('unitType').value;
+				const userUnitType = document.getElementById('unitType').value.trim();
 
-                const userUnitTypeNumber = document.getElementById('unitTypeNumber').value;
+                const userUnitTypeNumber = document.getElementById('unitTypeNumber').value.trim();
 
-                const userCountrySelection = document.getElementById('countrySelect').value;
+                const userCountrySelection = document.getElementById('countrySelect').value.trim();
 
-                const userStateSelection = document.getElementById('stateSelect').value;
+                const userStateSelection = document.getElementById('stateSelect').value.trim();
 
-                const userCountySelection = document.getElementById('countySelect').value;
+                const userCountySelection = document.getElementById('countySelect').value.trim();
               
-                const userCitySelection = document.getElementById('citySelect').value;
+                const userCitySelection = document.getElementById('citySelect').value.trim();
 
-                const userZipSelection = document.getElementById('zipSelect').value;
+                const userZipSelection = document.getElementById('zipSelect').value.trim();
 
-                const userIdType = document.getElementById('idType').value;
+                const userIdType = document.getElementById('idType').value.trim();
 
-                const userIdTypeNumber = document.getElementById('idTypeNumber').value;
+                const userIdTypeNumber = document.getElementById('idTypeNumber').value.trim();
 
-                const userPassword = document.getElementById('password').value;
+                const userPassword = document.getElementById('password').value.trim();
 
-                const userConfirmPassword = document.getElementById('confirmPassword').value;	
+                const userConfirmPassword = document.getElementById('confirmPassword').value.trim();	
                 
-                const userPoliciesAgreements = document.getElementById('policiesAgreements').value;
+                const userPoliciesAgreements = document.getElementById('policiesAgreements').value.trim();
 				
 
 				const regExRegistrationCode = /\d{2}[A-Z]{1}\d{1}\-\d{1}[A-Z]{1}\d{1}\-[A-Z]{2}\-\d{3}[A-Z]{2}\d{6}\-\d{2}/;
@@ -953,8 +1039,9 @@
 			   				
 				e.preventDefault();  
 							
-					form.addEventListener('submit', validateVoterSignUpForm);
-					return true; 
+                form.addEventListener('submit', validateVoterSignUpForm);
+                return true; 
+                alert('form Submitted!');
 
 				} 
 
@@ -1773,44 +1860,11 @@
         
         }
 
-        function review() {
+        document.getElementById('step1_Button').addEventListener('click', function() {
+            const userRegistrationCode = document.getElementById('registrationCode').value.trim(); 
 
-            const userRegistrationCode = document.getElementById('registrationCode').value; 
-            const userFirstName = document.getElementById('firstName').value;
-            const userMiddleName = document.getElementById('middleName').value;	
-            const userLastName = document.getElementById('lastName').value;	
-            const userSuffix = document.getElementById('suffix').value;
-            const userEmail = document.getElementById('email').value;
-            const userConfirmEmail = document.getElementById('confirmEmail').value;
-            const userPhoneNumber = document.getElementById('phoneNumber').value;
-            const userAddress = document.getElementById('address').value;
-            const userUnitType = document.getElementById('unitType').value;
-            const userUnitTypeNumber = document.getElementById('unitTypeNumber').value;
-            const userCountrySelection = document.getElementById('countrySelect').value;
-            const userStateSelection = document.getElementById('stateSelect').value;
-            const userCountySelection = document.getElementById('countySelect').value;              
-            const userCitySelection = document.getElementById('citySelect').value;
-            const userZipSelection = document.getElementById('zipSelect').value;
-            const userIdType = document.getElementById('idType').value;
-            const userIdTypeNumber = document.getElementById('idTypeNumber').value;
-            const userPassword = document.getElementById('password').value;
-            const userConfirmPassword = document.getElementById('confirmPassword').value;
-            const userPoliciesAgreements = document.getElementById('policiesAgreements').value;
-
-                      
             const regExRegistrationCode = /\d{2}[A-Z]{1}\d{1}\-\d{1}[A-Z]{1}\d{1}\-[A-Z]{2}\-\d{3}[A-Z]{2}\d{6}\-\d{2}/;
-            //const regExAlphaNumeric = /^[0-9a-zA-Z]+$/;
-            const regExName = /^[A-Za-z\s]+$/;
-            const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;  
-            const regExPhoneNumber = /^\d{3}\-\d{3}\-\d{4}$/;    
-            const regExAddress = /^\d+\s[\d\w]+\s(.*)$/;
-            const regExUnitTypeNumber = /^[0-9a-zA-Z-]+$/;
-            const regExUnitIdTypeDetails = /^(House)$/;
-            const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
-            const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,32}$/;
-            const regExPoliciesAgreements = /^Yes\b$|^No\b$/;
-            
-            
+
             if (userRegistrationCode === '' || userRegistrationCode == null || !userRegistrationCode.match(regExRegistrationCode)) { 
                 document.getElementById('userReviewRegistrationCode').textContent = '1. Your IVoteBallot Identification code is: ' +  userRegistrationCode + '.';
                 document.getElementById('userReviewRegistrationCodeErrorMessage').textContent = 'Error Message:  Your voter registration code is a required input field or you have entered the correct alphanumeric characters into the required input field.';
@@ -1825,11 +1879,26 @@
             }	else {
                 document.getElementById('userReviewRegistrationCode').textContent = '1. Your IVoteBallot Identification code is: ' +  userRegistrationCode + '.';
             }
-            
-            
+
+        })
+
+
+        document.getElementById('step2_Button').addEventListener('click', function() {
+            const userFirstName = document.getElementById('firstName').value.trim();
+            const userMiddleName = document.getElementById('middleName').value.trim();	
+            const userLastName = document.getElementById('lastName').value.trim();	
+            const userSuffix = document.getElementById('suffix').value.trim();
+            const userEmail = document.getElementById('email').value.trim();
+            const userConfirmEmail = document.getElementById('confirmEmail').value.trim();
+            const userPhoneNumber = document.getElementById('phoneNumber').value.trim();
+
+            const regExName = /^[A-Za-z\s]+$/;
+            const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;  
+            const regExPhoneNumber = /^\d{3}\-\d{3}\-\d{4}$/;    
+
             if (userFirstName === '' || userFirstName == null || userFirstName.length <= 2 || !userFirstName.match(regExName))  { 
                 document.getElementById('userReviewFirstName').textContent = '2. Your First Name is: ' +  userFirstName + '.';     
-                document.getElementById('userReviewFirstNameErrorMessage').textContent = 'Your first name is a required input field or you must enter more than two characters into the first name required input field.';
+                document.getElementById('userReviewFirstNameErrorMessage').textContent = 'Error Message:  Your first name is a required input field or you must enter more than two characters into the first name required input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewFirstNameErrorMessage').textContent = '';
@@ -1838,13 +1907,13 @@
 
                 return false;				
 
-			} else {
+            } else {
                     document.getElementById('userReviewFirstName').textContent = '2. Your First Name is: ' +  userFirstName + '.';  
             }	
-            
+
             if (userMiddleName === '' || userMiddleName == null) {
                 document.getElementById('userReviewMiddleName').textContent = '3. Your Middle Name is: ' +  userMiddleName + '.';
-                document.getElementById('userReviewMiddleNameErrorMessage').textContent = 'Do you have a middle name? If so, please type in your middle name into the input field or skip the middle name input field.';
+                document.getElementById('userReviewMiddleNameErrorMessage').textContent = 'Error Message:  Do you have a middle name? If so, please type in your middle name into the input field or skip the middle name input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewMiddleNameErrorMessage').textContent = '';
@@ -1853,22 +1922,22 @@
                                     
             } else if (userMiddleName.length <= 2 || !userMiddleName.match(regExName)) {                    
                 document.getElementById('userReviewMiddleName').textContent = '3. Your Middle Name is: ' +  userMiddleName + '.';
-                document.getElementById('userReviewMiddleNameErrorMessage').textContent = 'Your middle name is an optional input field; however, you must enter more than two characters into the middle name required input field.';
+                document.getElementById('userReviewMiddleNameErrorMessage').textContent = 'Error Message:  Your middle name is an optional input field; however, you must enter more than two characters into the middle name required input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewMiddleNameErrorMessage').textContent = '';
                 },
                 9000)
-            
+
                 return false;  
- 
+
             } else {
                 document.getElementById('userReviewMiddleName').textContent = '3. Your Middle Name is: ' +  userMiddleName + '.';
             }  
-            
+
             if (userLastName === '' || userLastName == null || userLastName.length <= 2 || !userLastName.match(regExName)) {
                 document.getElementById('userReviewLastName').textContent = '4. Your Last Name is: ' +  userLastName + '.';
-                document.getElementById('userReviewLastNameErrorMessage').textContent = 'Your last name is a required input field or you must enter more than two characters into the last name required input field.';
+                document.getElementById('userReviewLastNameErrorMessage').textContent = 'Error Message:  Your last name is a required input field or you must enter more than two characters into the last name required input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewLastNameErrorMessage').textContent = '';
@@ -1883,7 +1952,7 @@
 
             if (userSuffix === '' || userSuffix == null) {
                 document.getElementById('userReviewSuffix').textContent = '5. Your selected Suffix is: ' +  userSuffix + '.';
-                document.getElementById('userReviewSuffixErrorMessage').textContent = 'Do you have a sufix name? If so, please type in your suffix name into the input field or skip the suffix name input field.';
+                document.getElementById('userReviewSuffixErrorMessage').textContent = 'Error Message:  Do you have a sufix name? If so, please type in your suffix name into the input field or skip the suffix name input field.';
 
                 setTimeout(function() {                    
                     document.getElementById('userReviewSuffixErrorMessage').textContent = '';
@@ -1892,13 +1961,13 @@
                                     
             } else if (userSuffix.length <= 0 || !userSuffix.match(regExName)) {
                 document.getElementById('userReviewSuffix').textContent = '5. Your selected Suffix is: ' +  userSuffix + '.';
-                document.getElementById('userReviewSuffixErrorMessage').textContent = 'Your suffix name is an optional input field; however, you must enter more than one characters into the suffix name required input field.';
+                document.getElementById('userReviewSuffixErrorMessage').textContent = 'Error Message:  Your suffix name is an optional input field; however, you must enter more than one characters into the suffix name required input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewSuffixErrorMessage').textContent = '';
                 },
                 9000)
-            
+
                 return false;  
 
             } else {
@@ -1907,7 +1976,7 @@
 
             if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
                 document.getElementById('userReviewEmail').textContent = '6. Your Email Addresss is: ' +  userEmail + '.'; 
-                document.getElementById('userReviewEmailErrorMessage').textContent = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
+                document.getElementById('userReviewEmailErrorMessage').textContent = 'Error Message:  Your email address is a required input field and you must enter the correct email address format into the require input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewEmailErrorMessage').textContent = '';
@@ -1922,7 +1991,7 @@
 
             if (userConfirmEmail === '' || userConfirmEmail == null || userConfirmEmail.length <= 6 || !userConfirmEmail.match(regExEmail)) {
                 document.getElementById('userReviewConfirmEmail').textContent = '7. Your Confirm Email Addresss is: ' +  userConfirmEmail + '.';
-                document.getElementById('userReviewConfirmEmailErrorMessage').textContent = 'Your confirm email address is a required input field and you must enter the correct confirm email address format into the require input field.';
+                document.getElementById('userReviewConfirmEmailErrorMessage').textContent = 'Error Message:  Your confirm email address is a required input field and you must enter the correct confirm email address format into the require input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewConfirmEmailErrorMessage').textContent = '';
@@ -1934,10 +2003,10 @@
             } else {
                 document.getElementById('userReviewConfirmEmail').textContent = '7. Your Confirm Email Addresss is: ' +  userConfirmEmail + '.';
             }
-            
+
             if (userEmail != userConfirmEmail) {
                 document.getElementById('userReviewConfirmEmail').textContent = '7. Your Confirm Email Addresss is: ' +  userConfirmEmail + '.';
-                document.getElementById('userReviewConfirmEmailErrorMessage').textContent = 'Your email address does not match to your confirm email address which are required input fields.';
+                document.getElementById('userReviewConfirmEmailErrorMessage').textContent = 'Error Message:  Your email address does not match to your confirm email address which are required input fields.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewConfirmEmailErrorMessage').textContent = '';
@@ -1952,7 +2021,7 @@
 
             if (userPhoneNumber === '' || userPhoneNumber == null || userPhoneNumber.length <= 10 || !userPhoneNumber.match(regExPhoneNumber))  {
                 document.getElementById('userReviewPhoneNumber').textContent = '8. Your Phone Number is: ' +  userPhoneNumber + '.';
-                document.getElementById('userReviewPhoneNumberErrorMessage').textContent = 'Your phone number is a required input field or you must enter exactly twelve number digits into the phone number required input field.';
+                document.getElementById('userReviewPhoneNumberErrorMessage').textContent = 'Error Message:  Your phone number is a required input field or you must enter exactly twelve number digits into the phone number required input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewPhoneNumberErrorMessage').textContent = '';
@@ -1965,9 +2034,26 @@
                 document.getElementById('userReviewPhoneNumber').textContent = '8. Your Phone Number is: ' +  userPhoneNumber + '.';
             }	
 
+        })
+
+        document.getElementById('step3_Button').addEventListener('click', function() {
+
+            const userAddress = document.getElementById('address').value.trim();
+            const userUnitType = document.getElementById('unitType').value.trim();
+            const userUnitTypeNumber = document.getElementById('unitTypeNumber').value.trim();
+            const userCountrySelection = document.getElementById('countrySelect').value.trim();
+            const userStateSelection = document.getElementById('stateSelect').value.trim();
+            const userCountySelection = document.getElementById('countySelect').value.trim();              
+            const userCitySelection = document.getElementById('citySelect').value.trim();
+            const userZipSelection = document.getElementById('zipSelect').value.trim();
+
+            const regExAddress = /^\d+\s[\d\w]+\s(.*)$/;
+            const regExUnitTypeNumber = /^[0-9a-zA-Z-]+$/;
+            const regExUnitIdTypeDetails = /^(House)$/;
+
             if (userAddress === '' || userAddress == null || userAddress.length <= 6 || !userAddress.match(regExAddress))  { 
                 document.getElementById('userReviewAddress').textContent = '9. Your Residential Address is: ' +  userAddress + '.';
-                document.getElementById('userReviewAddressErrorMessage').textContent = 'Your street address is a required field and you must enter your correct street address format into the require input field.';
+                document.getElementById('userReviewAddressErrorMessage').textContent = 'Error Message:  Your street address is a required field and you must enter your correct street address format into the require input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewAddressErrorMessage').textContent = '';
@@ -1982,13 +2068,13 @@
 
             if (userUnitType === '' || userUnitType == null) {
                 document.getElementById('userReviewUnitType').textContent = '10. Your Residential Unit Type is: ' +  userUnitType + '.';
-                document.getElementById('userReviewUnitTypeErrorMessage').textContent = 'Select your residential unit type you live in, and your residential unit type is a require field.';
+                document.getElementById('userReviewUnitTypeErrorMessage').textContent = 'Error Message:  Select your residential unit type you live in, and your residential unit type is a require field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewUnitTypeErrorMessage').textContent = '';
                 },
                 9000)   
-            
+
                 return false;  
 
             } else {
@@ -1997,7 +2083,7 @@
 
             if (userUnitTypeNumber === '' || userUnitTypeNumber == null || userUnitTypeNumber.match(regExUnitTypeNumber))  {  
                 document.getElementById('userReviewUnitTypeNumber').textContent = '11. Your Residential Unit Type Number is: ' +  userUnitTypeNumber + '.';                                      
-                document.getElementById('userReviewUnitTypeNumberErrorMessage').textContent =  'Your address unit type number is a required field and you must enter the correct address unit number type into the required field or your address unit type number for your House is not a required field.';
+                document.getElementById('userReviewUnitTypeNumberErrorMessage').textContent =  'Error Message:  Your address unit type number is a required field and you must enter the correct address unit number type into the required field or your address unit type number for your House is not a required field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewUnitTypeNumberErrorMessage').textContent = '';
@@ -2006,7 +2092,7 @@
 
             } else if (!userUnitTypeNumber.match(regExUnitIdTypeDetails)) {
                 document.getElementById('userReviewUnitTypeNumber').textContent = '11. Your Residential Unit Type Number is: ' +  userUnitTypeNumber + '.';
-                document.getElementById('userUnitTypeNumberErrorMessage').textContent = 'Your address unit type number is a required field and you must enter the correct address unit number type into the required field or your address unit type number for your House is not a required field.';
+                document.getElementById('userUnitTypeNumberErrorMessage').textContent = 'Error Message:  Your address unit type number is a required field unless you own your home or other residential property which does not have an address unit type number.';
 
                 setTimeout(function() {
                     document.getElementById('userUnitTypeNumberErrorMessage').textContent = '';
@@ -2015,16 +2101,16 @@
 
                 return false;
             }
-            
+
             if (userCountrySelection === '' || userCountrySelection == null) {
                 document.getElementById('userReviewCountrySelection').textContent = '12. Your selected Country is: ' +  userCountrySelection + '.';
-                document.getElementById('userReviewCountrySelectionErrorMessage').textContent = 'Your country is a required select option field and you must select your correct country from the option require field.';
+                document.getElementById('userReviewCountrySelectionErrorMessage').textContent = 'Error Message:  Your country is a required select option field and you must select your correct country from the option require field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewCountrySelectionErrorMessage').textContent = '';
                 },
                 9000)    	
-            
+
                 return false;  
 
             } else {
@@ -2033,13 +2119,13 @@
 
             if (userStateSelection === '' || userStateSelection == null) {
                 document.getElementById('userReviewStateSelection').textContent = '13. Your selected State is: ' +  userStateSelection + '.';
-                document.getElementById('userReviewStateSelectionErrorMessage').textContent = 'Your state is a required select option field and you must select your correct state from the option require field.';
+                document.getElementById('userReviewStateSelectionErrorMessage').textContent = 'Error Message:  Your state is a required select option field and you must select your correct state from the option require field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewStateSelectionErrorMessage').textContent = '';
                 },
                 9000)    	
-            
+
                 return false;  
 
             } else {
@@ -2048,13 +2134,13 @@
 
             if (userCountySelection === '' || userCountySelection == null) {
                 document.getElementById('userReviewCountySelection').textContent = '14. Your selected County is: ' +  userCountySelection + '.';
-                document.getElementById('userReviewCountySelectionErrorMessage').textContent = 'Your county is a required select option field and you must select your correct county from the option require field.';
+                document.getElementById('userReviewCountySelectionErrorMessage').textContent = 'Error Message:  Your county is a required select option field and you must select your correct county from the option require field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewCountySelectionErrorMessage').textContent = '';
                 },
                 9000)    	
-            
+
                 return false;  
 
             } else {
@@ -2063,13 +2149,13 @@
 
             if (userCitySelection === '' || userCitySelection == null) {
                 document.getElementById('userReviewCitySelection').textContent = '15. Your selected City is: ' +  userCitySelection + '.';
-                document.getElementById('userReviewCitySelectionErrorMessage').textContent = 'Your city is a required select option field and you must select your correct city from the option require field.';
+                document.getElementById('userReviewCitySelectionErrorMessage').textContent = 'Error Message:  Your city is a required select option field and you must select your correct city from the option require field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewCitySelectionErrorMessage').textContent = '';
                 },
                 9000)    	
-            
+
                 return false;  
 
             } else {
@@ -2078,28 +2164,36 @@
 
             if (userZipSelection === '' || userZipSelection == null) {
                 document.getElementById('userReviewZipSelection').textContent = '16. Your selected Zip Code is: ' +  userZipSelection + '.';
-                document.getElementById('userReviewZipSelectionErrorMessage').textContent = 'Your zip code area is a required select option field and you must select your correct zip code area from the option require field.';
+                document.getElementById('userReviewZipSelectionErrorMessage').textContent = 'Error Message:  Your zip code area is a required select option field and you must select your correct zip code area from the option require field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewZipSelectionErrorMessage').textContent = '';
                 },
                 9000)    	
-            
+
                 return false;  
 
             } else {
                 document.getElementById('userReviewZipSelection').textContent = '16. Your selected Zip Code is: ' +  userZipSelection + '.';
             }
 
+        })
+
+        document.getElementById('step4_Button').addEventListener('click', function() {
+            const userIdType = document.getElementById('idType').value.trim();
+            const userIdTypeNumber = document.getElementById('idTypeNumber').value.trim();
+
+            const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
+
             if (userIdType === '' || userIdType == null) {
                 document.getElementById('userReviewIdType').textContent = '17. Your selected Identification card type is: ' +  userIdType + '.';
-                document.getElementById('userReviewIdTypeErrorMessage').textContent = 'Your Alabama\s identification card type is a required select option field and you must select your correct Alabama\s identification card type from the option require field.';
+                document.getElementById('userReviewIdTypeErrorMessage').textContent = 'Error Message:  Your Alabama\s identification card type is a required select option field and you must select your correct Alabama\s identification card type from the option require field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewIdTypeErrorMessage').textContent = '';
                 },
                 9000)    	
-            
+
                 return false;  
 
             } else {
@@ -2108,7 +2202,7 @@
 
             if (userIdTypeNumber === '' || userIdTypeNumber == null || !userIdTypeNumber.match(regExAlabamaId))  {   
                 document.getElementById('userReviewIdTypeNumber').textContent = '18. Your selected Identification card number is: ' +  userIdTypeNumber + '.';                        
-                document.getElementById('userReviewIdTypeNumberErrorMessage').textContent =  'Your Alabama numeric identification card characters are a required field or you must enter the correct Alabama numeric identification card characters from your Alabama/s identification card into the required field.';
+                document.getElementById('userReviewIdTypeNumberErrorMessage').textContent =  'Error Message:  Your Alabama numeric identification card characters are a required field or you must enter the correct Alabama numeric identification card characters from your Alabama/s identification card into the required field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewIdTypeNumberErrorMessage').textContent = '';
@@ -2121,16 +2215,24 @@
                 document.getElementById('userReviewIdTypeNumber').textContent = '18. Your selected Identification card number is: ' +  userIdTypeNumber + '.';
             }	
 
+        })
+
+        document.getElementById('step5_Button').addEventListener('click', function() {
+            const userPassword = document.getElementById('password').value.trim();
+            const userConfirmPassword = document.getElementById('confirmPassword').value.trim();
+
+            const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,32}$/;
+
             if (userPassword === '' || userPassword == null || userPassword.length <= 7 || !userPassword.match(regExPassword)) {
                 document.getElementById('userReviewPassword').textContent = '19. Your password is: ' + userPassword + '.';
-				document.getElementById('userReviewPasswordErrorMessage').textContent = 'Your password is a required input field and you must enter the correct password format into the require input field.';
+                document.getElementById('userReviewPasswordErrorMessage').textContent = 'Error Message:  Your password is a required input field and you must enter the correct password format into the require input field.';
 
-				setTimeout(function() {
-					document.getElementById('userReviewPasswordErrorMessage').textContent = '';
-				},
-				9000)
+                setTimeout(function() {
+                    document.getElementById('userReviewPasswordErrorMessage').textContent = '';
+                },
+                9000)
 
-				return false;
+                return false;
 
             } else {
                 document.getElementById('userReviewPassword').textContent = '19. Your password is: ' + userPassword.replace(/./g, '*') + '.';
@@ -2139,7 +2241,7 @@
 
             if (userConfirmPassword === '' || userConfirmPassword == null || userConfirmPassword.length <= 7 || !userConfirmPassword.match(regExPassword)) {
                 document.getElementById('userReviewConfirmPassword').textContent = '20. Your confirm password is: ' + userConfirmPassword + '.';
-                document.getElementById('userReviewConfirmPasswordErrorMessage').textContent = 'Your confirm password is a required input field and you must enter the correct confirm password format into the require input field.';
+                document.getElementById('userReviewConfirmPasswordErrorMessage').textContent = 'Error Message:  Your confirm password is a required input field and you must enter the correct confirm password format into the require input field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewConfirmPasswordErrorMessage').textContent = '';
@@ -2153,7 +2255,7 @@
             }
 
             if (userPassword != userConfirmPassword) {
-                document.getElementById('userConfirmPasswordErrorMessage').textContent = 'Your password does not match to your confirm password which are required input fields.';
+                document.getElementById('userConfirmPasswordErrorMessage').textContent = 'Error Message:  Your password does not match to your confirm password which are required input fields.';
 
                 setTimeout(function() {
                     document.getElementById('userConfirmPasswordErrorMessage').textContent = '';
@@ -2164,9 +2266,19 @@
 
             }
 
+
+
+        })
+
+        document.getElementById('step6_Button').addEventListener('click', function() {
+            const userPoliciesAgreements = document.getElementById('policiesAgreements').value.trim();
+
+            const regExPoliciesAgreements = /^Yes\b$|^No\b$/;
+
+
             if (userPoliciesAgreements === '' || userPoliciesAgreements == null || !userPoliciesAgreements.match(regExPoliciesAgreements))  {        
                 document.getElementById('userReviewPoliciesAgreements').textContent = '21. Your answer is: ' +  userPoliciesAgreements + ' to the iVoteBallot policies agreements.';
-                document.getElementById('userReviewPoliciesAgreementsErrorMessage').textContent =  'You must either type in "Yes", if you agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements or "No", if you do not agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements into the required field.';
+                document.getElementById('userReviewPoliciesAgreementsErrorMessage').textContent =  'Error Message:  You must either type in "Yes", if you agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements or "No", if you do not agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements into the required field.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewPoliciesAgreementsErrorMessage').textContent = '';
@@ -2177,18 +2289,10 @@
 
             } else {
                 document.getElementById('userReviewPoliciesAgreements').textContent = '21. Your answer is: ' +  userPoliciesAgreements + ' to the iVoteBallot policies agreements.';
-            }	         
+            }	        
 
-        }
+        })
 
-
-        
-       
-
-				
-			   
-
-			
 
 
 		</script>
