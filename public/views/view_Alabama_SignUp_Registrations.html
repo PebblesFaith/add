@@ -24,7 +24,7 @@
 			<ul id="navigational_Bar_01">
 				<li><a href="../views/view_AboutUs.html">About Us</a></li>
 				<li><a href="../views/view_Alabama_SignUp_Registrations.html">Alabama Online Sign Up</a></li>				
-				<li><a href="">Log In</a></li>			
+				<li><a href="../views/view_Alabama_Login_Voters.html">Log In</a></li>			
 			</ul>
 		</div>
 
@@ -65,10 +65,6 @@
 						<form id="form_Voter_SignUp" name="voterSignUpForm" onsubmit="return validateVoterSignUpForm()" action="/alabamasignup" method="POST" > 
 							<h1>Alabama's iVoteBallot Form</h1>
 
-
-
-                           
-
 							<div class="tabs-container">
 								<div class="tabs">
 								<button class="tab-button" onclick="showTab(1)">iVoteBallot Id Card                                    
@@ -105,7 +101,10 @@
 									<input id="registrationCode" type="text" name="userRegistrationCode" maxlength="26" />
 									<br>
 									<span id="userRegistrationCodeErrorMessage"></span>
-									<br>			
+									<br>
+                                    <br>
+                                    <button id="step01_Button" type="submit">Review - This Section for Error Message[s]</button>
+                                
 								</div>
 								<div class="tab-panel" id="tab-2">
 									<p>Contact Information</p>
@@ -160,8 +159,10 @@
 									<br>
 									<input id="phoneNumber" type="text" name="userPhoneNumber" maxlength="15">
 									<br>
-									<span id="userPhoneNumberErrorMessage"></span>
-									<br>										
+									<span id="userPhoneNumberErrorMessage"></span>								
+                                    <br>
+                                    <br>
+                                    <button id="step02_Button" type="submit">Review - This Section for Error Message[s]</button>							
 
 								</div>	
 								
@@ -246,8 +247,10 @@
                                         <option value="" selected="selected">Select Zip</option>
                                     </select>
                                     <br>
-                                    <span id="userZipSelectionErrorMessage"></span>
-                                    <br>                    
+                                    <span id="userZipSelectionErrorMessage"></span>                                  
+                                    <br>
+                                    <br>
+                                    <button id="step03_Button" type="submit">Review - This Section for Error Message[s]</button>          
 
 								</div>	
 
@@ -274,6 +277,8 @@
                                     <br>
                                     <span id="userIdTypeNumberErrorMessage"></span>                             
                                     <br>
+                                    <br>
+                                    <button id="step04_Button" type="submit">Review - This Section for Error Message[s]</button>  
 
                                 </div>
 
@@ -293,7 +298,10 @@
                                     <a href="#" id="showHide_02" onclick="toggle_InputConfirmPasswordCheckBox()">Show</a>
                                     <br>
                                     <span id = "userConfirmPasswordErrorMessage"></span>	
-                                    <br>					
+                                    <br>
+                                    <br>
+                                    <button id="step05_Button" type="submit">Review - This Section for Error Message[s]</button> 
+
 
                                 </div>
 
@@ -325,7 +333,10 @@
 									<input id="policiesAgreements" type="text" name="userPoliciesAgreements" maxlength="10">
 									<br>
 									<span id="userPoliciesAgreementsErrorMessage"></span>
-									<br>	
+									<br>
+                                    <br>
+                                    <button id="step06_Button" type="submit">Review - This Section for Error Message[s]</button> 	
+
 
                                 </div>
 
@@ -355,7 +366,6 @@
                                         <button id="step1_Button" type="submit">Review - Step 1</button>
                                         <br>
                                         <br>
-
 
                                         <hr id="redLines_HR">
                                       
@@ -477,8 +487,7 @@
 
                                         <hr id="redLines_HR">   
 
-                                    </div>
-                                        
+                                    </div>                                        
                                         
                                     <button type="button" class="collapsible">Account Password</button>
                                     <div class="content"> 
@@ -529,18 +538,10 @@
                                                                             
                                         <hr id="redLines_HR"> 
                                         
-                                    </div>
-                                        
-                                 
-
-                                
-
+                                    </div>            
+                                   
                                     <br>
                                     <br>
-                                    <button id="submitReview" type="submit" onclick="review(showTab(7))">Review My iVoteBallot Form</button>
-                                    <br>
-                                    <br>
-                                  
 
                                     <input id="submitButton" type="submit" value="SUBMIT">
 							        <br> 
@@ -680,65 +681,18 @@
             }
             
 
-			const validateVoterSignUpForm = (e) => { 	
-				
-				const userRegistrationCode = document.getElementById('registrationCode').value.trim();
-							
-				const userFirstName = document.getElementById('firstName').value.trim();				
-				
-				const userMiddleName = document.getElementById('middleName').value.trim();
-			
-				const userLastName = document.getElementById('lastName').value.trim();		
+           
 
-				const userSuffix = document.getElementById('suffix').value.trim();
 
-				const userEmail = document.getElementById('email').value.trim();
 
-				const userConfirmEmail = document.getElementById('confirmEmail').value.trim();
-
-                const userPhoneNumber = document.getElementById('phoneNumber').value.trim();
-
-				const userAddress = document.getElementById('address').value.trim();
-
-				const userUnitType = document.getElementById('unitType').value.trim();
-
-                const userUnitTypeNumber = document.getElementById('unitTypeNumber').value.trim();
-
-                const userCountrySelection = document.getElementById('countrySelect').value.trim();
-
-                const userStateSelection = document.getElementById('stateSelect').value.trim();
-
-                const userCountySelection = document.getElementById('countySelect').value.trim();
-              
-                const userCitySelection = document.getElementById('citySelect').value.trim();
-
-                const userZipSelection = document.getElementById('zipSelect').value.trim();
-
-                const userIdType = document.getElementById('idType').value.trim();
-
-                const userIdTypeNumber = document.getElementById('idTypeNumber').value.trim();
-
-                const userPassword = document.getElementById('password').value.trim();
-
-                const userConfirmPassword = document.getElementById('confirmPassword').value.trim();	
+			const validateVoterSignUpForm = (e) => { 
                 
-                const userPoliciesAgreements = document.getElementById('policiesAgreements').value.trim();
-				
+                   
+				    const userRegistrationCode = document.getElementById('registrationCode').value.trim();
 
-				const regExRegistrationCode = /\d{2}[A-Z]{1}\d{1}\-\d{1}[A-Z]{1}\d{1}\-[A-Z]{2}\-\d{3}[A-Z]{2}\d{6}\-\d{2}/;
-				const regExAlphaNumeric = /^[0-9a-zA-Z]+$/;
-				const regExName = /^[A-Za-z\s]+$/;
-				const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;  
-                const regExPhoneNumber = /^\d{3}\-\d{3}\-\d{4}$/;    
-				const regExAddress = /^\d+\s[\d\w]+\s(.*)$/;
-                const regExUnitTypeNumber = /^[0-9a-zA-Z-]+$/;
-                const regExUnitIdTypeDetails = /^(House)$/;
-                const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
-                const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,32}$/;
-                const regExPoliciesAgreements = /^Yes\b$|^No\b$/;
-				
-				
-				if (userRegistrationCode === '' || userRegistrationCode == null || !userRegistrationCode.match(regExRegistrationCode)) {                                                               
+                    const regExRegistrationCode = /\d{2}[A-Z]{1}\d{1}\-\d{1}[A-Z]{1}\d{1}\-[A-Z]{2}\-\d{3}[A-Z]{2}\d{6}\-\d{2}/;
+
+                    if (userRegistrationCode === '' || userRegistrationCode == null || !userRegistrationCode.match(regExRegistrationCode)) {                                                               
 					document.getElementById('userRegistrationCodeErrorMessage').textContent = 'Your voter registration code is a required input field or you have entered the correct alphanumeric characters into the required input field.';
 
 					setTimeout(function() {
@@ -748,9 +702,27 @@
 
 					return false;					
 										
-				}		
+				    } 
+
+                    const userFirstName = document.getElementById('firstName').value.trim();				
 				
-				if (userFirstName === '' || userFirstName == null || userFirstName.length <= 2 || !userFirstName.match(regExName))  {                                                               
+                    const userMiddleName = document.getElementById('middleName').value.trim();
+                
+                    const userLastName = document.getElementById('lastName').value.trim();		
+
+                    const userSuffix = document.getElementById('suffix').value.trim();
+
+                    const userEmail = document.getElementById('email').value.trim();
+
+                    const userConfirmEmail = document.getElementById('confirmEmail').value.trim();
+
+                    const userPhoneNumber = document.getElementById('phoneNumber').value.trim();
+
+                    const regExName = /^[A-Za-z\s]+$/;
+                    const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;  
+                    const regExPhoneNumber = /^\d{3}\-\d{3}\-\d{4}$/;   
+                    
+                    if (userFirstName === '' || userFirstName == null || userFirstName.length <= 2 || !userFirstName.match(regExName))  {                                                               
 					document.getElementById('userFirstNameErrorMessage').textContent = 'Your first name is a required input field or you must enter more than two characters into the first name required input field.';
 
 					setTimeout(function() {
@@ -760,212 +732,249 @@
 
 					return false;				
 
-				}									
-								
-				if (userMiddleName === '' || userMiddleName == null) {
-					document.getElementById('userMiddleNameErrorMessage').textContent = 'Do you have a middle name? If so, please type in your middle name into the input field or skip the middle name input field.';
+                    }									
+                                    
+                    if (userMiddleName === '' || userMiddleName == null) {
+                        document.getElementById('userMiddleNameErrorMessage').textContent = 'Do you have a middle name? If so, please type in your middle name into the input field or skip the middle name input field.';
 
-					setTimeout(function() {
-						document.getElementById('userMiddleNameErrorMessage').textContent = '';
-					},
-					9000)                                           
-										
-					} else if (userMiddleName.length <= 2 || !userMiddleName.match(regExName)) {
-					document.getElementById('userMiddleNameErrorMessage').textContent = 'Your middle name is an optional input field; however, you must enter more than two characters into the middle name required input field.';
+                        setTimeout(function() {
+                            document.getElementById('userMiddleNameErrorMessage').textContent = '';
+                        },
+                        9000)                                           
+                                            
+                        } else if (userMiddleName.length <= 2 || !userMiddleName.match(regExName)) {
+                        document.getElementById('userMiddleNameErrorMessage').textContent = 'Your middle name is an optional input field; however, you must enter more than two characters into the middle name required input field.';
 
-					setTimeout(function() {
-						document.getElementById('userMiddleNameErrorMessage').textContent = '';
-					},
-					9000)
-				
-					return false;  
+                        setTimeout(function() {
+                            document.getElementById('userMiddleNameErrorMessage').textContent = '';
+                        },
+                        9000)
+                    
+                        return false;  
 
-				}                                  
+                    }                                  
 
-				if (userLastName === '' || userLastName == null || userLastName.length <= 2 || !userLastName.match(regExName)) {
-					document.getElementById('userLastNameErrorMessage').textContent = 'Your last name is a required input field or you must enter more than two characters into the last name required input field.';
+                    if (userLastName === '' || userLastName == null || userLastName.length <= 2 || !userLastName.match(regExName)) {
+                        document.getElementById('userLastNameErrorMessage').textContent = 'Your last name is a required input field or you must enter more than two characters into the last name required input field.';
 
-					setTimeout(function() {
-						document.getElementById('userLastNameErrorMessage').textContent = '';
-					},
-					9000)
+                        setTimeout(function() {
+                            document.getElementById('userLastNameErrorMessage').textContent = '';
+                        },
+                        9000)
 
-					return false;
+                        return false;
 
-				}
+                    }
 
-				if (userSuffix === '' || userSuffix == null) {
-					document.getElementById('userSuffixErrorMessage').textContent = 'Do you have a sufix name? If so, please type in your suffix name into the input field or skip the suffix name input field.';
+                    if (userSuffix === '' || userSuffix == null) {
+                        document.getElementById('userSuffixErrorMessage').textContent = 'Do you have a sufix name? If so, please type in your suffix name into the input field or skip the suffix name input field.';
 
-					setTimeout(function() {
-						document.getElementById('userSuffixErrorMessage').textContent = '';
-					},
-					9000)                                           
-										
-					} else if (userSuffix.length <= 0 || !userSuffix.match(regExName)) {
-					document.getElementById('userSuffixErrorMessage').textContent = 'Your suffix name is an optional input field; however, you must enter more than one characters into the suffix name required input field.';
+                        setTimeout(function() {
+                            document.getElementById('userSuffixErrorMessage').textContent = '';
+                        },
+                        9000)                                           
+                                            
+                        } else if (userSuffix.length <= 0 || !userSuffix.match(regExName)) {
+                        document.getElementById('userSuffixErrorMessage').textContent = 'Your suffix name is an optional input field; however, you must enter more than one characters into the suffix name required input field.';
 
-					setTimeout(function() {
-						document.getElementById('userSuffixErrorMessage').textContent = '';
-					},
-					9000)
-				
-					return false;  
+                        setTimeout(function() {
+                            document.getElementById('userSuffixErrorMessage').textContent = '';
+                        },
+                        9000)
+                    
+                        return false;  
 
-				}
-				
-				if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
-                    document.getElementById('userEmailErrorMessage').textContent = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
+                    }
+                    
+                    if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
+                        document.getElementById('userEmailErrorMessage').textContent = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
 
-                    setTimeout(function() {
-                        document.getElementById('userEmailErrorMessage').textContent = '';
-                    },
-                    9000)
+                        setTimeout(function() {
+                            document.getElementById('userEmailErrorMessage').textContent = '';
+                        },
+                        9000)
 
-                    return false;
+                        return false;
 
-                }
+                    }
 
-                if (userConfirmEmail === '' || userConfirmEmail == null || userConfirmEmail.length <= 6 || !userConfirmEmail.match(regExEmail)) {
-                    document.getElementById('userConfirmEmailErrorMessage').textContent = 'Your confirm email address is a required input field and you must enter the correct confirm email address format into the require input field.';
+                    if (userConfirmEmail === '' || userConfirmEmail == null || userConfirmEmail.length <= 6 || !userConfirmEmail.match(regExEmail)) {
+                        document.getElementById('userConfirmEmailErrorMessage').textContent = 'Your confirm email address is a required input field and you must enter the correct confirm email address format into the require input field.';
 
-                    setTimeout(function() {
-                        document.getElementById('userConfirmEmailErrorMessage').textContent = '';
-                    },
-                    9000)
+                        setTimeout(function() {
+                            document.getElementById('userConfirmEmailErrorMessage').textContent = '';
+                        },
+                        9000)
 
-                    return false;
+                        return false;
 
-                }
-                
-                if (userEmail != userConfirmEmail) {
-                    document.getElementById('userConfirmEmailErrorMessage').textContent = 'Your email address does not match to your confirm email address which are required input fields.';
+                    }
+                    
+                    if (userEmail != userConfirmEmail) {
+                        document.getElementById('userConfirmEmailErrorMessage').textContent = 'Your email address does not match to your confirm email address which are required input fields.';
 
-                    setTimeout(function() {
-                        document.getElementById('userConfirmEmailErrorMessage').textContent = '';
-                    },
-                    9000)
+                        setTimeout(function() {
+                            document.getElementById('userConfirmEmailErrorMessage').textContent = '';
+                        },
+                        9000)
 
-                    return false;
+                        return false;
 
-                }
+                    }
 
-                if (userPhoneNumber === '' || userPhoneNumber == null || userPhoneNumber.length <= 10 || !userPhoneNumber.match(regExPhoneNumber))  {                                                               
-					document.getElementById('userPhoneNumberErrorMessage').textContent = 'Your phone number is a required input field or you must enter exactly twelve number digits into the phone number required input field.';
+                    if (userPhoneNumber === '' || userPhoneNumber == null || userPhoneNumber.length <= 10 || !userPhoneNumber.match(regExPhoneNumber))  {                                                               
+                        document.getElementById('userPhoneNumberErrorMessage').textContent = 'Your phone number is a required input field or you must enter exactly twelve number digits into the phone number required input field.';
 
-					setTimeout(function() {
-						document.getElementById('userPhoneNumberErrorMessage').textContent = '';
-					},
-					9000)
+                        setTimeout(function() {
+                            document.getElementById('userPhoneNumberErrorMessage').textContent = '';
+                        },
+                        9000)
 
-					return false;				
+                        return false;				
 
-				}			
-
-				if (userAddress === '' || userAddress == null || userAddress.length <= 6 || !userAddress.match(regExAddress))  {                                                               
-					document.getElementById('userAddressErrorMessage').textContent = 'Your street address is a required field and you must enter your correct street address format into the require input field.';
-
-					setTimeout(function() {
-						document.getElementById('userAddressErrorMessage').textContent = '';
-					},
-					9000)
-
-					return false;				
-
-				}	
-				
-				if (userUnitType === '' || userUnitType == null) {
-					document.getElementById('userUnitTypeErrorMessage').textContent = 'Select your residential unit type you live in, and your residential unit type is a require field.';
-
-					setTimeout(function() {
-						document.getElementById('userUnitTypeErrorMessage').textContent = '';
-					},
-					9000)   
-				
-					return false;  
-
-				}
+                    }	
                
-                if (userUnitTypeNumber === '' || userUnitTypeNumber == null || userUnitTypeNumber.match(regExUnitTypeNumber))  {                                                               
-					document.getElementById('userUnitTypeNumberErrorMessage').textContent =  'Your address unit type number is a required field and you must enter the correct address unit number type into the required field or your address unit type number for your House is not a required field.';
+                    const userAddress = document.getElementById('address').value.trim();
 
-					setTimeout(function() {
-						document.getElementById('userUnitTypeNumberErrorMessage').textContent = '';
-					},
-					9000)               
+                    const userUnitType = document.getElementById('unitType').value.trim();
 
-                } else if (!userUnitTypeNumber.match(regExUnitIdTypeDetails)) {
-                    document.getElementById('userUnitTypeNumberErrorMessage').textContent = 'Your address unit type number is a required field and you must enter the correct address unit number type into the required field or your address unit type number for your House is not a required field.';
+                    const userUnitTypeNumber = document.getElementById('unitTypeNumber').value.trim();
 
-                    setTimeout(function() {
-                        document.getElementById('userUnitTypeNumberErrorMessage').textContent = '';
-                    },
-                    9000)
+                    const userCountrySelection = document.getElementById('countrySelect').value.trim();
 
-                    return false;
-                }
-                         
-                if (userCountrySelection === '' || userCountrySelection == null) {
-					document.getElementById('userCountrySelectionErrorMessage').textContent = 'Your country is a required select option field and you must select your correct country from the option require field.';
+                    const userStateSelection = document.getElementById('stateSelect').value.trim();
 
-					setTimeout(function() {
-						document.getElementById('userCountrySelectionErrorMessage').textContent = '';
-					},
-					9000)    	
-				
-					return false;  
+                    const userCountySelection = document.getElementById('countySelect').value.trim();
+                
+                    const userCitySelection = document.getElementById('citySelect').value.trim();
 
-				}
+                    const userZipSelection = document.getElementById('zipSelect').value.trim();
 
-                if (userStateSelection === '' || userStateSelection == null) {
-					document.getElementById('userStateSelectionErrorMessage').textContent = 'Your state is a required select option field and you must select your correct state from the option require field.';
+                    const regExAddress = /^\d+\s[\d\w]+\s(.*)$/;
+                    const regExUnitTypeNumber = /^[0-9a-zA-Z-]+$/;
+                    const regExUnitIdTypeDetails = /^(House)$/;
 
-					setTimeout(function() {
-						document.getElementById('userStateSelectionErrorMessage').textContent = '';
-					},
-					9000)    	
-				
-					return false;  
 
-				}
+                    if (userAddress === '' || userAddress == null || userAddress.length <= 6 || !userAddress.match(regExAddress))  {                                                               
+                        document.getElementById('userAddressErrorMessage').textContent = 'Your street address is a required field and you must enter your correct street address format into the require input field.';
 
-                if (userCountySelection === '' || userCountySelection == null) {
-					document.getElementById('userCountySelectionErrorMessage').textContent = 'Your county is a required select option field and you must select your correct county from the option require field.';
+                        setTimeout(function() {
+                            document.getElementById('userAddressErrorMessage').textContent = '';
+                        },
+                        9000)
 
-					setTimeout(function() {
-						document.getElementById('userCountySelectionErrorMessage').textContent = '';
-					},
-					9000)    	
-				
-					return false;  
+                        return false;				
 
-				}
+                    }	
+                    
+                    if (userUnitType === '' || userUnitType == null) {
+                        document.getElementById('userUnitTypeErrorMessage').textContent = 'Select your residential unit type you live in, and your residential unit type is a require field.';
 
-                if (userCitySelection === '' || userCitySelection == null) {
-					document.getElementById('userCitySelectionErrorMessage').textContent = 'Your city is a required select option field and you must select your correct city from the option require field.';
+                        setTimeout(function() {
+                            document.getElementById('userUnitTypeErrorMessage').textContent = '';
+                        },
+                        9000)   
+                    
+                        return false;  
 
-					setTimeout(function() {
-						document.getElementById('userCitySelectionErrorMessage').textContent = '';
-					},
-					9000)    	
-				
-					return false;  
+                    }
+                
+                    if (userUnitTypeNumber === '' || userUnitTypeNumber == null || userUnitTypeNumber.match(regExUnitTypeNumber))  {                                                               
+                        document.getElementById('userUnitTypeNumberErrorMessage').textContent =  'Your address unit type number is a required field unless you own your home or other residential property which does not have an address unit type number.';
 
-				}
+                        setTimeout(function() {
+                            document.getElementById('userUnitTypeNumberErrorMessage').textContent = '';
+                        },
+                        9000)               
 
-                if (userZipSelection === '' || userZipSelection == null) {
-					document.getElementById('userZipSelectionErrorMessage').textContent = 'Your zip code area is a required select option field and you must select your correct zip code area from the option require field.';
+                    } else if (!userUnitTypeNumber.match(regExUnitIdTypeDetails)) {
+                        document.getElementById('userUnitTypeNumberErrorMessage').textContent = 'Your address unit type number is a required field unless you own your home or other residential property which does not have an address unit type number.';
 
-					setTimeout(function() {
-						document.getElementById('userZipSelectionErrorMessage').textContent = '';
-					},
-					9000)    	
-				
-					return false;  
+                        setTimeout(function() {
+                            document.getElementById('userUnitTypeNumberErrorMessage').textContent = '';
+                        },
+                        9000)
 
-				}
+                    } else if (!userUnitTypeNumber.match(regExUnitIdTypeDetails)) {
+                        document.getElementById('userReviewUnitTypeNumber').textContent = '11. Your Residential Unit Type Number is: ' +  userUnitTypeNumber + '.';
+                        document.getElementById('userUnitTypeNumberErrorMessage').textContent = 'Error Message:  Your address unit type number is a required field unless you own your home or other residential property which does not have an address unit type number.';
 
-                if (userIdType === '' || userIdType == null) {
+                        setTimeout(function() {
+                            document.getElementById('userUnitTypeNumberErrorMessage').textContent = '';
+                        },
+                        9000)
+
+                        return false;
+                    }
+                            
+                    if (userCountrySelection === '' || userCountrySelection == null) {
+                        document.getElementById('userCountrySelectionErrorMessage').textContent = 'Your country is a required select option field and you must select your correct country from the option require field.';
+
+                        setTimeout(function() {
+                            document.getElementById('userCountrySelectionErrorMessage').textContent = '';
+                        },
+                        9000)    	
+                    
+                        return false;  
+
+                    }
+
+                    if (userStateSelection === '' || userStateSelection == null) {
+                        document.getElementById('userStateSelectionErrorMessage').textContent = 'Your state is a required select option field and you must select your correct state from the option require field.';
+
+                        setTimeout(function() {
+                            document.getElementById('userStateSelectionErrorMessage').textContent = '';
+                        },
+                        9000)    	
+                    
+                        return false;  
+
+                    }
+
+                    if (userCountySelection === '' || userCountySelection == null) {
+                        document.getElementById('userCountySelectionErrorMessage').textContent = 'Your county is a required select option field and you must select your correct county from the option require field.';
+
+                        setTimeout(function() {
+                            document.getElementById('userCountySelectionErrorMessage').textContent = '';
+                        },
+                        9000)    	
+                    
+                        return false;  
+
+                    }
+
+                    if (userCitySelection === '' || userCitySelection == null) {
+                        document.getElementById('userCitySelectionErrorMessage').textContent = 'Your city is a required select option field and you must select your correct city from the option require field.';
+
+                        setTimeout(function() {
+                            document.getElementById('userCitySelectionErrorMessage').textContent = '';
+                        },
+                        9000)    	
+                    
+                        return false;  
+
+                    }
+
+                    if (userZipSelection === '' || userZipSelection == null) {
+                        document.getElementById('userZipSelectionErrorMessage').textContent = 'Your zip code area is a required select option field and you must select your correct zip code area from the option require field.';
+
+                        setTimeout(function() {
+                            document.getElementById('userZipSelectionErrorMessage').textContent = '';
+                        },
+                        9000)    	
+                    
+                        return false;  
+
+                    }
+                    
+
+                    const userIdType = document.getElementById('idType').value.trim();
+
+                    const userIdTypeNumber = document.getElementById('idTypeNumber').value.trim();
+
+                    const regExAlabamaId = /(^\d{7}$)|(^\d{8}$)/;
+
+                    if (userIdType === '' || userIdType == null) {
 					document.getElementById('userIdTypeErrorMessage').textContent = 'Your Alabama\s identification card type is a required select option field and you must select your correct Alabama\s identification card type from the option require field.';
 
 					setTimeout(function() {
@@ -975,75 +984,99 @@
 				
 					return false;  
 
-				}
+                    }
 
-                if (userIdTypeNumber === '' || userIdTypeNumber == null || !userIdTypeNumber.match(regExAlabamaId))  {                                                               
-					document.getElementById('userIdTypeNumberErrorMessage').textContent =  'Your Alabama numeric identification card characters are a required field or you must enter the correct Alabama numeric identification card characters from your Alabama\s identification card into the required field.';
+                    if (userIdTypeNumber === '' || userIdTypeNumber == null || !userIdTypeNumber.match(regExAlabamaId))  {                                                               
+                        document.getElementById('userIdTypeNumberErrorMessage').textContent =  'Your Alabama numeric identification card characters are a required field or you must enter the correct Alabama numeric identification card characters from your Alabama\s identification card into the required field.';
 
-					setTimeout(function() {
-						document.getElementById('userIdTypeNumberErrorMessage').textContent = '';
-					},
-					9000)
+                        setTimeout(function() {
+                            document.getElementById('userIdTypeNumberErrorMessage').textContent = '';
+                        },
+                        9000)
+
+                        return false;
+
+                    }                        
+
+            
+
+
+                    const userPassword = document.getElementById('password').value.trim();
+
+                    const userConfirmPassword = document.getElementById('confirmPassword').value.trim();	
+
+                    const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,32}$/;
+
+                    if (userPassword === '' || userPassword == null || userPassword.length <= 7 || !userPassword.match(regExPassword)) {
+                    document.getElementById('userPasswordErrorMessage').textContent = 'Your password is a required input field and you must enter the correct password format into the require input field.';
+
+                    setTimeout(function() {
+                        document.getElementById('userPasswordErrorMessage').textContent = '';
+                    },
+                    9000)
 
                     return false;
 
-                }           
+                    }
+
+                    if (userConfirmPassword === '' || userConfirmPassword == null || userConfirmPassword.length <= 7 || !userConfirmPassword.match(regExPassword)) {
+                        document.getElementById('userConfirmPasswordErrorMessage').textContent = 'Your confirm password is a required input field and you must enter the correct confirm password format into the require input field.';
+
+                        setTimeout(function() {
+                            document.getElementById('userConfirmPasswordErrorMessage').textContent = '';
+                        },
+                        9000)
+
+                        return false;
+
+                    }
+
+                    if (userPassword != userConfirmPassword) {
+                        document.getElementById('userConfirmPasswordErrorMessage').textContent = 'Your password does not match to your confirm password which are required input fields.';
+
+                        setTimeout(function() {
+                            document.getElementById('userConfirmPasswordErrorMessage').textContent = '';
+                        },
+                        9000)
+
+                        return false;
+
+                    }
+
+                    const userPoliciesAgreements = document.getElementById('policiesAgreements').value.trim();
+
+                    const regExPoliciesAgreements = /^Yes\b$|^No\b$/;
+
+                    if (userPoliciesAgreements === '' || userPoliciesAgreements == null || !userPoliciesAgreements.match(regExPoliciesAgreements))  {                                                               
+                        document.getElementById('userPoliciesAgreementsErrorMessage').textContent =  'You must either type in "Yes", if you agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements or "No", if you do not agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements into the required field.';
+
+                        setTimeout(function() {
+                            document.getElementById('userPoliciesAgreementsErrorMessage').textContent = '';
+                        },
+                        9000)
+
+                        return false;				
+
+				    }	
+                   
+
+             
                 
-                if (userPassword === '' || userPassword == null || userPassword.length <= 7 || !userPassword.match(regExPassword)) {
-				document.getElementById('userPasswordErrorMessage').textContent = 'Your password is a required input field and you must enter the correct password format into the require input field.';
-
-				setTimeout(function() {
-					document.getElementById('userPasswordErrorMessage').textContent = '';
-				},
-				9000)
-
-				return false;
-
-                }
-
-                if (userConfirmPassword === '' || userConfirmPassword == null || userConfirmPassword.length <= 7 || !userConfirmPassword.match(regExPassword)) {
-                    document.getElementById('userConfirmPasswordErrorMessage').textContent = 'Your confirm password is a required input field and you must enter the correct confirm password format into the require input field.';
-
-                    setTimeout(function() {
-                        document.getElementById('userConfirmPasswordErrorMessage').textContent = '';
-                    },
-                    9000)
-
-                    return false;
-
-                }
-
-                if (userPassword != userConfirmPassword) {
-                    document.getElementById('userConfirmPasswordErrorMessage').textContent = 'Your password does not match to your confirm password which are required input fields.';
-
-                    setTimeout(function() {
-                        document.getElementById('userConfirmPasswordErrorMessage').textContent = '';
-                    },
-                    9000)
-
-                    return false;
-
-                }
-
-                if (userPoliciesAgreements === '' || userPoliciesAgreements == null || !userPoliciesAgreements.match(regExPoliciesAgreements))  {                                                               
-					document.getElementById('userPoliciesAgreementsErrorMessage').textContent =  'You must either type in "Yes", if you agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements or "No", if you do not agree to the iVoteBallot\s Terms of Service, Privacy Policy and Cookie Use Agreements into the required field.';
-
-					setTimeout(function() {
-						document.getElementById('userPoliciesAgreementsErrorMessage').textContent = '';
-					},
-					9000)
-
-					return false;				
-
-				}		
-			   				
+               
+                
+                
+			
 				e.preventDefault();  
 							
                 form.addEventListener('submit', validateVoterSignUpForm);
                 return true; 
-                alert('form Submitted!');
+                
 
-				} 
+        
+
+			} 
+
+            //form.addEventListener('submit', validateVoterSignUpForm);
 
 			    /* Sarai Hannah Ajai have created a contant/variable; in order to store all United States country's, states, counties, cities and
                zip codes in a retrievable arrays connected links in order for the voters to have a conveniences to select from a drop down 
@@ -2083,7 +2116,7 @@
 
             if (userUnitTypeNumber === '' || userUnitTypeNumber == null || userUnitTypeNumber.match(regExUnitTypeNumber))  {  
                 document.getElementById('userReviewUnitTypeNumber').textContent = '11. Your Residential Unit Type Number is: ' +  userUnitTypeNumber + '.';                                      
-                document.getElementById('userReviewUnitTypeNumberErrorMessage').textContent =  'Error Message:  Your address unit type number is a required field and you must enter the correct address unit number type into the required field or your address unit type number for your House is not a required field.';
+                document.getElementById('userReviewUnitTypeNumberErrorMessage').textContent =  'Error Message:  Your address unit type number is a required field unless you own your home or other residential property which does not have an address unit type number.';
 
                 setTimeout(function() {
                     document.getElementById('userReviewUnitTypeNumberErrorMessage').textContent = '';
@@ -2265,8 +2298,6 @@
                 return false;
 
             }
-
-
 
         })
 
