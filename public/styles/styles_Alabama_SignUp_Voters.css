@@ -47,6 +47,46 @@ html {
     background-color: rgba(172, 10, 10, 0.3); ;    
 }
 
+/* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
+#states {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 2vw, 20px);  
+    color: rgb(13, 65, 255);
+    background-color: transparent;
+    white-space: normal;
+    padding: 2px; 
+    text-align: center;
+    justify-content: center;
+    text-decoration-line: none;
+}
+
+/* Sarai Hannah Ajai has added styles input attributes to DOM Elements; in order to receive a brown border
+   colors whenever, the user clicks focus are inside the input fields. And, she has also added the CSS
+   transition property which will animate a brown border color within 0.5 secords which will change the
+   color of focus.
+*/ 
+#states {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+select {
+    border-color: rgb(255, 255, 255);
+    outline-color: rgb(255, 255, 255);
+}
+
+#states:focus {
+    border:3px solid rgb(13, 65, 255);;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: solid;
+    background-color: rgb(255, 255, 255);    
+    width: 70%;  
+}
+
+
+
 /* To style the hr line attribute's ID element for which will add decorative designs' sets of 
    appearance to the horizontal rule line. */
 #redLines_HR {
