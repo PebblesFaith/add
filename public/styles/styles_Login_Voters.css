@@ -177,26 +177,7 @@ html {
     } 
 } 
 
-/* Sarai Hannah Ajai have changed the default HTML placeholder attribute style color from 
-   grey to white with the non-standard "::placeholder" selector. */
-/*
-::placeholder {
-    color: rgb(255, 255, 255);
-    opacity: 1; /* Firefox 
-  }
-*/
-  
-/*
-  :-ms-input-placeholder { /* Internet Explorer 10-11 
-   color: rgb(255, 255, 255);
-  }
-*/
-/* 
-  ::-ms-input-placeholder { /* Microsoft Edge 
-   color: rgb(255, 255, 255);
-  }
 
-*/
 
 /* To create 'form' tag style in order to align all DOM elements to the center of the form. */
 form {
@@ -295,6 +276,7 @@ label {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(14px, 3vw, 16px);
     justify-content: center;  
-    border-style: outset;
-    border-color: rgb(201, 24, 24);
+    border-style: double;
+	border-color: rgb(201, 24, 24);
+
 }
