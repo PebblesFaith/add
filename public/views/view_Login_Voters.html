@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	
+	<title>iVoteBallot | Voter Login</title>
+
+	<link rel="icon" type="images" href="../images/iVoteBallot Favicon/314860_star_icon.png" />
+	<link rel="stylesheet" type="text/css" href="../styles/styles_Alabama_Login_Voters.css" />	
+
+
+
+</head>
+	<body>
+	
+		<!-- -->
+
+		<hr id="redLines_HR">	
+		<hr id="blueLines_HR">		
+		
+		<div id="flex_Container_StarsAndStrips">
+			<ul id="navigational_Bar_01">
+				<li><a href="../views/view_AboutUs.html">About Us</a></li>
+				<li><a href="../views/view_Alabama_SignUp_Registrations.html">Alabama Online Sign Up</a></li>				
+				<li><a href=".//view_Alabama_Login_Voters.html">Log In</a></li>			
+			</ul>
+		</div>
+
+		<div id="flex_Container">
+			<div id="row_Container">
+				<div id="column_Containers">     
+					<div id="left_Column">
+						<div>
+							<hr id="redLines_HR">
+							<hr id="redLines_HR">
+							<hr id="blueLines_HR">
+
+							<p>Account Login</p>
+                            <br>
+							<br>
+
+							<label>Email Address |</label> 
+							<br>
+							<input id="email" type="text" name="userEmail" maxlength="250">
+							<br>
+							<span id="userEmailErrorMessage"></span>
+							<br>
+
+							<label>Password | </label>
+							<br>
+							<input id="password" type="password" name="userPassword" value="" maxlength="250" >
+							<a href="#" id="showHide_01" onclick="toggle_InputPasswordCheckBox()">Show</a>
+							<br>
+							<span id = "userPasswordErrorMessage"></span>
+							<br>
+
+							<hr id="redLines_HR">
+							<hr id="redLines_HR">
+							<hr id="blueLines_HR">
+							
+						</div>  					
+					</div>			
+				</div>
+
+				<div id="column_Containers">				
+					<div id="right_Column">
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+
+						<hr id="blueLines_HR">
+						<hr id="redLines_HR">
+						<hr id="redLines_HR">
+						<hr id="blueLines_HR">
+						
+						
+						<form id="form_Voter_SignUp" name="voterSignUpForm" onsubmit="return validateVoterSignUpForm()" action="/alabamasignup" method="POST" > 
+							<h1>iVoteBallot </h1>
+
+						</form>
+					</div>
+				</div>
+
+
+
+	</body>
+</html>
