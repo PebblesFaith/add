@@ -77,7 +77,7 @@ html {
 /* To style form attribute's element for which will add decorative designs' sets of appearance to the 
    font hover hyperlink texts. */
 #navigational_Bar_01 a:hover {
-    background-color: rgba(93, 99, 207, 0.45);
+    background-color: rgb(201, 24, 24);
     color: rgb(255, 255, 255);
 }
 
