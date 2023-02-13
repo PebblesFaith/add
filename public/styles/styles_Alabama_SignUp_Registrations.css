@@ -1068,7 +1068,7 @@ img {
 
 
 
-#step1_Button, #step2_Button, #step3_Button, #step4_Button, #step5_Button, #step6_Button {
+#step1_Button, #step2_Button, #step3_Button, #step4_Button, #step5_Button, #step6_Button, #step01_Button, #step02_Button, #step03_Button, #step04_Button, #step05_Button, #step06_Button {
     width: 80%;
     height: 25px;
     background-color: rgb(255, 255, 255);  
