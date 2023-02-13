@@ -6,6 +6,9 @@ router
     .get('/', views_Controller.view_AboutUs);
 
 router
+    .get('/', views_Controller.view_Login_Voters);
+
+router
     .get('/', views_Controller.view_Alabama_SignUp_Registration);
 
 router
