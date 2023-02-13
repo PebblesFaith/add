@@ -2288,10 +2288,10 @@
             }
 
             if (userPassword != userConfirmPassword) {
-                document.getElementById('userConfirmPasswordErrorMessage').textContent = 'Error Message:  Your password does not match to your confirm password which are required input fields.';
+                document.getElementById('userReviewConfirmPasswordErrorMessage').textContent = 'Error Message:  Your password does not match to your confirm password which are required input fields.';
 
                 setTimeout(function() {
-                    document.getElementById('userConfirmPasswordErrorMessage').textContent = '';
+                    document.getElementById('userReviewConfirmPasswordErrorMessage').textContent = '';
                 },
                 9000)
 
