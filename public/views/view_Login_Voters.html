@@ -33,62 +33,164 @@
 				<div id="column_Containers">     
 					<div id="left_Column">
 						<div>
-							<hr id="redLines_HR">
-							<hr id="redLines_HR">
-							<hr id="blueLines_HR">
-
-							<p>Account Login</p>
-                            <br>
 							<br>
-
-							<label>Email Address |</label> 
 							<br>
-							<input id="email" type="text" name="userEmail" maxlength="250">
+							<p id="title_02">iVoteBallot</p>
 							<br>
-							<span id="userEmailErrorMessage"></span>
-							<br>
-
-							<label>Password | </label>
-							<br>
-							<input id="password" type="password" name="userPassword" value="" maxlength="250" >
-							<a href="#" id="showHide_01" onclick="toggle_InputPasswordCheckBox()">Show</a>
-							<br>
-							<span id = "userPasswordErrorMessage"></span>
-							<br>
-
 							<hr id="redLines_HR">
 							<hr id="redLines_HR">
 							<hr id="blueLines_HR">
 							
+							<form id="form_SignUp" name="signUpForm" onsubmit="return validateSignUpForm()" action="/signup" method="POST" > 
+								
+								<br>
+								<p id="title_01">Account Login</p>
+								<br>
+								<br>
+
+								<label>Email Address |</label> 
+								<br>
+								<input id="email" type="text" name="userEmail" maxlength="250">
+								<br>
+								<span id="userEmailErrorMessage"></span>
+								<br>
+
+								<label>Password | </label>
+								<br>
+								<input id="password" type="password" name="userPassword" value="" maxlength="250" >
+								<a href="#" id="showHide_01" onclick="toggle_InputPasswordCheckBox()">Show</a>
+								<br>
+								<span id = "userPasswordErrorMessage"></span>
+								<br>	
+								<br>
+								<input id="submitButton" type="submit" value="SUBMIT">
+								<br> 
+
+								<hr id="redLines_HR">
+								<hr id="redLines_HR">
+								<hr id="blueLines_HR">
+								<br>
+								<br>
+								<br>
+
+							</form>
+								
 						</div>  					
 					</div>			
 				</div>
 
 				<div id="column_Containers">				
-					<div id="right_Column">
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
+					<div id="right_Column">							
+					
+						<p id="title_03">iVoteBallot</p>
+				
+						<p id="title_04">We are Uniting for a brighter future: Your vote, Your voice, Your impact matters.</p>
 
-						<hr id="blueLines_HR">
-						<hr id="redLines_HR">
-						<hr id="redLines_HR">
-						<hr id="blueLines_HR">
-						
-						
-						<form id="form_Voter_SignUp" name="voterSignUpForm" onsubmit="return validateVoterSignUpForm()" action="/alabamasignup" method="POST" > 
-							<h1>iVoteBallot </h1>
-
-						</form>
-					</div>
+					</div>						
 				</div>
+
+			</div>
+		</div>
+
+		<hr id="redLines_HR">
+
+		<div id="footer_flex_container">        
+
+			<ul id = "socialMedias_01">
+				<li><a href = "../views/view_AboutUs.html">About</a></li>
+				<li><a href = "#">Help Center</a></li>
+				<li><a href = "#">Terms of Service</a></li>				
+				<li><a href = "#">Privacy Policy</a></li>
+				<li><a href = "#">Cookie Policy</a></li>
+				<li><a href = "#">Social Medias</a></li>                
+			</ul>			
+			
+			<hr id="blueLines_HR">
+
+			<ul id="socialMedias_01">
+				<li><a href="http://www.twitter.com"><img src="../images/iVoteBallot_SocialMedia_Icons/6214703_bird_logo_twitter_icon.png" /></a></li>
+				<li><a href="http://www.facebook.com"><img src="../images/iVoteBallot_SocialMedia_Icons/433084_facebook_media_social_network_icon.png" /></a></li>
+				<li><a href="http://www.youtube.com"><img src="../images/iVoteBallot_SocialMedia_Icons/2138495_colored_high quality_media_social_social media_icon.png" /></a></li>
+				<li><a href="http://www.whatsapp.com"><img src="../images/iVoteBallot_SocialMedia_Icons/4213464_app_chat_communication_message_messenger_icon.png" /></a></li>
+				<li><a href="http://www.instagram.com"><img src="../images/iVoteBallot_SocialMedia_Icons/1217174_instagram_icon.png" /></a></li>
+				<li><a href="http://www.slack.com"><img src="../images/iVoteBallot_SocialMedia_Icons/8198236_slack_social network_interaction_communication_social media_icon.png" /></a></li>
+				<li><a href="http://www.google.com"><img src="../images/iVoteBallot_SocialMedia_Icons/9022495_google_logo_duotone_icon.png" /></a></li>
+				<li><a href="http://www.tiktok.com"><img src="../images/iVoteBallot_SocialMedia_Icons/9027137_tiktok_logo_thin_icon.png" /></a></li>
+				<li><a href="http://www.tumblr.com"><img src="../images/iVoteBallot_SocialMedia_Icons/433078_media_social_tumblr_network_icon.png" /></a></li>
+				<li><a href="http://www.linkedIn.com"><img src="../images/iVoteBallot_SocialMedia_Icons/777926_linkedin_business_communication_connection_network_icon.png" /></a></li>            
+			</ul> 
+			
+		<div id="footer_flex_container">       
+			<ul id="iVoteBallot_Footer_Insignia_01">  
+				<a href="">© 2023 iVoteBallot</a></li>
+			</ul>
+		<div>
+			
+			
+
+		<script type="text/javascript">
+
+		function toggle_InputPasswordCheckBox() {
+            const inputPassword = document.getElementById('password');
+            const userShowHide = document.getElementById('showHide_01')
+
+			if (userShowHide.innerText === 'Show') {
+				inputPassword.setAttribute('type', 'text');
+				userShowHide.innerText = ('Hide');
+			} else {
+				inputPassword.setAttribute('type', 'password');
+				userShowHide.innerText = 'Show';
+			}
+		}
+
+
+		const validateSignUpForm = (e) => { 
+
+			const userEmail = document.getElementById('email').value.trim();
+			const userPassword = document.getElementById('password').value.trim();
+
+			const regExEmail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;  
+			const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,32}$/;
+
+			if (userEmail === '' || userEmail == null || userEmail.length <= 6 || !userEmail.match(regExEmail)) {
+				document.getElementById('userEmailErrorMessage').textContent = 'Your email address is a required input field and you must enter the correct email address format into the require input field.';
+
+				setTimeout(function() {
+					document.getElementById('userEmailErrorMessage').textContent = '';
+				},
+				9000)
+
+				return false;
+
+			}
+
+			if (userPassword === '' || userPassword == null || userPassword.length <= 7 || !userPassword.match(regExPassword)) {
+				document.getElementById('userPasswordErrorMessage').textContent = 'Your password is a required input field and you must enter the correct password format into the require input field.';
+
+				setTimeout(function() {
+					document.getElementById('userPasswordErrorMessage').textContent = '';
+				},
+				9000)
+
+				return false;
+
+			}
+
+
+
+
+
+			e.preventDefault();  
+							
+			form.addEventListener('submit', validateVoterSignUpForm);
+			return true; 
+			
+
+		
+
+			} 
+
+		</script>
 
 
 
