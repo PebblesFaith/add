@@ -188,7 +188,7 @@ form {
    the "label" tag. */
 label {
     display: inline-block;
-    width: 71%;
+    width: 70%;
     text-align: left;         
 }
 
@@ -249,7 +249,111 @@ label {
 	background-color: rgb(255, 255, 255);
 	border-style: double;
 	border-color: rgb(201, 24, 24);
+    height: auto;
+    width: auto;
 }
+
+
+#title_01 {
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: transparent;  
+    color: rgb(13, 65, 255);
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(20px, 3vw, 75px);
+    text-align: center;
+    justify-content: center;
+  
+}
+
+
+
+/* To style the label attribute's element for which will add decorative designs' sets of appearance to
+   the "label" tag. */
+   label {
+    display: inline-block;
+    width: 71%;
+    text-align: left;         
+}
+
+/* To add and style the form hidden borders to the inputs' tags. */
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: solid;
+    color: rgb(13, 65, 255);
+    background-color: inherit;
+    width: 70%;       
+    
+}
+
+/* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
+   elements within the contact us form. */
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #idTypeNumber, #zipSelect, #email, #confirmEmail, #phoneNumber, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #password, #confirmPassword, #policiesAgreements {
+    outline: none; 
+    
+}
+
+/* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #phoneNumber, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #password, #confirmPassword, #policiesAgreements {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(10px, 2vw, 18px);  
+    color: rgb(13, 65, 255); 
+    background-color: inherit;
+    white-space: normal;
+    padding: 2px; 
+    
+}
+
+/* Sarai Hannah Ajai has added styles input attributes to DOM Elements; in order to receive a brown border
+   colors whenever, the user clicks focus are inside the input fields. And, she has also added the CSS
+   transition property which will animate a brown border color within 0.5 secords which will change the
+   color of focus.
+*/ 
+#email, #password {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#email:focus, #password:focus {
+    border:3px solid rgb(201, 24, 24);
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: solid;
+    background-color: rgba(212, 221, 249, .50);    
+    width: 70%;  
+}    
+
+/* To style a span attributes' DOM elements for which will add font decorations sets of appearances. */
+#userEmailErrorMessage, #userPasswordErrorMessage {    
+    margin: 2px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(8px, 2vw, 12px);
+    color: rgb(201, 24, 24);   
+    text-align: left;
+    white-space: normal;
+    padding: 1px;     
+}
+
+/* To style the submitButton attribute's DOM element for which will add decorative designs' sets of appearances
+   to the submit button area. */
+#submitButton {
+    display: block;
+    height: 40px;
+    width: 70%;
+    background-color: rgb(201, 24, 24);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 255, 255);
+    font-size: clamp(10px, 2vw, 18px);
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+    cursor: pointer;
+    cursor: 14px;
+}
+
 
 /* To create left side flex item column box to which will allows the column's values to shrink and expand
    to their appropriate fitted space for storing and styling AccouNetrics contact us information. */
@@ -261,8 +365,7 @@ label {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    width: 90%;
+    background-size: cover;    
     height: auto;   
     color: rgb(201, 24, 24);
     height: auto;
@@ -280,3 +383,131 @@ label {
 	border-color: rgb(201, 24, 24);
 
 }
+
+
+#title_02 {
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: transparent;  
+    color: rgb(201, 24, 24);
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(20px, 3vw, 75px);
+    text-align: center;
+    justify-content: center;
+  
+}
+
+#title_03 {
+    margin-top: 350px;  
+    margin-bottom: 20px;
+    background-color: transparent;  
+    color: rgb(201, 24, 24);
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(20px, 3vw, 75px);
+    text-align: center;
+    justify-content: center;
+  
+}
+
+#title_04 {  
+    margin-bottom: auto;
+    background-color: transparent;  
+    color: rgb(13, 65, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 2vw, 20px);
+    text-align: center;
+    justify-content: center;
+  
+}
+
+/* To create a flex item columns boxes to which will allows the columns' values to shrink and expand
+   to their appropriate fitted space for storing and styling iVoteBallot's social medias links and policies information. */
+   #socialMedias_01 {
+    display: flex;
+    flex-flow: row wrap;   
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 14px;
+    cursor: pointer;
+    cursor: 14px;
+    list-style: none;   
+    background-color: transparent;  
+    width: auto;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 1.5vw, 18px); 
+    text-align: center;    
+}
+
+/* To style HTML tag (img) for which will add decorative designs sets of resizes to shrink and expand  
+   to the iVoteBallot's social medias flex boxes. */
+img {
+    width: clamp(15px, 3vw, 25px);    
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#socialMedias_01 a {    
+    text-decoration: none;
+    display: block;
+    background-color: inherit;
+    padding: 15px;
+    color:rgba(93, 99, 207, 0.45);
+}
+
+/* To style the attribute's element for which will add decorative designs' sets of appearance to the 
+   font hover hyperlink texts. */
+#socialMedias_01 a:hover {
+    background-color: rgba(82, 108, 187, 0.238);
+    color: rgb(136, 125, 125);
+}
+
+/* To create a main flex container box column with a set of values of the area container to 
+   which will displays properties and, houses within the main flex container box two children
+   which are call flex items (left and right containers. */
+#footer_flex_container > ul li img {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;    
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+}
+
+/* To create a flex item column box to which will allows the column's values to shrink and expand
+   to their appropriate fitted space for storing and styling iVoteBallot's footer insignia. */
+#iVoteBallot_Footer_Insignia_01 {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px 14px;    
+    list-style: none;   
+    background-color: rgb(201, 24, 24);
+    width: auto;
+    font-family: 'Megrim-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(12px, 1vw, 50px); 
+    margin-top: 0px; 
+    margin-bottom: 0px;  
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance  
+   to the hyperlink texts. */
+#iVoteBallot_Footer_Insignia_01 a {    
+    text-decoration: none;    
+    padding: 5px;
+    color: rgb(234, 233, 233);
+    text-align: center;
+    padding: 10px;   
+}
+
+/* To style form attribute's element for which will add decorative designs' sets of appearance in order
+   to allow sturctual pseduo class to the style content based on it relationship with its parent and sibling
+   from the hyperlink text. */
+#iVoteBallot_Footer_Insignia_01 li:last-of-type a {
+    border-bottom: none;
+}
+
+
+
+
