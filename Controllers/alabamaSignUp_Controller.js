@@ -54,7 +54,7 @@ db.serialize( () => {
 
 const createAlabamaSignUpDatabase = ('/alabamasignup', async(req, res, next,) => {   
 		
-	res.redirect(301, 'http://localhost:3001/view_Home.html');
+	res.redirect(301, 'http://localhost:3001/view_LoginRegistrationsConfirm_ByEmail.html');
 	console.log('The user inserted data information texts from body-parser section had been successfully loaded into the iVoteBallot\s SQLite3 database , ' + Date());   
 
 
@@ -131,7 +131,7 @@ capture the user input fields information from the middleware parser.
 	
 		db.run(sqlInsert, params, function (err, result) {
 			if (err) {
-				res.redirect(302, 'http://localhost:3001/views/view_home.html');
+				res.redirect(302, 'http://localhost:3001/views/view_LoginRegistrationsConfirm_ByEmail.html');
 				console.log('An syntax error has occurred during user\s contact us input fields from DOM submission with a 500 error message webpage display onto the user device screen.'); 
 				return false;				
 			} else {
