@@ -704,11 +704,14 @@
 										
 				    } 
 
-                    const userFirstName = document.getElementById('firstName').value.trim();				
+                    const userFirstName = document.getElementById('firstName').value.trim();
+                    window.sessionStorage.setItem('userfirstname', userFirstName);
 				
                     const userMiddleName = document.getElementById('middleName').value.trim();
+                    window.sessionStorage.setItem('usermiddlename', userMiddleName);
                 
-                    const userLastName = document.getElementById('lastName').value.trim();		
+                    const userLastName = document.getElementById('lastName').value.trim();
+                    window.sessionStorage.setItem('userlastname', userLastName);
 
                     const userSuffix = document.getElementById('suffix').value.trim();
 
