@@ -328,9 +328,86 @@ html {
    
 }
 
+
+#iVoteBallot_Message_01 {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;	
+    width: 100%;
+    height: 100%;   
+    color: rgb(201, 24, 24);    
+    text-align: center;
+    line-height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 3vw, 25px);
+    justify-content: center; 
+}
+
+#iVoteBallot_Message_02 {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;	
+    width: 100%;
+    height: 100%;   
+    color: rgb(13, 65, 255);    
+    text-align: left;
+    line-height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 3vw, 25px);
+    justify-content: center; 
+
+}
+
+#iVoteBallot_Message_03 {
+    display: flex;
+    flex-wrap: row wrap;
+    flex-direction: column;	
+    width: 100%;
+    height: 100%;   
+    color: rgb(201, 24, 24);    
+    text-align: left;
+    line-height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: clamp(14px, 3vw, 25px);
+    justify-content: center; 
+}
+
+#submitHomePageButton {
+    display: block;
+    height: 40px;
+    width: 70%;
+    background-color: rgb(201, 24, 24);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255, 255, 255);
+    font-size: clamp(10px, 2vw, 18px);
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+    cursor: pointer;
+    cursor: 14px;
+}
+
 /* To create a flex item columns boxes to which will allows the columns' values to shrink and expand
    to their appropriate fitted space for storing and styling iVoteBallot's social medias links and policies information. */
-   #socialMedias_01 {
+#socialMedias_01 {
     display: flex;
     flex-flow: row wrap;   
     align-items: center;
