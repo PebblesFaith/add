@@ -450,13 +450,13 @@ input {
 
 /* To style an input attributes' DOM elements for which will eliminate all focus borders around all attributes' 
    elements within the contact us form. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #idTypeNumber, #zipSelect, #email, #confirmEmail, #phoneNumber, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #password, #confirmPassword, #policiesAgreements {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idTypes, #idTypeNumber, #zipSelect, #email, #confirmEmail, #phoneNumber, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #password, #confirmPassword, #policiesAgreements, #verifyEmailAddress {
     outline: none; 
     
 }
 
 /* To style an input attributes' DOM elements for which will add font decorations sets of appearances. */
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #phoneNumber, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #password, #confirmPassword, #policiesAgreements {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #phoneNumber, #address, #unitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #password, #confirmPassword, #policiesAgreements, #verifyEmailAddress {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: clamp(10px, 2vw, 18px);  
     color: rgb(13, 65, 255); 
@@ -471,12 +471,12 @@ input {
    transition property which will animate a brown border color within 0.5 secords which will change the
    color of focus.
 */ 
-#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #phoneNumber, #address, #addressUnitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #password, #confirmPassword, #policiesAgreements {
+#registrationCode, #firstName, #middleName, #lastName, #suffix, #idType, #idTypeNumber, #email, #confirmEmail, #phoneNumber, #address, #addressUnitType, #unitTypeNumber, #countrySelect, #stateSelect, #countySelect, #citySelect, #zipSelect, #idType, #idTypeNumber, #password, #confirmPassword, #policiesAgreements, #verifyEmailAddress {
     -webkit-transition: 0.5s;
     transition: 0.5s;
 }
 
-#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idType:focus, #idTypeNumber:focus, #email:focus, #confirmEmail:focus, #phoneNumber:focus, #address:focus, #unitType:focus, #unitTypeNumber:focus, #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #idType:focus, #idTypeNumber:focus, #password:focus, #confirmPassword:focus, #policiesAgreements:focus {
+#registrationCode:focus, #firstName:focus, #middleName:focus, #lastName:focus, #suffix:focus, #idType:focus, #idTypeNumber:focus, #email:focus, #confirmEmail:focus, #phoneNumber:focus, #address:focus, #unitType:focus, #unitTypeNumber:focus, #countrySelect:focus, #stateSelect:focus, #countySelect:focus, #citySelect:focus, #zipSelect:focus, #idType:focus, #idTypeNumber:focus, #password:focus, #confirmPassword:focus, #policiesAgreements:focus, #verifyEmailAddress:focus {
     border:3px solid rgb(201, 24, 24);
     border-top-style: hidden;
     border-right-style: hidden;
