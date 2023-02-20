@@ -20,6 +20,12 @@ router
 router
     .get('/', views_Controller.view_LoginRegistrationsConfirm_ByEmail);
 
+router
+    .get('/', views_Controller.view_Verify_Link);
+
+router
+    
+
 
 
 
