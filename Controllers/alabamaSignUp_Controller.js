@@ -4,12 +4,11 @@ library application that connect with HTTP and middleware in Node.js back-end se
  */
 const express = require('express');
 
-
 /*
-Sarai Hannah Ajai has imported the 'nodemailer' constant from using her written JavaScript programmatic codes which has allowed her
-to interact with nodemailer SMTP from the NODE.js application using the nodemailer module library. 
+Sarai Hannah Ajai has initialized the constant ('iVoteBallot') object for calling the return 'express' constant from the Express
+module library application.
 */
-const nodemailer = require('nodemailer');
+const iVoteBallotApp = express();
 
 /*
 Sarai Hannah Ajai has imported the 'sqlite3' API database library and she has assigned a constant to it; in order to be use for her written JavaScript 
@@ -19,22 +18,6 @@ which, she will be able to open a database connection and perform specified comm
 const sqlite3 = require('sqlite3').verbose();
 
 const bcrypt = require('bcrypt');
-
-
-/*
-Sarai Hannah Ajai has initialized the constant ('iVoteBallot') object for calling the return 'express' constant from the Express
-module library application.
-*/
-const iVoteBallotApp = express();
-
-/*
-Sarai Hannah Ajai has used the 'iVoteBallot' Express object in order to set her middleware for server static or
-public files which will invokes her 'accouNetricsApp.use()' method which is a method to confirgure her middlewares used
-by those specified routes of the Express HTTP server object. Specifically, 'iVoteBallot.use()' acts, as a
-middleware in an Express module library.
-*/
-iVoteBallotApp.use(express.json());
-iVoteBallotApp.use(express.urlencoded({ extended: true }));
 
 /*
 Sarai Hannah Ajai has created the “. dotenv” API library which will store AccouNetrics web application environment into a 
@@ -48,6 +31,22 @@ require('dotenv').config();
 const IONOS_SECRET_KEY = process.env.IONOS_SECRET_KEY;
 const EXPRESS_SESSION_KEY = process.env.EXPRESS_SESSION_KEY;
 const SESSION_MAX_AGE = process.env.SESSION_MAX_AGE;
+
+/*
+Sarai Hannah Ajai has imported the 'nodemailer' constant from using her written JavaScript programmatic codes which has allowed her
+to interact with nodemailer SMTP from the NODE.js application using the nodemailer module library. 
+*/
+const nodemailer = require('nodemailer');
+
+/*
+Sarai Hannah Ajai has used the 'iVoteBallot' Express object in order to set her middleware for server static or
+public files which will invokes her 'accouNetricsApp.use()' method which is a method to confirgure her middlewares used
+by those specified routes of the Express HTTP server object. Specifically, 'iVoteBallot.use()' acts, as a
+middleware in an Express module library.
+*/
+
+iVoteBallotApp.use(express.json());
+iVoteBallotApp.use(express.urlencoded({ extended: true }));
 
 /*
 Sarai Hannah Ajai has created the 'alabama_SignUp_Controller.js' file/module for handling her export SQLite3's user/voter data
@@ -87,23 +86,7 @@ db.serialize( () => {
     
 });
 
-
-/*
-Sarai Hannah Ajai has generated a test SMTP service account; in order to receive AccouNetrics' customercare@ionos.com emails from the 
-'transporter' constant object from the AccouNetrics' users which pass through the 'nodemailer' API library.
-*/
-const transporter = nodemailer.createTransport ({
-	host: 'smtp.ionos.com',
-	port: 587,
-	//secure: true,
-	auth: {
-		user: 'testdevelopmentenvcustomercare@ivoteballot.com',
-		pass: IONOS_SECRET_KEY,
-	}
-});
-
-
-const createAlabamaSignUpDatabase = ('/alabamasignup', async(req, res, next,) => {   
+const createAlabamaSignUpDatabase = ('/alabamasignup', async(req, res, next,) => { 	
         
     res.redirect(301, 'http://localhost:3001/view_LoginRegistrationsConfirm_ByEmail.html');
     console.log('The user inserted data information texts from body-parser section had been successfully loaded into the iVoteBallot\s SQLite3 database , ' + Date());   
@@ -173,132 +156,122 @@ const createAlabamaSignUpDatabase = ('/alabamasignup', async(req, res, next,) =>
     console.log('User password is: ' + data.userPassword + '.');
     console.log('User confirm password is: ' + data.userConfirmPassword + '.');
     console.log('User have agreed to all Policies Agreements: ' + data.userPoliciesAgreements + '.');
-    console.log('User verify email address is: ' + data.userVerifyEmailAddress + '.');
+    console.log('User verify email address is: ' + data.userVerifyEmailAddress + '.');    
 
-	/* 
-	Check if user already exists.	
-	*/
-	const userEmail = req.body.email;
+    /*
+    Sarai Hannah Ajai has generated a test SMTP service account; in order to receive AccouNetrics' customercare@ionos.com emails from the 
+    'transporter' constant object from the AccouNetrics' users which pass through the 'nodemailer' API library.
+    */
+    const transporter = nodemailer.createTransport ({
+        host: 'smtp.ionos.com',
+        port: 587,
+        //secure: true,
+        auth: {
+            user: 'testdevelopmentenvcustomercare@ivoteballot.com',
+            pass: IONOS_SECRET_KEY,
+        }
+    });
+        
+    /*
+    Sarai Hannah Ajai has written her JavaScript programmatic codes for creating a usable 'transporter' constant object by ways of
+    using the default SMTP transporter nodemailer API library.
+    */
+    const mailOptions_01 = {
+        from: req.body.userEmail,
+        to: 'testdevelopmentenvcustomercare@ivoteballot.com', 
+        subject: `iVoteBallot New Voter Registration`,  
+        text: `iVoteBallot new online create account name is:
+        ${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName}
+        and ${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName} has been sent a verification code registration to be verify by his/her 
+        email address account at, ${req.body.userEmail}.`,		
+    };
 
-	db.get('SELECT * FROM AlabamaSignUp WHERE userEmail = ?', [userEmail], (error, row) => {
-		if (error) {
-			return res.status(500).send('Internal server error');			
-		}
-		if (row) {
-			return res.status(400).send('User already exists');
-		}
+    const mailOptions_02 = {
+        from: 'testdevelopmentenvcustomercare@ivoteballot.com',
+        to: req.body.userConfirmEmail, 
+        subject: `Your iVoteBallot's Email Address Sign Up Verification Code Registration'`,
+        text: `
+        
+        Dear ${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName}:
 
-	});
+        Your login verification code registration has been sent to your email address account.
 
-	bcrypt.compare(userEmail, hashedPassword, (error, result) => {
-		if (error) {
-			return res.status(500).send('Internal server error');
-		}
-		if (!result) {
-			return res.status(400).send('Invalid email or password');
-		}
+        Please click onto the link in order to verify your email addess http://localhost:3001/view_Verify_link.html      
 
-	});
+               
+        and, your verification code will expire in 10 minutes.
+        
+        Respectfully Yours,
 
-	/*
-	Insert user into the database
-	*/
+        iVoteBallot's Customer Care Team
+        
+        `,			
+    };
 
-    var sqlInsert = 'INSERT INTO AlabamaSignUp (userRegistrationCode, userFirstName, userMiddleName, userLastName, userSuffix, userEmail, userConfirmEmail, userPhoneNumber, userAddress, userUnitType, userUnitTypeNumber, userCountrySelection, userStateSelection, userCountySelection, userCitySelection, userZipSelection, userIdType, userIdTypeNumber,userPassword, userConfirmPassword, userPoliciesAgreements, userVerifyEmailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-    var params = [data.userRegistrationCode, data.userFirstName, data.userMiddleName, data.userLastName, data.userSuffix, data.userEmail, data.userConfirmEmail, data.userPhoneNumber, data.userAddress, data.userUnitType, data.userUnitTypeNumber, data.userCountrySelection, data.userStateSelection, data.userCountySelection, data.userCitySelection, data.userZipSelection, data.userIdType, data.userIdTypeNumber, data.userPassword, data.userConfirmPassword, data.userPoliciesAgreements, data.userVerifyEmailAddress];
     
-	db.run(sqlInsert, params, function (err, result) {
-		if (err) {
-			res.redirect(302, 'http://localhost:3001/views/view_LoginRegistrationsConfirm_ByEmail.html');
-			console.log('An syntax error has occurred during user\s contact us input fields from DOM submission with a 500 error message webpage display onto the user device screen.'); 
-			return false;               
-		} else {
-			console.log('The user data information typed into the input fields section has been successfully parsed into the iVoteBallot\s SQLite3 database. ' + Date());
-			return true;
-		}
-	});   
+    /*
+    Sarai Hannah Ajai has written her JavaScript programmatic codes to send an user test email to AccouNetrics' customercare@accounetrics.com
+    email account with nodemailer defined transporter object.
+    */
+    transporter.sendMail(mailOptions_01, (error, info) => {
+        if (error) {
+            console.log(error);
+            res.send('error');
 
-	/*
-	Send verificcation email to user.
-	*/
+        } else {
+            console.log('Email Sent: ' + info.response);
+            res.send('success!');
+        }
+    });
 
-	/*
-	Sarai Hannah Ajai has written her JavaScript programmatic codes for creating a usable 'transporter' constant object by ways of
-	using the default SMTP transporter nodemailer API library.
-	
-	const mailOptions_01 = {
-		from: req.body.userEmail,
-		to: 'testdevelopmentenvcustomercare@ivoteballot.com', 
-		subject: `iVoteBallot : ${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName} : email address verification sign up.`,		
-		text: `${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName} has attempted to verify iVoteBallot's email address.`,
-	};
-	*/
+    transporter.sendMail(mailOptions_02, (error, info) => {
+        if (error) {
+            console.log(error);
+            res.send('error');				
 
-	const verificationLink = `http://localhost:3001/verify?id=${this.lastID}`;
+        } else {
+            console.log('Email Sent: ' + info.response);            
+            
+            //Prompt user to verify email address
+            const verificationLink = `http://localhost:3001/view_Verify_Link.html?userEmail=req.body.userEmail`
+            //Generate Bcrypt hash for verification link.
+            const verificationHashed = bcrypt.hashSync(verificationLink).toString();
+            //Create an HTML document to prompt user to click onto the link.
+            html: '<title>Verify Email address</title> </head> <body> <h2>Please click onto the link below to verify your email address</h2> <ahref="${verificationLink}"> Verify</a> <p>Thank you for signing up with us.</p> </body> </html> '
 
-	const mailOptions_02 = {
-		from: 'testdevelopmentenvcustomercare@ivoteballot.com',
-		to: req.body.userEmail, 
-		subject: `Your iVoteBallot Email Address Sign Up Verification.`,
-		text: 
 
-		`
-		Dear ${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName}:
-		<br>
-		<!DOCTYPE html>
-		<html>
-			<head>
-			 	<title>Verify Email Address</title>
-			</head>
-			<body>
-				<h2>Please click the following link to verify your email address: <h2>
-				<a href="${verificationLink}">${verificationLink}</a>
-				<br>
-				<p>Thank you for signing up for iVoteBallot.</p
-				<br>
-			</body>
-		</html>
+             // If the verify link matches to the stored Bcrypt hash
+            if (bcrypt.compareSync(verificationLink, verificationHashed)) {
+
+                var sqlInsert = 'INSERT INTO AlabamaSignUp (userRegistrationCode, userFirstName, userMiddleName, userLastName, userSuffix, userEmail, userConfirmEmail, userPhoneNumber, userAddress, userUnitType, userUnitTypeNumber, userCountrySelection, userStateSelection, userCountySelection, userCitySelection, userZipSelection, userIdType, userIdTypeNumber,userPassword, userConfirmPassword, userPoliciesAgreements, userVerifyEmailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+                var params = [data.userRegistrationCode, data.userFirstName, data.userMiddleName, data.userLastName, data.userSuffix, data.userEmail, data.userConfirmEmail, data.userPhoneNumber, data.userAddress, data.userUnitType, data.userUnitTypeNumber, data.userCountrySelection, data.userStateSelection, data.userCountySelection, data.userCitySelection, data.userZipSelection, data.userIdType, data.userIdTypeNumber, data.userPassword, data.userConfirmPassword, data.userPoliciesAgreements, data.userVerifyEmailAddress];
+            
+                db.run(sqlInsert, params, function (err, result) {
+                    if (err) {
+                        res.redirect(302, 'http://localhost:3001/views/view_Verify_Link.html');
+                        console.log('An syntax error has occurred during user\s contact us input fields from DOM submission with a 500 error message webpage display onto the user device screen.'); 
+                        return false;               
+                    } else {
+                        console.log('The user data information typed into the input fields section has been successfully parsed into the iVoteBallot\s SQLite3 database. ' + Date());
+                        return true;
+                    }
+                });
+            };                  
+        };
+    });
+
+
+});	
 		
-		`
-	};
-
-	transporter.sendMail(mailOptions_02, (err) => {
-		if (error) {
-			return res.status(500).send('Internal server error');
-		}
-		res.send('Verfication email sent.');
-
-	});
-		
-	/*
-	Handle email verification
-	*/
-	iVoteBallotApp.get('verify', (req, res) => {
-		const {ID} = req.query;
-
-	/*
-	update the is_verified column in the database
-	*/
-
-	db.run('UPDATE AlabamaSignUp SET is_verified = 1 WHERE ID = ?', [ID], (error) => {
-		if (error) {
-			return res.status(500).send('Internal server error.')
-		}
-		res.send('Email address verified');
-
-	});
-
-});
-		
-		
-}); 
-
 module.exports = {
     db,        
     alabamaSignUp_Router,
     createAlabamaSignUpDatabase,
+   
     
 }
+
+
   
 
 
