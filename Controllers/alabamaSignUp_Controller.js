@@ -74,7 +74,7 @@ Sarai Hannah Ajai had JavaScript programmatically coded SQLite3; in order to cre
 JavaScript table each time an iVoteBallot's user/voter sign up the Alabama webpage.
 */
 db.serialize( () => {
-	const sqlTable =  ("CREATE TABLE IF NOT EXISTS AlabamaSignUp (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userDate DATETIME NOT NULL DEFAULT (datetime(CURRENT_TIMESTAMP, 'localtime')), userRegistrationCode VARCHAR (25) NOT NULL, userFirstName VARCHAR (150) NOT NULL, userMiddleName VARCHAR (150) NOT NULL, userLastName VARCHAR(150) NOT NULL, userSuffix VARCHAR(5) NOT NULL, userEmail VARCHAR (255) NOT NULL, userConfirmEmail VARCHAR (255) NOT NULL, userPhoneNumber VARCHAR (15) NOT NULL, userAddress VARCHAR (400) NOT NULL, userUnitType VARCHAR (50) NOT NULL, userUnitTypeNumber VARCHAR (10) NOT NULL, userCountrySelection VARCHAR (50) NOT NULL, userStateSelection VARCHAR (150) NOT NULL, userCountySelection VARCHAR (150) NOT NULL, userCitySelection VARCHAR (150) NOT NULL, userZipSelection VARCHAR (50) NOT NULL, userIdType VARCHAR (250) NOT NULL, userIdTypeNumber VARCHAR (50) NOT NULL, userPassword VARCHAR (50) NOT NULL, userConfirmPassword VARCHAR (50) NOT NULL, userPoliciesAgreements VARCHAR (5) NOT NULL, userVerifyEmailAddress VARCHAR (7) NOT NULL)");
+	const sqlTable =  ("CREATE TABLE IF NOT EXISTS AlabamaSignUp (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, userDate DATETIME NOT NULL DEFAULT (datetime(CURRENT_TIMESTAMP, 'localtime')), userRegistrationCode VARCHAR (25) NOT NULL, userFirstName VARCHAR (150) NOT NULL, userMiddleName VARCHAR (150) NOT NULL, userLastName VARCHAR(150) NOT NULL, userSuffix VARCHAR(5) NOT NULL, userEmail VARCHAR (255) NOT NULL, userConfirmEmail VARCHAR (255) NOT NULL, userPhoneNumber VARCHAR (15) NOT NULL, userAddress VARCHAR (400) NOT NULL, userUnitType VARCHAR (50) NOT NULL, userUnitTypeNumber VARCHAR (10) NOT NULL, userCountrySelection VARCHAR (50) NOT NULL, userStateSelection VARCHAR (150) NOT NULL, userCountySelection VARCHAR (150) NOT NULL, userCitySelection VARCHAR (150) NOT NULL, userZipSelection VARCHAR (50) NOT NULL, userIdType VARCHAR (250) NOT NULL, userIdTypeNumber VARCHAR (50) NOT NULL, userPassword VARCHAR (50) NOT NULL, userConfirmPassword VARCHAR (50) NOT NULL, userPoliciesAgreements VARCHAR (5) NOT NULL, userVerificationToken VARCHAR (25) NOT NULL)");
 		
 	db.run(sqlTable, (error) => {       
 	
@@ -147,7 +147,7 @@ const createAlabamaSignUpDatabase = ('/alabamasignup', async(req, res, next,) =>
         userPassword: hashedPassword,
         userConfirmPassword: confirmHashedPassword,
         userPoliciesAgreements: req.body.userPoliciesAgreements,
-        userVerifyEmailAddress: req.body.userVerifyEmailAddress
+        userVerificationToken: req.body.userVerificationToken
                     
     }     
             
@@ -173,39 +173,13 @@ const createAlabamaSignUpDatabase = ('/alabamasignup', async(req, res, next,) =>
     console.log('User password is: ' + data.userPassword + '.');
     console.log('User confirm password is: ' + data.userConfirmPassword + '.');
     console.log('User have agreed to all Policies Agreements: ' + data.userPoliciesAgreements + '.');
-    console.log('User verify email address is: ' + data.userVerifyEmailAddress + '.');
+    console.log('User random verification number is: ' + data.userVerificationToken + '.');
 
-	/* 
-	Check if user already exists.	
-	*/
-	const userEmail = req.body.email;
+	
+	
 
-	db.get('SELECT * FROM AlabamaSignUp WHERE userEmail = ?', [userEmail], (error, row) => {
-		if (error) {
-			return res.status(500).send('Internal server error');			
-		}
-		if (row) {
-			return res.status(400).send('User already exists');
-		}
-
-	});
-
-	bcrypt.compare(userEmail, hashedPassword, (error, result) => {
-		if (error) {
-			return res.status(500).send('Internal server error');
-		}
-		if (!result) {
-			return res.status(400).send('Invalid email or password');
-		}
-
-	});
-
-	/*
-	Insert user into the database
-	*/
-
-    var sqlInsert = 'INSERT INTO AlabamaSignUp (userRegistrationCode, userFirstName, userMiddleName, userLastName, userSuffix, userEmail, userConfirmEmail, userPhoneNumber, userAddress, userUnitType, userUnitTypeNumber, userCountrySelection, userStateSelection, userCountySelection, userCitySelection, userZipSelection, userIdType, userIdTypeNumber,userPassword, userConfirmPassword, userPoliciesAgreements, userVerifyEmailAddress) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
-    var params = [data.userRegistrationCode, data.userFirstName, data.userMiddleName, data.userLastName, data.userSuffix, data.userEmail, data.userConfirmEmail, data.userPhoneNumber, data.userAddress, data.userUnitType, data.userUnitTypeNumber, data.userCountrySelection, data.userStateSelection, data.userCountySelection, data.userCitySelection, data.userZipSelection, data.userIdType, data.userIdTypeNumber, data.userPassword, data.userConfirmPassword, data.userPoliciesAgreements, data.userVerifyEmailAddress];
+    var sqlInsert = 'INSERT INTO AlabamaSignUp (userRegistrationCode, userFirstName, userMiddleName, userLastName, userSuffix, userEmail, userConfirmEmail, userPhoneNumber, userAddress, userUnitType, userUnitTypeNumber, userCountrySelection, userStateSelection, userCountySelection, userCitySelection, userZipSelection, userIdType, userIdTypeNumber,userPassword, userConfirmPassword, userPoliciesAgreements, userVerificationToken) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+    var params = [data.userRegistrationCode, data.userFirstName, data.userMiddleName, data.userLastName, data.userSuffix, data.userEmail, data.userConfirmEmail, data.userPhoneNumber, data.userAddress, data.userUnitType, data.userUnitTypeNumber, data.userCountrySelection, data.userStateSelection, data.userCountySelection, data.userCitySelection, data.userZipSelection, data.userIdType, data.userIdTypeNumber, data.userPassword, data.userConfirmPassword, data.userPoliciesAgreements, data.userVerificationToken];
     
 	db.run(sqlInsert, params, function (err, result) {
 		if (err) {
@@ -218,80 +192,11 @@ const createAlabamaSignUpDatabase = ('/alabamasignup', async(req, res, next,) =>
 		}
 	});   
 
-	/*
-	Send verificcation email to user.
-	*/
-
-	/*
-	Sarai Hannah Ajai has written her JavaScript programmatic codes for creating a usable 'transporter' constant object by ways of
-	using the default SMTP transporter nodemailer API library.
 	
-	const mailOptions_01 = {
-		from: req.body.userEmail,
-		to: 'testdevelopmentenvcustomercare@ivoteballot.com', 
-		subject: `iVoteBallot : ${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName} : email address verification sign up.`,		
-		text: `${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName} has attempted to verify iVoteBallot's email address.`,
-	};
-	*/
-
-	const verificationLink = `http://localhost:3001/verify?id=${this.lastID}`;
-
-	const mailOptions_02 = {
-		from: 'testdevelopmentenvcustomercare@ivoteballot.com',
-		to: req.body.userEmail, 
-		subject: `Your iVoteBallot Email Address Sign Up Verification.`,
-		text: 
-
-		`
-		Dear ${req.body.userFirstName} ${req.body.userMiddleName} ${req.body.userLastName}:
-		<br>
-		<!DOCTYPE html>
-		<html>
-			<head>
-			 	<title>Verify Email Address</title>
-			</head>
-			<body>
-				<h2>Please click the following link to verify your email address: <h2>
-				<a href="${verificationLink}">${verificationLink}</a>
-				<br>
-				<p>Thank you for signing up for iVoteBallot.</p
-				<br>
-			</body>
-		</html>
-		
-		`
-	};
-
-	transporter.sendMail(mailOptions_02, (err) => {
-		if (error) {
-			return res.status(500).send('Internal server error');
-		}
-		res.send('Verfication email sent.');
-
-	});
-		
-	/*
-	Handle email verification
-	*/
-	iVoteBallotApp.get('verify', (req, res) => {
-		const {ID} = req.query;
-
-	/*
-	update the is_verified column in the database
-	*/
-
-	db.run('UPDATE AlabamaSignUp SET is_verified = 1 WHERE ID = ?', [ID], (error) => {
-		if (error) {
-			return res.status(500).send('Internal server error.')
-		}
-		res.send('Email address verified');
-
-	});
-
 });
 		
 		
-}); 
+ 
 
 module.exports = {
     db,        
