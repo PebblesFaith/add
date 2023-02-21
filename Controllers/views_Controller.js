@@ -25,6 +25,10 @@ const view_LoginRegistrationsConfirm_ByEmail = (req, res) => {
     res.sendFile(path.join(__dirname, './views/view_LoginRegistrationsConfirm_ByEmail'));
 };
 
+// Define a route for handling email verfification.
+const view_Verify_Link = (req, res) => {
+    res.sendFile(path.join(__dirname, './views/view_Verify_Link'));
+};
 
 
 module.exports = {  
@@ -33,7 +37,8 @@ module.exports = {
     view_Alabama_SignUp_Voters,
     view_Home,
     view_Login_Voters, 
-    view_LoginRegistrationsConfirm_ByEmail   
+    view_LoginRegistrationsConfirm_ByEmail,
+    view_Verify_Link  
     
 
 }
